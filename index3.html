@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/common-styles.css" rel="stylesheet">
+    <link rel="preload" href="Satoshi-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
     <title>Document</title>
 </head>
 <body>
     <header class="header">
         <div class="header-register">
-            <p>Sign up and get 20% off to your first order.<a class="header-register-link" href="#">Sign Up Now</a></p>
-            <img src="img/zaglyshka2.png" width="13.13" height="13.13" alt="close"> 
+            <p>Sign up and get 20% off to your first order. <a class="header-register-link" href="#">Sign Up Now</a></p>
+            <img src="img/white_closing_icon.svg" width="13.13" height="13.13" alt="close"> 
         </div>
 
         <nav class="header-nav">
             <a class="header-nav-logo" href="#">
-                <img src="img/zaglyshka2.png" width="160" height="22" alt="Logo of company">
+                <img src="img/SHOP.CO.svg" width="160" height="22" alt="Logo of company">
             </a>
 
             <ul class="header-nav-links">
@@ -28,12 +32,12 @@
                 </li> -->
                 <li class="header-nav-link"><a href="#">Shop</a></li>
                 <li class="header-nav-link"><a href="#">On Sale</a></li>
-                <li class="header-nav-link"><a href="#">New Casual</a></li>
+                <li class="header-nav-link"><a href="#">New Arrivals</a></li>
                 <li class="header-nav-link"><a href="#">Brands</a></li>
             </ul>
             
             <div class="header-nav-search">
-                <label for="header-nav-input"><img src="img/zaglyshka2.png" width="20.27" height="20.27" alt="Magnifying glass in input"></label> 
+                <label for="header-nav-input"><img src="img/Magnifying_glass.svg" width="20.27" height="20.27" alt="Magnifying glass in input"></label> 
                 <input id="header-nav-input" name="header-nav-input" type="text" list="header-nav-datalist" placeholder="Search for products...">
                 <datalist id="header-nav-datalist">
                     <option value="thing1" class="header-nav-option"><a href="#">thing1</a></option>
@@ -43,249 +47,330 @@
             </div>
 
             <div class="header-nav-other">
-                <img src="img/zaglyshka2.png" width="22.13" height="20.25" alt="basket of user"> 
-                <img src="img/zaglyshka2.png" width="20.25" height="20.25" alt="user account"> 
+                <img src="img/catr(telegka).svg" width="22.13" height="20.25" alt="basket of user"> 
+                <img src="img/account.svg" width="20.25" height="20.25" alt="user account"> 
             </div>
         </nav>
     </header>
 
 
     <main>
-        <section class="hero">
-            <nav class="hero-breadcrumbs">
-                <a href="#">Home</a>
-                <a href="#">Casual</a>
-            </nav>
+        <nav class="main-breadcrumbs">
+            <a href="#">Home</a>
+            <a href="#">Casual</a>
+        </nav>
 
-            <!-- <article class="hero-filters">
-                <div class="filters-part1">
-                    <h2>Filters</h2>
-                    <img src="img/zaglyshka2.png" width="20.25" height="18.75" alt="icon of using filters">
-                </div> 
-                
-                <ul class="хуйня которую я не понимаю"></ul>
+        <section class="main-filters">
+            <article class="filters-part1">
+                <h2>Filters</h2>
+                <img src="img/Filters_Grey.svg" width="20.25" height="18.75" alt="icon of using filters">
+            </article> 
+            
+            <ul class="хуйня которую я не понимаю">
+                <!-- крч потом реализую -->
+            </ul>
 
-                <div class="filters-prices">
-                    <h3>
+            <article class="filters-prices">
+                <h3>Price</h3>
+                <img class="active" src="img/Filters-arrow.svg" width="11.5" height="6.5" alt="black arrow">
+                <labe>
+                    50$<input type="range" name="filters-prices-range" min="50$" max="200$" step="1">200$
+                </label>
+            </article>
 
-                    </h3>
-                </div>
-            </article> -->
-
-            <article class="hero-Casual">
-                <div class="Casual-topPart">
-                    <h1>Casual</h1>
-
-                    <p>Showing 1-10 of 100 Products</p>
-
-                    <div class="Casual-topPart-Sort">
-                        <label for="Casual-topPart-select">Sort by:</label>
-                        <select id="Casual-topPart-select">
-                            <option value="Most Popular">Most Popular</option>
-                            <option value="Have The Casual Reviews">Have The Casual Reviews</option>
-                            <option value="Not ussuall/Specical collections">Not ussuall/Specical collections</option>
-                        </select>
-                    </div>
-                </div>
-
-                <ul class="Casual-list">
-                    <li class="Casual-item">
-                        <img src="img/zaglyshka2.png" width="100" height="100" alt="Gradient Graphic T-shirt">
-                        <h3>Gradient Graphic T-shirt</h3>
-                        <div class="Casual-item-mark">
-                            <ul class="Casual-item-stars">
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star half"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                            </ul>
-                            <p class="Casual-item-assessment">
-                                <span class="black">3.5/</span>
-                                <span>5</span>
-                            </p>
-                        </div>
-                        
-                        <p class=" price">145$</p>
+            <article class="filters-colors">
+                <h3>Colors</h3>
+                <img class="active" src="img/Filters-arrow.svg" width="11.5" height="6.5" alt="black arrow">
+                <ul class="filters-colors-list">
+                    <li class="colors-item-green"> 
+                        <div></div>
                     </li>
 
-                    <li class="Casual-item">
-                        <img src="img/zaglyshka2.png" width="100" height="100" alt="Polo with Tipping Details">
-                        <h3>Polo with Tipping Details</h3>
-                        <div class="Casual-item-mark">
-                            <ul class="Casual-item-stars">
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star half"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                            </ul>
-                            <p class="Casual-item-assessment">
-                                <span class="black">4.5/</span>
-                                <span>5</span>
-                            </p>
-                        </div>
-                        
-                        <p class=" price">180$</p>
+                    <li class="colors-item-green"> 
+                        <div></div>
                     </li>
 
-                    <li class="Casual-item">
-                        <img src="img/zaglyshka2.png" width="100" height="100" alt="Black Striped T-shirt">
-                        <h3>Black Striped T-shirt</h3>
-                        <div class="Casual-item-mark">
-                            <ul class="Casual-item-stars">
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                            </ul>
-                            <p class="Casual-item-assessment">
-                                <span class="black">5.0/</span>
-                                <span>5</span>
-                            </p>
-                        </div>
-
-                        <div class="Casual-item-prices prices">
-                            <p class="Casual-item-pricesnow">120$</p>
-                            <p class="Casual-item-priceswas">150$</p>
-                            <p class="Casual-item-sale">-30%</p>
-                        </div>
+                    <li class="colors-item-red"> 
+                        <div></div>
                     </li>
 
-                    <li class="Casual-item">
-                        <img src="img/zaglyshka2.png" width="100" height="100" alt="Skinny Fit Jeans">
-                        <h3>Skinny Fit Jeans</h3>
-                        <div class="Casual-item-mark">
-                            <ul class="Casual-item-stars">
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star half"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                            </ul>
-                            <p class="Casual-item-assessment">
-                                <span class="black">3.5/</span>
-                                <span>5</span>
-                            </p>
-                        </div>
-                        
-                        <div class="Casual-item-prices prices">
-                            <p class="Casual-item-pricesnow">240$</p>
-                            <p class="Casual-item-priceswas">260$</p>
-                            <p class="Casual-item-sale">-20%</p>
-                        </div>
-                    </li>
-                    
-                    <li class="Casual-item">
-                        <img src="img/zaglyshka2.png" width="100" height="100" alt="Checkered Shirt">
-                        <h3>Checkered Shirt"</h3>
-                        <div class="Casual-item-mark">
-                            <ul class="Casual-item-stars">
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star half"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                            </ul>
-                            <p class="Casual-item-assessment">
-                                <span class="black">4.5/</span>
-                                <span>5</span>
-                            </p>
-                        </div>
-
-                        <p class="price">180$</p>
+                    <li class="colors-item-yellow"> 
+                        <div></div>
                     </li>
 
-                    <li class="Casual-item">
-                        <img src="img/zaglyshka2.png" width="100" height="100" alt="Slevve Striped T-shirt">
-                        <h3>Slevve Striped T-shirt</h3>
-                        <div class="Casual-item-mark">
-                            <ul class="Casual-item-stars">
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star half"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                            </ul>
-                            <p class="Casual-item-assessment">
-                                <span class="black">4.5/</span>
-                                <span>5</span>
-                            </p>
-                        </div>
-                        
-                        <div class="Casual-item-prices prices">
-                            <p class="Casual-item-pricesnow">130$</p>
-                            <p class="Casual-item-priceswas">160$</p>
-                            <p class="Casual-item-sale">-30%</p>
-                        </div>
+                    <li class="colors-item-orange"> 
+                        <div></div> 
                     </li>
 
-                    <li class="Casual-item">
-                        <img src="img/zaglyshka2.png" width="100" height="100" alt="Vertical Striped Shirt">
-                        <h3>Vertical Striped Shirt</h3>
-                        <div class="Casual-item-mark">
-                            <ul class="Casual-item-stars">
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                            </ul>
-                            <p class="Casual-item-assessment">
-                                <span class="black">5.0/</span>
-                                <span>5</span>
-                            </p>
-                        </div>
-
-                        <div class="Casual-item-prices prices">
-                            <p class="Casual-item-pricesnow">212$</p>
-                            <p class="Casual-item-priceswas">232$</p>
-                            <p class="Casual-item-sale">-20%</p>
-                        </div>
+                    <li class="colors-item-lightBlue"> 
+                        <div></div>
                     </li>
 
-                    <li class="Casual-item">
-                        <img src="img/zaglyshka2.png" width="100" height="100" alt="Courage Graphic T-shirt">
-                        <h3>Courage Graphic T-shirt</h3>
-                        <div class="Casual-item-mark">
-                            <ul class="Casual-item-stars">
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                            </ul>
-                            <p class="Casual-item-assessment">
-                                <span class="black">4.0/</span>
-                                <span>5</span>
-                            </p>
-                        </div>
-                        
-                        <p class="price">145$</p>
+                    <li class="colors-item-darkBlue"> 
+                        <div></div>
                     </li>
-                    
-                    <li class="Casual-item">
-                        <img src="img/zaglyshka2.png" width="100" height="100" alt="Loose Fit Bermuda Shorts">
-                        <h3>Loose Fit Bermuda Shorts</h3>
-                        <div class="Casual-item-mark">
-                            <ul class="Casual-item-stars">
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                                <li class="Casual-item-star"><img src="img/zaglyshka2.png" width="18.49" height="18.49" alt="star"></li>
-                            </ul>
-                            <p class="Casual-item-assessment">
-                                <span class="black">3.0/</span>
-                                <span>5</span>
-                            </p>
-                        </div>
 
-                        <p class=" price">80$</p>
+                    <li class="colors-item-violet"> 
+                        <div></div>
+                    </li>
+
+                    <li class="colors-item-pink"> 
+                        <div></div>
+                    </li>
+
+                    <li class="colors-item-white"> 
+                        <div></div>
+                    </li>
+
+                    <li class="colors-item-black"> 
+                        <div></div>
                     </li>
                 </ul>
-
-                <!-- <nav class="Casual">
-                    <
-                </nav> -->
             </article>
+
+            <article class="filters-sizes">
+                <h3>Styles</h3>
+                <img class="active" src="img/Filters-arrow.svg" width="11.5" height="6.5" alt="black arrow">
+                <ul class="filters-sizes-list">
+                    <li class="filters-size">XX-Small</li>
+                    <li class="filters-size">X-Small</li>
+                    <li class="filters-size">Small</li>
+                    <li class="filters-size">Medium</li>
+                    <li class="filters-size active">Large</li>
+                    <li class="filters-size">X-Large</li>
+                    <li class="filters-size">XX-Large</li>
+                    <li class="filters-size">3X-Large</li>
+                    <li class="filters-size">4X-Large</li>
+                </ul>
+            </article>
+
+            <article class="filters-DressStyle">
+                <h3>Dress Style</h3>
+                <img class="active" src="img/Filters-arrow.svg" width="11.5" height="6.5" alt="black arrow">
+                <ul class="Dress-Style-list">
+                    <!-- <li>Хуйня которую буду реализовывать потом</li> -->
+                </ul>
+            </article>
+
+            <a class="filters-button buttonBlack" href="#">
+                Apply Filter
+            </a>
         </section>
+
+        <section class="main-Casual">
+            <div class="Casual-topPart">
+                <h1>Casual</h1>
+
+                <p>Showing 1-10 of 100 Products</p>
+
+                <div class="Casual-topPart-Sort">
+                    <label for="Casual-topPart-select">Sort by:</label>
+                    <select id="Casual-topPart-select">
+                        <option value="Most Popular">Most Popular</option>
+                        <option value="Have The Casual Reviews">Have The Casual Reviews</option>
+                        <option value="Not ussuall/Specical collections">Not ussuall/Specical collections</option>
+                    </select>
+                </div>
+            </div>
+
+            <ul class="Casual-list">
+                <li class="Casual-item">
+                    <img src="img/Gradient Graphic T-shirt.jpg" width="100" height="100" alt="Gradient Graphic T-shirt">
+                    <h3>Gradient Graphic T-shirt</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star half"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">3.5/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    
+                    <p class="price">145$</p>
+                </li>
+
+                <li class="Casual-item">
+                    <img src="img/Polo with Tipping Details.jpg" width="100" height="100" alt="Polo with Tipping Details">
+                    <h3>Polo with Tipping Details</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star half"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">4.5/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    
+                    <p class=" price">180$</p>
+                </li>
+
+                <li class="Casual-item">
+                    <img src="img/Black Striped T-shirt.jpg" width="100" height="100" alt="Black Striped T-shirt">
+                    <h3>Black Striped T-shirt</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">5.0/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+
+                    <div class="Casual-item-prices prices">
+                        <p class="Casual-item-pricesnow">120$</p>
+                        <p class="Casual-item-priceswas">150$</p>
+                        <p class="Casual-item-sale">-30%</p>
+                    </div>
+                </li>
+
+                <li class="Casual-item">
+                    <img src="img/SKINNY FIT JEANS.jpg" width="100" height="100" alt="Skinny Fit Jeans">
+                    <h3>Skinny Fit Jeans</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star half"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">3.5/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    
+                    <div class="Casual-item-prices prices">
+                        <p class="Casual-item-pricesnow">240$</p>
+                        <p class="Casual-item-priceswas">260$</p>
+                        <p class="Casual-item-sale">-20%</p>
+                    </div>
+                </li>
+                
+                <li class="Casual-item">
+                    <img src="img/CHECKERED SHIRT.jpg" width="100" height="100" alt="Checkered Shirt">
+                    <h3>Checkered Shirt</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star half"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">4.5/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+
+                    <p class="price">180$</p>
+                </li>
+
+                <li class="Casual-item">
+                    <img src="img/Black Striped T-shirt.jpg" width="100" height="100" alt="Slevve Striped T-shirt">
+                    <h3>Slevve Striped T-shirt</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star half"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">4.5/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    
+                    <div class="Casual-item-prices prices">
+                        <p class="Casual-item-pricesnow">130$</p>
+                        <p class="Casual-item-priceswas">160$</p>
+                        <p class="Casual-item-sale">-30%</p>
+                    </div>
+                </li>
+
+                <li class="Casual-item">
+                    <img src="img/VERTICAL STRIPED .jpg" width="100" height="100" alt="Vertical Striped Shirt">
+                    <h3>Vertical Striped Shirt</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">5.0/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+
+                    <div class="Casual-item-prices prices">
+                        <p class="Casual-item-pricesnow">212$</p>
+                        <p class="Casual-item-priceswas">232$</p>
+                        <p class="Casual-item-sale">-20%</p>
+                    </div>
+                </li>
+
+                <li class="Casual-item">
+                    <img src="img/T-COURAGE GRAPHIC .jpg" width="100" height="100" alt="Courage Graphic T-shirt">
+                    <h3>Courage Graphic T-shirt</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">4.0/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    
+                    <p class="price">145$</p>
+                </li>
+                
+                <li class="Casual-item">
+                    <img src="img/LOOSE FIT BERMUDA SHORTS.jpg" width="100" height="100" alt="Loose Fit Bermuda Shorts">
+                    <h3>Loose Fit Bermuda Shorts</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                            <li class="Casual-item-star"><img src="img/Star 5.svg" width="18.49" height="18.49" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">3.0/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+
+                    <p class=" price">80$</p>
+                </li>
+            </ul>
+
+            <!-- <nav class="Casual">
+                <
+            </nav> -->
+        </srction>
+        
     </main>
 
     <footer class="footer">
@@ -304,7 +389,9 @@
 
         <article class="footer-flex2">
             <div class="footer-flex2-part1">
-                <h3>SHOP.CO</h3>
+                <a class="footer-flex2-part1-logo" href="#">
+                    <img src="img/SHOP.CO.svg" width="160" height="22" alt="Logo of company">
+                </a>
                 <p>We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
 
                 <ul class="footer-messagers">

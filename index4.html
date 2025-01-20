@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/common-styles.css" rel="stylesheet">
+    <link rel="preload" href="Satoshi-Regular.woff2" as="font" type="font/woff2" crossorigin>
+
     <title>Document</title>
 </head>
 <body>
     <header class="header">
         <div class="header-register">
-            <p>Sign up and get 20% off to your first order.<a class="header-register-link" href="#">Sign Up Now</a></p>
-            <img src="img/zaglyshka2.png" width="13.13" height="13.13" alt="close"> 
+            <p>Sign up and get 20% off to your first order. <a class="header-register-link" href="#">Sign Up Now</a></p>
+            <img src="img/white_closing_icon.svg" width="13.13" height="13.13" alt="close"> 
         </div>
 
         <nav class="header-nav">
             <a class="header-nav-logo" href="#">
-                <img src="img/zaglyshka2.png" width="160" height="22" alt="Logo of company">
+                <img src="img/SHOP.CO.svg" width="160" height="22" alt="Logo of company">
             </a>
 
             <ul class="header-nav-links">
@@ -33,7 +37,7 @@
             </ul>
             
             <div class="header-nav-search">
-                <label for="header-nav-input"><img src="img/zaglyshka2.png" width="20.27" height="20.27" alt="Magnifying glass in input"></label> 
+                <label for="header-nav-input"><img src="img/Magnifying_glass.svg" width="20.27" height="20.27" alt="Magnifying glass in input"></label> 
                 <input id="header-nav-input" name="header-nav-input" type="text" list="header-nav-datalist" placeholder="Search for products...">
                 <datalist id="header-nav-datalist">
                     <option value="thing1" class="header-nav-option"><a href="#">thing1</a></option>
@@ -43,8 +47,8 @@
             </div>
 
             <div class="header-nav-other">
-                <img src="img/zaglyshka2.png" width="22.13" height="20.25" alt="basket of user"> 
-                <img src="img/zaglyshka2.png" width="20.25" height="20.25" alt="user account"> 
+                <img src="img/catr(telegka).svg" width="22.13" height="20.25" alt="basket of user"> 
+                <img src="img/account.svg" width="20.25" height="20.25" alt="user account"> 
             </div>
         </nav>
     </header>
@@ -61,7 +65,7 @@
             <article class="Cart">
                 <ul class="Cart-list">
                     <li class="Cart-item">
-                        <img src="img/zaglyshka2.png" width="100" height="100" alt="Gradient Graphic T-shirt">
+                        <img src="img/Gradient Graphic T-shirt.jpg" width="100" height="100" alt="Gradient Graphic T-shirt">
                         
                         <div class="Cart-item-info">
                             <h2>Gradient Graphic T-shirt</h2>
@@ -71,13 +75,13 @@
                         </div>
 
                         <div class="Cart-item-control">
-                            <img src="img/zaglyshka2.png" width="18" height="19.5" alt="delete this item">
+                            <img src="img/trash_icon.svg" width="18" height="19.5" alt="delete this item">
                             <!-- <input> -->
                         </div>
                     </li>
 
                     <li class="Cart-item">
-                        <img src="img/zaglyshka2.png" width="100" height="100" alt="Checkered Shirt">
+                        <img src="img/CHECKERED SHIRT.jpg" width="100" height="100" alt="Checkered Shirt">
                         
                         <div class="Cart-item-info">
                             <h2>Checkered Shirt</h2>
@@ -87,13 +91,13 @@
                         </div>
 
                         <div class="Cart-item-control">
-                            <img src="img/zaglyshka2.png" width="18" height="19.5" alt="delete this item">
+                            <img src="img/trash_icon.svg" width="18" height="19.5" alt="delete this item">
                             <!-- <input> -->
                         </div>
                     </li>
 
                     <li class="Cart-item">
-                        <img src="img/zaglyshka2.png" width="100" height="100" alt="Skinny Fit Jeans">
+                        <img src="img/SKINNY FIT JEANS.jpg" width="100" height="100" alt="Skinny Fit Jeans">
                         
                         <div class="Cart-item-info">
                             <h2>Skinny Fit Jeans</h2>
@@ -103,7 +107,7 @@
                         </div>
 
                         <div class="Cart-item-control">
-                            <img src="img/zaglyshka2.png" width="18" height="19.5" alt="delete this item">
+                            <img src="img/trash_icon.svg" width="18" height="19.5" alt="delete this item">
                             <!-- <input> -->
                         </div>
                     </li>
@@ -135,21 +139,21 @@
                     <div class="Summary-flex5">
                         <div class="Summary-flex5-input">
                             <label for="Summary-promocode-id">
-                                <img src="img/zaglyshka2.png" width="21" height="21" alt="tag(icon of promocode)">
+                                <img src="img/Promocode_icon.svg" width="21" height="21" alt="tag(icon of promocode)">
                             </label>
                             <input id="Summary-promocode-id"  name="Summary-promocode" placeholder="Add promo code">
                         </div>
 
-                        <button class="Summary-flex5-apply" type="button">
+                        <button class="Summary-flex5-apply buttonBlack" type="button">
                             Apply
                         </button>
                     </div>
 
                     <div class="Summary-flex6">
-                        <a class="Summary-GoCheckout" href="#">
+                        <a class="Summary-GoCheckout buttonBlack" href="#">
                             Go to Checkout
                         </a>
-                        <img src="img/zaglyshka2.png" width="15.76" height="18.75">
+                        <img src="img/Checout_arrow.svg" width="15.76" height="18.75">
                     </div>
                 </div>
             </article>
@@ -172,7 +176,9 @@
 
         <article class="footer-flex2">
             <div class="footer-flex2-part1">
-                <h3>SHOP.CO</h3>
+                <a class="footer-flex2-part1-logo" href="#">
+                    <img src="img/SHOP.CO.svg" width="160" height="22" alt="Logo of company">
+                </a>
                 <p>We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
 
                 <ul class="footer-messagers">

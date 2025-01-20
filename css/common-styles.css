@@ -1,0 +1,186 @@
+                                        /* Общие для всех html */
+
+@font-face {
+  font-family: 'Satoshi';
+  font-weight: normal;
+  font-style: normal;
+  src: local("Satoshi"),
+       url(../fonts/Satoshi-Regular.woff2) format(woff2)
+ 
+}
+
+body {
+  font-size: 16px;
+  line-height: 22px;
+  color:rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 1);
+  font-family:"Satoshi";
+}
+
+h1, h2, h3, h4 , .price , .prices p:first-child{
+  color: rgba(0, 0, 0, 1);
+} 
+
+
+  .black{
+    color: rgba(0, 0, 0, 1);
+  }
+  
+  .clothes-name{
+    font-size: 20px;
+    line-height: 27px;
+    font-weight: 700;
+  }
+  
+  .assessment{
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .price , .prices p:first-child , .prices p:nth-child(2){
+    font-size: 24px;
+    line-height: 32.4px;
+    font-weight: 700;
+  }
+
+  ul{
+    list-style:none
+  }
+
+  .prices p:last-child{
+    color: rgba(255, 51, 51, 1);
+    background-color: rgba(255, 51, 51, 0.1);
+    border-radius: 62px;
+  }
+
+  .prices p:nth-child(2){
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+    text-decoration-color:rgba(0, 0, 0, 0.4);
+    color:rgba(0, 0, 0, 0.4);
+
+  }
+
+  input::placeholder{
+    font-size: 16px;
+    line-height: 21.6px;
+    color:rgba(0, 0, 0, 0.4);
+  }
+
+  .button{
+    line-height: 21.6px;
+    font-weight: 500;
+    text-decoration:none ;
+    color:rgba(0, 0, 0, 1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 62px;
+  }
+  
+  .buttonBlack{
+    line-height: 21.6px;
+    font-weight: 500;
+    text-decoration:none ;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 62px;
+  }
+
+                                         /* header */
+
+.header-register{
+    background-color: rgba(0, 0, 0, 1);
+  }
+  
+  .header-register p{
+    font-size:14px ;
+    line-height: 18.9px;
+    color:rgba(255, 255, 255, 1) ;
+  }
+  
+  .header-register-link{
+    font-weight: 500;
+    color:rgba(255, 255, 255, 1) ;
+  }
+  
+  .header-nav-links{
+    list-style:none;
+  }
+  
+  .header-nav-link a{
+    list-style: none;
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+  }
+  
+  .header-nav-search{
+    background-color: rgba(240, 240, 240, 1);
+    border-radius: 62px;
+  }
+  
+  input[name="header-nav-input"]{
+    background-color: rgba(240, 240, 240, 1);
+    border: none;
+  }
+
+
+                                            /* footer */
+
+footer{
+    background-color: rgba(240, 240, 240, 1)
+}
+
+.footer-flex1{
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 20px;
+}
+
+.footer-flex1 h2{
+    font-size: 40px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.footer-form div , input[name="footer-flex1-sending"]{
+    background-color:rgba(255, 255, 255, 1) ;
+    border-radius: 62px;
+    border: none;
+}
+
+#footer-flex1-email{
+    border:none;
+}
+
+.footer-flex2-part1 p{
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.footer-messager{
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    background-color:rgba(255, 255, 255, 1) ;
+    border-radius:50%;
+}
+
+.footer-messager:nth-child(2){
+    background-color:black ;
+    border-radius:50% ;
+    border: none;
+}
+
+.footer-link a{
+    text-decoration: none;
+}
+
+.footer-link a{
+    color:rgba(0, 0, 0, 0.6);
+}
+
+.footer-copyring , .footer-policy{
+    text-decoration: none;
+    color:rgba(0, 0, 0, 0.6);
+}
+
+.footer-card{
+    background-color:rgba(255, 255, 255, 1) ;
+    border-radius: 5.38px;
+}
