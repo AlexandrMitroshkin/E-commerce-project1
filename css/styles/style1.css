@@ -4,7 +4,6 @@
 h1{
   font-size:64px ;
   line-height: 64px;
-  font-weight: 700;
 }
 
 .hero-button{
@@ -19,11 +18,9 @@ h1{
 }
 
 .hero-inf-text1{
-  font-weight: 700;
   font-size: 40px;
   line-height: 54px;
 }
-
 
 
                                         /* section  brends */
@@ -36,6 +33,6 @@ h1{
   list-style: none;
 }
 
-                                        /* section Arrivals */
+
 
 

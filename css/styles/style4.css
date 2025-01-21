@@ -1,0 +1,66 @@
+                                                /* sectihero */
+
+h1{
+    font-size: 40px;
+    line-height: 48px;
+}
+
+.hero-breadcrumbs a{
+    font-size: 16px;
+    line-height: 21.6px;
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+
+.hero-breadcrumbs a.active{
+    color: rgba(0, 0, 0, 1);
+}
+
+.size span{
+    font-size:14px;
+    line-height: 21.6px;
+}
+
+.size-black{
+    color: rgba(0, 0, 0, 1);
+
+}
+
+.Summary h3{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32.4px;
+}
+
+.Summary div h4{
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 20px;
+    line-height: 27px;
+}
+
+.Summary div p{
+    font-size: 20px;
+    line-height: 27px;
+    font-weight: 700;
+}
+
+.Summary-flex2 p{
+     color: rgba(255, 51, 51, 1);
+}
+
+.Summary-flex4-blackTitle{
+    color: rgba(0, 0, 0, 1);
+}
+
+.Summary-flex4 p{
+    font-size: 24px!important;
+    line-height: 32.4px!important;
+}
+
+input[name="Summary-promocode"]::placeholder{
+    font-family: "Satoshi";
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 16px;
+    line-height: 21.6px;
+
+}

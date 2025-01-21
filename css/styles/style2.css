@@ -1,0 +1,28 @@
+                        /* section hero */
+
+.hero-breadcrumbs a{
+    font-size: 16px;
+    line-height: 21.6px;
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+
+.hero-breadcrumbs a.active{
+    color: rgba(0, 0, 0, 1);
+}
+
+h1{
+    font-size: 40px;
+    line-height: 48px;
+}
+
+
+
+                            /* section Reviews */
+
+.Reviews h2{
+    font-weight:700;
+    font-family:"Satoshi";
+    font-size: 24px;
+    line-height:32.4px ;
+}
