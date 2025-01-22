@@ -1,5 +1,5 @@
 
-                              /* section  hero */
+/*                              section  hero */
 
 h1{
   font-size:64px ;
@@ -23,7 +23,7 @@ h1{
 }
 
 
-                                        /* section  brends */
+/*                                         section  brends */
 
 .brends{
   background-color:rgba(0, 0, 0, 1) ;
@@ -32,7 +32,3 @@ h1{
 .brends-list{
   list-style: none;
 }
-
-
-
-

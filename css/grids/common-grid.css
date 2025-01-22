@@ -1,0 +1,61 @@
+/*                                                     common */
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+section , .main-content{
+    margin:0 , 100px , 0 ,100px;
+}
+
+*{
+    box-sizing: border-box;
+   }
+
+ul , li{
+    padding:0;
+}
+
+
+/*                                                    header  */
+
+
+header{
+    width: 100%;
+    height: 110px;
+}
+
+.header-register{
+    width: 100%;
+    height: 38px;
+    padding:9px 0 10px 0;
+    display: flex;
+}
+
+.header-register-content{
+    width:1240px ;
+    height:20px ;
+    margin:0 auto ;
+}
+
+.header-register p{
+    margin:0 auto;
+    width: 351px;
+}
+
+.header-register a{
+    border-bottom:1px solid rgba(255, 255, 255, 1);
+}
+
+.header-register-close{
+    margin: 0;
+    padding:0;
+    background: none; 
+    border: none;
+}
+
+.header-register-close img{
+    margin: 0;
+    padding: 0;
+}

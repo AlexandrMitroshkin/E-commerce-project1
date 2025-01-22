@@ -1,11 +1,11 @@
-                                        /* Общие для всех html */
+/*                                         Common */
 
 @font-face {
   font-family: 'Satoshi';
   font-weight: normal;
   font-style: normal;
   src: local("Satoshi"),
-       url(../fonts/Satoshi-Regular.woff2) format(woff2),
+       url(../../fonts/Satoshi-Regular.woff2) format(woff2),
 }
 
 @font-face {
@@ -13,7 +13,7 @@
   font-weight: normal;
   font-style: normal;
   src: local("Integral CF"),
-       url(../fonts/IntegralCF-Regular.woff2) format(woff2)
+       url(../../fonts/IntegralCF-Regular.woff2) format(woff2)
 }
 
 body {
@@ -107,13 +107,13 @@ input::placeholder{
   font-weight: 700;
 }
 
-                                         /* header */
+ /*                                         header */
 
 .header-register{
     background-color: rgba(0, 0, 0, 1);
   }
   
-.header-register p{
+.header-register-content p{
   font-size:14px ;
   line-height: 18.9px;
   color:rgba(255, 255, 255, 1) ;
@@ -121,7 +121,8 @@ input::placeholder{
 
 .header-register-link{
   font-weight: 500;
-  color:rgba(255, 255, 255, 1) ;
+  color:rgba(255, 255, 255, 1);
+  text-decoration:none;
 }
 
 .header-nav-links{
@@ -145,7 +146,7 @@ input[name="header-nav-input"]{
 }
 
 
-                                            /* footer */
+/*                                             footer */
 
 footer{
     background-color: rgba(240, 240, 240, 1)
