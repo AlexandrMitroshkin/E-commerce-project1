@@ -1,0 +1,85 @@
+/*                                                section  hero */
+
+.hero{
+    width: 100%;
+    height: 663px;
+    background-image:url(../../img/couple-img.jpg);
+    padding:103px 0 116px 100px;
+    margin-bottom: 1000px;
+    position:relative;
+}
+
+.hero-title-wrapper{
+    display: flex;
+    margin:0;
+    margin-bottom:32px;
+    width: 558px;
+    height: 174px;
+    align-items: center;
+}
+
+.hero-black-star1{
+    position: absolute;
+    top:297px;
+    left: 750px;
+}
+
+.hero-black-star2{
+    position: absolute;
+    top:86px;
+    left:1225px;
+}
+
+.hero-text{
+    margin-bottom: 32px;
+    display:flex;
+    align-items: center;
+    width: 545px;
+    height: 33px;
+}
+
+.hero-text p{
+    margin: 0;
+}
+
+.hero-button{
+    width: 210px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.hero-inf{
+    display: flex;
+    height: 74px;
+    width: 596px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-inf-item{
+    height: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-inf-item:first-child{
+    width:173px;
+    padding-right:32px;
+    margin-right: 32px;
+    border-right:1px solid rgba(0, 0, 0, 0.1);
+}
+
+.hero-inf-item:nth-child(2){
+    width:188px;
+    padding-right:32px;
+    margin-right: 32px;
+    border-right:1px solid rgba(0, 0, 0, 0.1);
+}
+
+.hero-inf-item h2 ,p{
+    margin:0;
+}

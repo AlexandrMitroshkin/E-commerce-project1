@@ -7,6 +7,7 @@
     <link href="css/styles/style1.css" rel="stylesheet">
     <link href="css/styles/common-styles.css" rel="stylesheet">
     <link href="css/grids/common-grid.css" rel="stylesheet">
+    <link href="css/grids/grid1.css" rel="stylesheet"> 
 
 
     <title>Document</title>
@@ -14,9 +15,7 @@
 <body>
     <header class="header">
         <article class="header-register">
-            <div class="header-register-content">
-                <p>Sign up and get 20% off to your first order. <a class="header-register-link" href="#">Sign Up Now</a></p>
-            </div>
+            <p>Sign up and get 20% off to your first order. <a class="header-register-link" href="#">Sign Up Now</a></p>
             
             <button class="header-register-close">
                 <img src="img/white_closing_icon.svg" width="13.13" height="13.13" alt="close">
@@ -24,27 +23,33 @@
         </article>
 
         <nav class="header-nav">
-            <a class="header-nav-logo" href="#">
+            <a class="header-nav-logo" href="https://github.com">
                 <img src="img/SHOP.CO.svg" width="160" height="22" alt="Logo of company">
             </a>
 
             <ul class="header-nav-links">
-                <!-- <li class="header-nav-link">
-                    <select name="header-nav-select">
-                        <option value="" selected disabled hidden>Shop</option>
-                        <option value="shoes"><a href="https://sgo.tvobr.ru/">shoes</a></option>
-                        <option value="jeans">jeans</option>
-                        <option value="t-shirts">t-shirts</option>
-                      </select>
-                </li> -->
-                <li class="header-nav-link"><a href="#">Shop</a></li>
+                <li class="select-wrapper">
+                    <div class="custom-select">
+                        <div class="selected-option" id="selected-option">
+                            <span class="selected-option-title">Shop</span>
+                            <span class="selected-option-img"><img class="selected-option-arrow notInverted" src="img/inverted-black-arrow.svg" width="11.5" height="6.5"></span>
+                        </div>
+                        <div class="options">
+                            <div class="option" data-link="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText">Option</div>
+                            <div class="option" data-link="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText">Home</div>
+                            <div class="option" data-link="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText">Men</div>
+                            <div class="option" data-link="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText">Women</div>
+                        </div>
+                    </div>
+                </li>
+
                 <li class="header-nav-link"><a href="#">On Sale</a></li>
                 <li class="header-nav-link"><a href="#">New Arrivals</a></li>
                 <li class="header-nav-link"><a href="#">Brands</a></li>
             </ul>
             
             <div class="header-nav-search">
-                <label for="header-nav-input"><img src="img/Magnifying_glass.svg" width="20.27" height="20.27" alt="Magnifying glass in input"></label> 
+                <label class="header-nav-img" for="header-nav-input"><img src="img/Magnifying_glass.svg" width="20.27" height="20.27" alt="Magnifying glass in input"></label> 
                 <input id="header-nav-input" name="header-nav-input" type="text" list="header-nav-datalist" placeholder="Search for products...">
                 <datalist id="header-nav-datalist">
                     <option value="thing1" class="header-nav-option"><a href="#">thing1</a></option>
@@ -54,7 +59,7 @@
             </div>
 
             <div class="header-nav-other">
-                <img src="img/catr(telegka).svg" width="22.13" height="20.25" alt="basket of user"> 
+                <img class="header-nav-telegka" src="img/catr(telegka).svg" width="22.13" height="20.25" alt="basket of user"> 
                 <img src="img/account.svg" width="20.25" height="20.25" alt="user account"> 
             </div>
         </nav>
@@ -63,33 +68,35 @@
 
     <main>
         <section class="hero"> 
-            <h1>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
+            <div class="hero-title-wrapper">
+                <h1>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
+            </div>
 
             <img class="hero-black-star1" src="img/Black_star.svg" width="56" height="56" alt="black star">
             <img class="hero-black-star2" src="img/Black_star.svg" width="104" height="104" alt="black star">
 
-            <p>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
-
+            <div class="hero-text"> 
+                <p class="">Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
+            </div>
             <a class="hero-button buttonBlack" href="#"> 
                 Shop Now
             </a>
 
             <article class="hero-inf"> 
                 <div class="hero-inf-item"> 
-                    <h2 class="hero-inf-text1">200+</h2>
-                    <p class="hero-inf-text2">International Brands</p>
+                    <h2>200+</h2>
+                    <p>International Brands</p>
                 </div>
 
                 <div class="hero-inf-item"> 
-                    <h2 class="hero-inf-text1">2,000+</h2>
-                    <p class="hero-inf-text2">High-Quality Products</p>
+                    <h2>2,000+</h2>
+                    <p>High-Quality Products</p>
                 </div>
 
                 <div class="hero-inf-item"> 
-                    <h2 class="hero-inf-text1">30,000+</h2>
-                    <p class="hero-inf-text2">Happy Customers</p>
+                    <h2>30,000+</h2>
+                    <p>Happy Customers</p>
                 </div>
-                
             </article>
         </section>
 
@@ -515,4 +522,5 @@
         </article>
     </footer>
 </body>
+<script src="js/header.js"></script>
 </html>

@@ -113,7 +113,7 @@ input::placeholder{
     background-color: rgba(0, 0, 0, 1);
   }
   
-.header-register-content p{
+.header-register p{
   font-size:14px ;
   line-height: 18.9px;
   color:rgba(255, 255, 255, 1) ;
@@ -143,6 +143,10 @@ input::placeholder{
 input[name="header-nav-input"]{
   background-color: rgba(240, 240, 240, 1);
   border: none;
+}
+
+.option , .selected-option-title{
+  color: rgba(0, 0, 0, 1);
 }
 
 
