@@ -148,12 +148,19 @@ header{
 
 .options {
   display: none;
-  position: absolute;
-  background-color:rgba(255, 255, 255, 1);
-  z-index: 1;
+}
+
+.options.visible {
+  display: block;
+}
+
+.header {
+  transition: margin-bottom 0.8s;
 }
 
 .option {
   cursor: pointer;
 }
+
+
 
