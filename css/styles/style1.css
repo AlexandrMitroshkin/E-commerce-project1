@@ -33,3 +33,11 @@ h1{
 .brends-list{
   list-style: none;
 }
+
+
+/*                                         section Styles*/
+
+
+.Styles{
+  background-color: rgba(240, 240, 240, 1);
+}

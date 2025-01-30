@@ -5,8 +5,8 @@ body{
     padding: 0;
 }
 
-section , .main-content{
-    margin:0 , 100px , 0 ,100px;
+.section-special_margin , .main-content{
+  margin: 0 auto;
 }
 
 *{
@@ -17,6 +17,41 @@ ul , li{
     padding:0;
 }
 
+.half {
+  width: 8.79px !important;
+  margin:0 !important;
+}
+
+.half img {
+  clip-path: inset(0 50% 0 0);
+  width: 18.49px;
+  height: 16.72px;
+  margin: 0;
+}
+
+.last-star{
+  margin:0 !important;
+}
+
+.assessment{
+  margin-right:auto;
+}
+
+.prices{
+  width: 200px;
+  height: 32px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  margin-right:auto;
+}
+
+
+.prices p:last-child{
+  width: 56px;
+  height: 28px;
+  padding:6px 13.5px
+}
 
 /*                                                    header  */
 
@@ -161,6 +196,7 @@ header{
 .option {
   cursor: pointer;
 }
+
 
 
 
