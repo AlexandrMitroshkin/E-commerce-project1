@@ -6,39 +6,48 @@
 
     <link href="css/styles/style3.css" rel="stylesheet">
     <link href="css/styles/common-styles.css" rel="stylesheet">
-     <link href="css/grids/common-grid.css" rel="stylesheet">
+    <link href="css/grids/common-grid.css" rel="stylesheet">
 
     <title>Document</title>
 </head>
 <body>
     <header class="header">
-        <div class="header-register">
+        <article class="header-register">
             <p>Sign up and get 20% off to your first order. <a class="header-register-link" href="#">Sign Up Now</a></p>
-            <img src="img/white_closing_icon.svg" width="13.13" height="13.13" alt="close"> 
-        </div>
+            
+            <button class="header-register-close">
+                <img src="img/white_closing_icon.svg" width="13.13" height="13.13" alt="close">
+            </button>
+        </article>
 
         <nav class="header-nav">
-            <a class="header-nav-logo" href="#">
+            <a class="header-nav-logo" href="https://github.com">
                 <img src="img/SHOP.CO.svg" width="160" height="22" alt="Logo of company">
             </a>
 
             <ul class="header-nav-links">
-                <!-- <li class="header-nav-link">
-                    <select name="header-nav-select">
-                        <option value="" selected disabled hidden>Shop</option>
-                        <option value="shoes"><a href="https://sgo.tvobr.ru/">shoes</a></option>
-                        <option value="jeans">jeans</option>
-                        <option value="t-shirts">t-shirts</option>
-                      </select>
-                </li> -->
-                <li class="header-nav-link"><a href="#">Shop</a></li>
+                <li class="select-wrapper">
+                    <div class="custom-select">
+                        <div class="selected-option" id="selected-option">
+                            <span class="selected-option-title">Shop</span>
+                            <span class="selected-option-img"><img class="selected-option-arrow notInverted" src="img/inverted-black-arrow.svg" width="11.5" height="6.5"></span>
+                        </div>
+                        <div class="options ">
+                            <div class="option" data-link="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText">Option</div>
+                            <div class="option" data-link="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText">Home</div>
+                            <div class="option" data-link="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText">Men</div>
+                            <div class="option" data-link="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText">Women</div>
+                        </div>
+                    </div>
+                </li>
+
                 <li class="header-nav-link"><a href="#">On Sale</a></li>
                 <li class="header-nav-link"><a href="#">New Arrivals</a></li>
                 <li class="header-nav-link"><a href="#">Brands</a></li>
             </ul>
             
             <div class="header-nav-search">
-                <label for="header-nav-input"><img src="img/Magnifying_glass.svg" width="20.27" height="20.27" alt="Magnifying glass in input"></label> 
+                <label class="header-nav-img" for="header-nav-input"><img src="img/Magnifying_glass.svg" width="20.27" height="20.27" alt="Magnifying glass in input"></label> 
                 <input id="header-nav-input" name="header-nav-input" type="text" list="header-nav-datalist" placeholder="Search for products...">
                 <datalist id="header-nav-datalist">
                     <option value="thing1" class="header-nav-option"><a href="#">thing1</a></option>
@@ -48,8 +57,8 @@
             </div>
 
             <div class="header-nav-other">
-                <img src="img/catr(telegka).svg" width="22.13" height="20.25" alt="basket of user"> 
-                <img src="img/account.svg" width="20.25" height="20.25" alt="user account"> 
+                <a><img src="img/catr(telegka).svg" width="22.13" height="20.25" alt="basket of user"></a>
+                <a><img src="img/account.svg" width="20.25" height="20.25" alt="user account"> </a>
             </div>
         </nav>
     </header>
@@ -177,7 +186,7 @@
 
                 <ul class="Casual-list">
                     <li class="Casual-item">
-                        <img src="img/Gradient Graphic T-shirt.jpg" width="295" height="298" alt="Gradient Graphic T-shirt">
+                        <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="img/Gradient Graphic T-shirt.jpg" width="295" height="298" alt="Gradient Graphic T-shirt">
                         <h3 class="clothes-name">Gradient Graphic T-shirt</h3>
                         <div class="Casual-item-mark">
                             <ul class="Casual-item-stars">
@@ -196,7 +205,7 @@
                     </li>
 
                     <li class="Casual-item">
-                        <img class="clothes-img" src="img/Polo with Tipping Details.jpg" width="295" height="298" alt="Polo with Tipping Details">
+                        <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="img/Polo with Tipping Details.jpg" width="295" height="298" alt="Polo with Tipping Details"></a>
                         <h3 class="clothes-name">Polo with Tipping Details</h3>
                         <div class="Casual-item-mark">
                             <ul class="Casual-item-stars">
@@ -216,7 +225,7 @@
                     </li>
 
                     <li class="Casual-item">
-                        <img class="clothes-img" src="img/Black Striped T-shirt.jpg" width="295" height="298" alt="Black Striped T-shirt">
+                        <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="img/Black Striped T-shirt.jpg" width="295" height="298" alt="Black Striped T-shirt"></a>
                         <h3 class="clothes-name">Black Striped T-shirt</h3>
                         <div class="Casual-item-mark">
                             <ul class="Casual-item-stars">
@@ -240,7 +249,7 @@
                     </li>
 
                     <li class="Casual-item">
-                        <img class="clothes-img" src="img/SKINNY FIT JEANS.jpg" width="295" height="298" alt="Skinny Fit Jeans">
+                        <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="img/SKINNY FIT JEANS.jpg" width="295" height="298" alt="Skinny Fit Jeans"></a>
                         <h3 class="clothes-name">Skinny Fit Jeans</h3>
                         <div class="Casual-item-mark">
                             <ul class="Casual-item-stars">
@@ -263,7 +272,7 @@
                     </li>
                     
                     <li class="Casual-item">
-                        <img class="clothes-img" src="img/CHECKERED SHIRT.jpg" width="295" height="298" alt="Checkered Shirt">
+                        <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="img/CHECKERED SHIRT.jpg" width="295" height="298" alt="Checkered Shirt"></a>
                         <h3 class="clothes-name">Checkered Shirt</h3>
                         <div class="Casual-item-mark">
                             <ul class="Casual-item-stars">
@@ -283,7 +292,7 @@
                     </li>
 
                     <li class="Casual-item">
-                        <img class="clothes-img" src="img/Black Striped T-shirt.jpg" width="295" height="298" alt="Slevve Striped T-shirt">
+                        <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="img/Black Striped T-shirt.jpg" width="295" height="298" alt="Slevve Striped T-shirt"></a>
                         <h3 class="clothes-name">Slevve Striped T-shirt</h3>
                         <div class="Casual-item-mark">
                             <ul class="Casual-item-stars">
@@ -307,7 +316,7 @@
                     </li>
 
                     <li class="Casual-item">
-                        <img class="clothes-img" src="img/VERTICAL STRIPED .jpg" width="295" height="298" alt="Vertical Striped Shirt">
+                        <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="img/VERTICAL STRIPED .jpg" width="295" height="298" alt="Vertical Striped Shirt"></a>
                         <h3 class="clothes-name">Vertical Striped Shirt</h3>
                         <div class="Casual-item-mark">
                             <ul class="Casual-item-stars">
@@ -331,7 +340,7 @@
                     </li>
 
                     <li class="Casual-item">
-                        <img class="clothes-img" src="img/T-COURAGE GRAPHIC .jpg" width="295" height="298" alt="Courage Graphic T-shirt">
+                        <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="img/T-COURAGE GRAPHIC .jpg" width="295" height="298" alt="Courage Graphic T-shirt"></a>
                         <h3 class="clothes-name">Courage Graphic T-shirt</h3>
                         <div class="Casual-item-mark">
                             <ul class="Casual-item-stars">
@@ -350,7 +359,7 @@
                     </li>
                     
                     <li class="Casual-item">
-                        <img class="clothes-img" src="img/LOOSE FIT BERMUDA SHORTS.jpg" width="295" height="298" alt="Loose Fit Bermuda Shorts">
+                        <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="img/LOOSE FIT BERMUDA SHORTS.jpg" width="295" height="298" alt="Loose Fit Bermuda Shorts"></a>
                         <h3 class="clothes-name">Loose Fit Bermuda Shorts</h3>
                         <div class="Casual-item-mark">
                             <ul class="Casual-item-stars">
@@ -382,121 +391,128 @@
 
             <form class="footer-form">
                 <div>
-                    <label for="footer-flex1-email"><img src="img/Email.svg" width="20.15" height="15.75" alt="photo of the envelope"></label>
+                    <label for="footer-flex1-email"><img class="footer-form-img" src="img/Email.svg" width="20.15" height="15.75" alt="photo of the envelope"></label>
                     <input id="footer-flex1-email" name="footer-flex1-email" type="email" placeholder="Enter your email address">
                 </div>
-
-                <input name="footer-flex1-sending" type="submit" value="Subscribe to Newsletter">
+                <input id="footer-flex1-sending" name="footer-flex1-sending" type="submit" value="Subscribe to Newsletter" placeholder="Subscribe to Newsletter">
             </form>
         </article>
 
-        <article class="footer-flex2">
-            <div class="footer-flex2-part1">
-                <a class="footer-flex2-part1-logo" href="#">
-                    <img src="img/SHOP.CO.svg" width="160" height="22" alt="Logo of company">
-                </a>
-                <p>We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
+        <div class="footer-flex2and3-wrapper">
+            <article class="footer-flex2">
+                <div class="footer-flex2-part1">
+                    <h3>SHOP.CO</h3>
+                    <p>We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
 
-                <ul class="footer-messagers">
-                    <li class="footer-messager">
-                        <img src="img/twitter_icon.svg" width="11.17" height="9.03" alt="icon of twitter">
+                    <ul class="footer-messagers">
+                        <li class="footer-messager">
+                            <a href="#">
+                                <img src="img/twitter_icon.svg" width="11.17" height="9.03" alt="icon of twitter">
+                            </a>
+                        </li>
+
+                        <li class="footer-messager">
+                            <a href="#">
+                                <img src="img/Facebook_icon.svg" width="11.17" height="9.03" alt="icon of factbook">
+                            </a>
+                        </li>
+
+                        <li class="footer-messager">
+                            <a href="#">
+                                <img src="img/logo-instagram 1.svg" width="11.17" height="9.03" alt="icon of instagramm">
+                            </a>
+                        </li>
+
+                        <li class="footer-messager">
+                            <a href="#">
+                                <img src="img/git_icon.svg" width="11.17" height="9.03" alt="icon of githab">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="footer-links">
+                    <li class="footer-links-column">
+                        <ul>
+                            <li class="footer-link"><a href="#"><h4>COMPANY</h4></a></li>
+                            <li class="footer-link"><a href="#">About</a></li>
+                            <li class="footer-link"><a href="#">Features</a></li>
+                            <li class="footer-link"><a href="#">Works</a></li>
+                            <li class="footer-link"><a href="#">Career</a></li>
+                        </ul>
                     </li>
 
-                    <li class="footer-messager">
-                        <img src="img/Facebook_icon.svg" width="11.17" height="9.03" alt="icon of factbook">
+                    <li class="footer-links-column">
+                        <ul>
+                            <li class="footer-link"><a href="#"><h4>HELP</h4></a></li>
+                            <li class="footer-link"><a href="#">Customer Support</a></li>
+                            <li class="footer-link"><a href="#">Delivery Details</a></li>
+                            <li class="footer-link"><a href="#">Terms & Conditions</a></li>
+                            <li class="footer-link"><a href="#">Privacy Policy</a></li>
+                        </ul>
                     </li>
 
-                    <li class="footer-messager">
-                        <img src="img/logo-instagram 1.svg" width="11.17" height="9.03" alt="icon of instagramm">
+                    <li class="footer-links-column">
+                        <ul>
+                            <li class="footer-link"><a href="#"><h4>FAQ</h4></a></li>
+                            <li class="footer-link"><a href="#">Account</a></li>
+                            <li class="footer-link"><a href="#">Manage Deliveries</a></li>
+                            <li class="footer-link"><a href="#">Orders</a></li>
+                            <li class="footer-link"><a href="#">Payments</a></li>
+                        </ul>
                     </li>
 
-                    <li class="footer-messager">
-                        <img src="img/git_icon.svg" width="11.17" height="9.03" alt="icon of githab">
+                    <li class="footer-links-column">
+                        <ul>
+                            <li class="footer-link"><a href="#"><h4>RESOURCES</h4></a></li>
+                            <li class="footer-link"><a href="#">Free eBooks</a></li>
+                            <li class="footer-link"><a href="#">Development Tutorial</a></li>
+                            <li class="footer-link"><a href="#">How to - Blog</a></li>
+                            <li class="footer-link"><a href="#">Youtube Playlist</a></li>
+                        </ul>
                     </li>
                 </ul>
-            </div>
+            </article>
 
-            <ul class="footer-links">
-                <li class="footer-links-row">
-                    <ul>
-                        <li class="footer-link"><a href="#"><h4>COMPANY</h4></a></li>
-                        <li class="footer-link"><a href="#">About</a></li>
-                        <li class="footer-link"><a href="#">Features</a></li>
-                        <li class="footer-link"><a href="#">Works</a></li>
-                        <li class="footer-link"><a href="#">Career</a></li>
-                    </ul>
-                </li>
+            <article class="footer-flex3">
+                <div class="footer-copyringPolicy">
+                    <a class="footer-copyring" href="#">Shop.co © 2000-2023,</a>
+                    <a class="footer-policy" href="#">All Rights Reserved</a>
+                </div>
 
-                <li class="footer-links-row">
-                    <ul>
-                        <li class="footer-link"><a href="#"><h4>Help</h4></a></li>
-                        <li class="footer-link"><a href="#">Customer Support</a></li>
-                        <li class="footer-link"><a href="#">Delivery Details</a></li>
-                        <li class="footer-link"><a href="#">Terms & Conditions</a></li>
-                        <li class="footer-link"><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </li>
+                <ul class="footer-cards">
+                    <li class="footer-card">
+                        <a href="#">
+                            <img src="img/Visa.svg" width="32.54" height="10.51" alt="Logo of Visa cards">
+                        </a>
+                    </li>
 
-                <li class="footer-links-row">
-                    <ul>
-                        <li class="footer-link"><a href="#"><h4>FAQ</h4></a></li>
-                        <li class="footer-link"><a href="#">Account</a></li>
-                        <li class="footer-link"><a href="#">Manage Deliveries</a></li>
-                        <li class="footer-link"><a href="#">Orders</a></li>
-                        <li class="footer-link"><a href="#">Payments</a></li>
-                    </ul>
-                </li>
+                    <li class="footer-card">
+                        <a href="#">
+                            <img src="img/Mastercard.svg" width="25.38" height="15.69" alt="Logo of Mastercard cards">
+                        </a>
+                    </li>
 
-                <li class="footer-links-row">
-                    <ul>
-                        <li class="footer-link"><a href="#"><h4>Resources</h4></a></li>
-                        <li class="footer-link"><a href="#">Free eBooks</a></li>
-                        <li class="footer-link"><a href="#">Development Tutorial</a></li>
-                        <li class="footer-link"><a href="#">How to - Blog</a></li>
-                        <li class="footer-link"><a href="#">Youtube Playlist</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </article>
+                    <li class="footer-card">
+                        <a href="#">
+                            <img src="img/Paypal.svg" width="34.55" height="9.21" alt="Logo of PayPal cards">
+                        </a>
+                    </li>
 
-        <article class="footer-flex3">
-            <div class="footer-copyring&Policy">
-                <a class="footer-copyring" href="#">Shop.co © 2000-2023,</a>
-                <a class="footer-policy" href="#">All Rights Reserved</a>
-            </div>
+                    <li class="footer-card">
+                        <a href="#">
+                            <img src="img/apple-pay.svg" width="26.41" height="11.21" alt="Logo of apple pay">
+                        </a>
+                    </li>
 
-            <ul class="footer-cards">
-                <li class="footer-card">
-                    <a href="#">
-                        <img src="img/Visa.svg" width="32.54" height="10.51" alt="Logo of Visa cards">
-                    </a>
-                </li>
-
-                <li class="footer-card">
-                    <a href="#">
-                        <img src="img/Mastercard.svg" width="25.38" height="15.69" alt="Logo of Mastercard cards">
-                    </a>
-                </li>
-
-                <li class="footer-card">
-                    <a href="#">
-                        <img src="img/Paypal.svg" width="34.55" height="9.21" alt="Logo of PayPal cards">
-                    </a>
-                </li>
-
-                <li class="footer-card">
-                    <a href="#">
-                        <img src="img/apple-pay.svg" width="26.41" height="11.21" alt="Logo of apple pay">
-                    </a>
-                </li>
-
-                <li class="footer-card">
-                    <a href="#">
-                        <img src="img/G Pay.svg" width="28.56" height="11.21" alt="Logo of Google pay">
-                    </a>
-                </li>
-            </ul>
-        </article>
+                    <li class="footer-card">
+                        <a href="#">
+                            <img src="img/G Pay.svg" width="28.56" height="11.21" alt="Logo of Google pay">
+                        </a>
+                    </li>
+                </ul>
+            </article>
+        </div>
     </footer>
 
 </body>

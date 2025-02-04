@@ -154,10 +154,6 @@ input[name="header-nav-input"]{
 
 /*                                             footer */
 
-footer{
-    background-color: rgba(240, 240, 240, 1)
-}
-
 .footer-flex1{
     background-color: rgba(0, 0, 0, 1);
     border-radius: 20px;
@@ -186,13 +182,21 @@ input[name="footer-flex1-email"]{
     border:none;
 }
 
+.footer-flex2and3-wrapper{
+  background-color: rgba(240, 240, 240, 1)
+}
+
+.footer-flex2-part1 h3{
+  font-family:"Integral CF";
+}
+
 .footer-flex2-part1 p{
     font-size: 14px;
     line-height: 22px;
 }
 
 .footer-messager{
-    border: 1px solid rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     background-color:rgba(255, 255, 255, 1) ;
     border-radius:50%;
 }
@@ -205,6 +209,10 @@ input[name="footer-flex1-email"]{
 
 .footer-link a{
     text-decoration: none;
+}
+
+.footer-link a h4{
+  letter-spacing: 3px;
 }
 
 .footer-link a{
