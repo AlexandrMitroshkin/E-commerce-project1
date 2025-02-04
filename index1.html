@@ -324,9 +324,17 @@
         </section>
 
         <section class="carousel">
-            <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;
-                
-            </button>
+            <div class="carousel-header">
+                <h2 class="H2-IntegralFont">OUR HAPPY CUSTOMERS</h2>
+
+                <button class="carousel-button prev" onclick="moveCarousel(-1)">
+                    <img src="img/black-arrow.svg" width="15.76" height="18.76" alt="left-arrow(prev)">
+                </button>
+
+                <button class="carousel-button next" onclick="moveCarousel(1)">
+                    <img src="img/black-arrow.svg" width="15.76" height="18.76" alt="right-arrow(next)">
+                </button>
+            </div>
             <ul class="carousel-container">
                 <!-- Группа 1 -->
                 <li class="review-group">
@@ -432,7 +440,6 @@
                     </article>
                 </li>
             </ul>
-            <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
         </section>
     </main>
 
