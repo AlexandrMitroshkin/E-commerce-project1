@@ -18,8 +18,8 @@ function toggleOptions() {
 
 function selectOption(event) {
     const link = event.target.getAttribute('data-link');
-    optionsList.forEach(opt => opt.classList.remove('selected'));
-    event.target.classList.add('selected');
+    // optionsList.forEach(opt => opt.classList.remove('selected'));
+    // event.target.classList.add('selected');
     window.location.href = link;
 }
 
