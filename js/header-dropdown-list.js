@@ -1,4 +1,4 @@
-let header = document.querySelector(".header");
+let header = document.getElementById("header");
 let selectedOptionArrow = document.querySelector(".selected-option-arrow");
 const selectedOption = document.getElementById('selected-option');
 const optionsContainer = document.querySelector('.options');
@@ -16,15 +16,5 @@ function toggleOptions() {
     }
 }
 
-function selectOption(event) {
-    const link = event.target.getAttribute('data-link');
-    // optionsList.forEach(opt => opt.classList.remove('selected'));
-    // event.target.classList.add('selected');
-    window.location.href = link;
-}
-
 selectedOption.addEventListener('click', toggleOptions);
-optionsList.forEach(option => {
-    option.addEventListener('click', selectOption);
-});
 

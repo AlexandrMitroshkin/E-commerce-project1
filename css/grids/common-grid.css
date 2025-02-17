@@ -3,7 +3,6 @@
 body{
     margin: 0;
     padding: 0;
-
 }
 
 .section-special_margin , .main-content{
@@ -64,24 +63,21 @@ ul , li{
 
 
 header{
-    width: 100%;
     height: 110px;
     margin-bottom:24px;
+    transition:margin 1s;
 }
 
 .header-register{
-    width: 100%;
     height: 38px;
     padding:9px 100px 10px 100px;
     display: flex;
     margin-bottom: 24px;
 }
 
-
-
 .header-register p{
     margin:0 auto;
-    width: 351px;
+    /* width: 351px; */
     height:20px ;
 }
 
@@ -102,53 +98,118 @@ header{
     padding: 0;
 }
 
+.header-content{
+  /* min-width:1110px; */
+  padding:0 100px;
+
+}
+
 .header-nav{
+  width:100%;
   display: flex;
-  width: 1240px;
   height: 48px;
-  margin:0 auto;
+  /* margin:0 auto; */
   align-items: center;
 }
 
 .header-nav-logo{
-    width: 160px;
+    width:200px;
     height: 22px;
     margin:0;
-    margin-right:40px;
+    margin-right:auto;
 }
 
 .header-nav-links{
-  width: 321px;
+  width:361px;
   height: 22px;
   display: flex;
   justify-content: space-between;
-  margin-right: 40px;
+  margin-right:auto;
+  flex-wrap:nowrap;
 }
 
-.header-nav-search{
-  width: 577px;
-  height: 48px;
-  margin-right: 40px;
-  display: flex;
-  padding-right:10px;
+.header-nav-link{
+  margin-right:24px;
 }
 
 .header-nav-img img{
   margin: 13.87px 13.87px 13.87px 17.86px;
 }
 
-#header-nav-input{
-  /* margin: 14px auto 14px 0; */
-  padding: 0;
-  align-items: center;
-  width:100%;
-  height:100%;
+.header-nav-search {
+  position: relative; 
+  width:557px;
+  height:48px;
+  margin-right:auto;
+  display: flex;
 }
 
-#header-nav-input::placeholder{
+#header-nav-input {
+  padding: 0;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius:62px;
+  outline: none;
   font-family: "Satoshi";
-  font-weight: 500;
-} 
+  font-size: 16px;
+  line-height: 21.6px;
+  color: rgba(0, 0, 0, 1);
+  font-weight:500;
+}
+
+#header-nav-input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.custom-datalist {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width:100%;
+  background-color:rgba(255, 255, 255, 1);
+  border-radius:30px;
+  max-height: 150px;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.custom-datalist.show {
+  display: block;
+}
+
+.custom-datalist div {
+  padding: 8px;
+  font-family: "Satoshi";
+  font-size: 16px;
+  line-height:21.6px;
+  cursor: pointer;
+  color:rgba(0, 0, 0,1);
+  font-weight:500;
+}
+
+.custom-datalist div:hover {
+  background-color:rgba(240, 240, 240, 1);
+}
+
+.custom-datalist::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-datalist::-webkit-scrollbar-track {
+  background: rgba(240, 240, 240, 1);
+}
+
+.custom-datalist::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+}
+
+.custom-datalist::-webkit-scrollbar-thumb:hover {
+  background:gray; 
+}
 
 .header-nav-other{
   display: flex;
@@ -201,6 +262,11 @@ header{
 
 .options.visible {
   display: block;
+  height:120px;
+  display:flex;
+  flex-direction:column;
+  column-gap:3px;
+  
 }
 
 .header {

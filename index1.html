@@ -13,7 +13,7 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="header">
+    <header id="header">
         <article class="header-register">
             <p>Sign up and get 20% off to your first order. <a class="header-register-link" href="#">Sign Up Now</a></p>
             
@@ -22,48 +22,47 @@
             </button>
         </article>
 
-        <nav class="header-nav">
-            <a class="header-nav-logo" href="https://github.com">
-                <img src="img/SHOP.CO.svg" width="160" height="22" alt="Logo of company">
-            </a>
+        <article class="header-content">
+            <nav class="header-nav">
+                <a class="header-nav-logo" href="https://github.com">
+                    <img src="img/SHOP.CO.svg" width="160" height="22" alt="Logo of company">
+                </a>
 
-            <ul class="header-nav-links">
-                <li class="select-wrapper">
-                    <div class="custom-select">
-                        <div class="selected-option" id="selected-option">
-                            <span class="selected-option-title">Shop</span>
-                            <span class="selected-option-img"><img class="selected-option-arrow notInverted" src="img/inverted-black-arrow.svg" width="11.5" height="6.5"></span>
+                <ul class="header-nav-links">
+                    <li class="select-wrapper header-nav-link">
+                        <div class="custom-selectcustom-select">
+                            <div class="selected-option" id="selected-option">
+                                <span class="selected-option-title">Shop</span>
+                                <span class="selected-option-img"><img class="selected-option-arrow notInverted" src="img/inverted-black-arrow.svg" width="11.5" height="6.5"></span>
+                            </div>
+                            <div class="options">
+                                <a class="option" href="#">page</a>
+                                <a class="option" href="#">Home</a>
+                                <a class="option" href="#">Men</a>
+                                <a class="option" href="#">Women</a>
+                            </div>
                         </div>
-                        <div class="options ">
-                            <a class="option" data-link="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText">Option</a>
-                            <div class="option" data-link="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText">Home</div>
-                            <div class="option" data-link="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText">Men</div>
-                            <div class="option" data-link="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText">Women</div>
-                        </div>
-                    </div>
-                </li>
+                    </li>
 
-                <li class="header-nav-link"><a href="#">On Sale</a></li>
-                <li class="header-nav-link"><a href="#">New Arrivals</a></li>
-                <li class="header-nav-link"><a href="#">Brands</a></li>
-            </ul>
-            
-            <div class="header-nav-search">
-                <label class="header-nav-img" for="header-nav-input"><img src="img/Magnifying_glass.svg" width="20.27" height="20.27" alt="Magnifying glass in input"></label> 
-                <input id="header-nav-input" name="header-nav-input" type="text" list="header-nav-datalist" placeholder="Search for products...">
-                <datalist id="header-nav-datalist">
-                    <option value="thing1" class="header-nav-option"><a href="#">thing1</a></option>
-                    <option value="thing2" class="header-nav-option"><a href="#">thing2</a></option>
-                    <option value="thing3" class="header-nav-option"><a href="#">thing3</a></option>
-                </datalist>
-            </div>
+                    <li class="header-nav-link"><a href="#">On Sale</a></li>
+                    <li class="header-nav-link"><a href="#">New Arrivals</a></li>
+                    <li class="header-nav-link"><a href="#">Brands</a></li>
+                </ul>
 
-            <div class="header-nav-other">
-                <a href="#"><img src="img/catr(telegka).svg" width="22.13" height="20.25" alt="basket of user"></a>
-                <a href="#"><img src="img/account.svg" width="20.25" height="20.25" alt="user account"> </a>
-            </div>
-        </nav>
-    </header>
+                <div class="header-nav-search">
+                    <label class="header-nav-img" for="header-nav-input">
+                        <img src="img/Magnifying_glass.svg" width="20.27" height="20.27" alt="Magnifying glass in input">
+                    </label>
+                    <input id="header-nav-input" name="header-nav-input" type="text" placeholder="Search for products...">
+                    <div id="custom-datalist" class="custom-datalist"></div>
+                </div>
+
+                <div class="header-nav-other">
+                    <a href="#"><img src="img/catr(telegka).svg" width="22.13" height="20.25" alt="basket of user"></a>
+                    <a href="#"><img src="img/account.svg" width="20.25" height="20.25" alt="user account"> </a>
+                </div>
+            </nav>
+        </header>
     
 
     <main>
@@ -574,6 +573,7 @@
         </div>
     </footer>
 </body>
-<script src="js/header.js"></script>
+<script src="js/header-dropdown-list.js"></script>
+<script src="js/header-search.js"></script>
 <script src="js/js.html1-karusel.js"></script>
 </html>
