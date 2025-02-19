@@ -60,12 +60,11 @@ ul , li{
 }
 
 /*                                                    header  */
-
-
 header{
     height: 110px;
     margin-bottom:24px;
-    transition:margin 1s;
+    transition:margin 1s , padding 1s;
+    /* max-width:1600px; */
 }
 
 .header-register{
@@ -92,7 +91,6 @@ header{
     border: none;
 }
 
-
 .header-register-close img{
     margin: 0;
     padding: 0;
@@ -101,15 +99,18 @@ header{
 .header-content{
   /* min-width:1110px; */
   padding:0 100px;
-
 }
 
 .header-nav{
   width:100%;
   display: flex;
   height: 48px;
-  /* margin:0 auto; */
+  position:relative;
   align-items: center;
+}
+
+.header-nav-more{
+  display:none;
 }
 
 .header-nav-logo{
@@ -128,8 +129,20 @@ header{
   flex-wrap:nowrap;
 }
 
+/* .header-nav-links.visible{
+  
+} */
+
 .header-nav-link{
   margin-right:24px;
+}
+
+.header-nav-link:first-child{
+  margin-right:20px;
+}
+
+.header-nav-link:last-child{
+  margin-right:40px;
 }
 
 .header-nav-img img{
@@ -140,8 +153,8 @@ header{
   position: relative; 
   width:557px;
   height:48px;
-  margin-right:auto;
   display: flex;
+  margin-right:40px;
 }
 
 #header-nav-input {
@@ -217,6 +230,7 @@ header{
   height: 24px;
   align-items: center;
   justify-content: space-between;
+  margin-left:auto;
 }
 
 .header-nav-other{
@@ -263,27 +277,90 @@ header{
 
 .options.visible {
   display: block;
-  height:90px;
+  height:88px;
   display:flex;
   flex-direction:column;
   column-gap:3px;
-  background-color:rgba(240, 240, 240, 1);
+  /* background-color:white; */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius:10px;
-  padding:3.5px;
-}
-
-.header {
-  transition: margin-bottom 0.8s;
+  /* padding:3.5px; */
 }
 
 .option {
   cursor: pointer;
+  border-radius:10px;
+  padding:0 3.5px 0 3.5px;
 }
 
 .option:hover{
-  color: #333333;
+  background-color: rgba(240, 240, 240, 1);
 }
+
+/*                                      разметка при ширине экрана более 1420px */
+
+@media (min-width: 1420px) {
+  .header{
+      padding:0;
+  }
+  .header-content{
+      max-width:1800px;
+      margin:0 auto;
+  }
+}
+
+/*                             разметка при ширине экрана не менее 600px , но не более 1420px */
+
+@media (max-width:1420px){
+  .header-content{
+    min-width:840px;
+  }
+
+  .header-register-close{
+    display:none;
+  }
+
+  .header-nav-more{
+    display:block;
+    border:none;
+    background-color:white;
+    margin:0;
+    margin-right:auto;
+  }
+
+  .header-nav-more.inverted{
+    transform: rotate(90deg);
+  }
+
+  .header-nav-links{
+    display:none;
+  }
+
+  #header{
+    margin-bottom:1000px !important
+  }
+  
+  .header-nav-links.visible{
+    position:absolute;
+    display:flex;
+    top:40px;
+    /* left:100px */
+  }
+
+  .header-nav-search{
+    margin-left:100px;
+  }
+
+  .header-nav-logo{
+    margin-left:46px;
+  }
+
+  .account{
+    margin-left:15.88px;
+  }
+}
+
+
 
 
 /*                                             footer */

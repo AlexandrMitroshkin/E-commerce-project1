@@ -1,3 +1,25 @@
+                                            // закрытие регистрации
+let headerRegisterClose = document.querySelector(".header-register-close");
+let headerRegister = document.querySelector(".header-register");
+
+headerRegisterClose.onclick = function(){
+  headerRegister.style.display = "none";
+  // headerRegister.classList.add('hidden');
+  header.style.paddingTop = "10px" 
+  header.style.height = "48px"
+}
+
+//                                               реализация кнопки header-nav-more
+
+let headerNavMore = document.querySelector(".header-nav-more");
+let headerNavLinks = document.querySelector(".header-nav-links");
+
+headerNavMore.onclick = function(){
+  headerNavLinks.classList.toggle("visible");
+  headerNavMore.classList.toggle("inverted");
+}
+
+                                            
                                             // элеметнты выпадающего списка
 
 let header = document.getElementById("header");
