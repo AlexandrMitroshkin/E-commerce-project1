@@ -376,6 +376,7 @@ header{
   .header-register{
     margin:0;
     height:34px;
+    padding:9px 40px;
   }
 
   #header{
@@ -411,9 +412,16 @@ header{
     margin-left:97.8px;
   }
 
-  .Magnifying_glass-button , .telegka{
+  .Magnifying_glass-button{
     display:block;
     background-color:white;
+    padding:0;
+    margin-right:13.87px;
+    border:none;
+    color:black
+  }
+  
+  .telegka{
     padding:0;
     margin-right:13.87px;
   }
