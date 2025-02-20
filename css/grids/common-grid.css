@@ -236,6 +236,10 @@ header{
   padding-top:1.87px;
 }
 
+.Magnifying_glass-button{
+  display: none;
+}
+
 .custom-select {
   position: relative;
   display: inline-block;
@@ -312,7 +316,7 @@ header{
 
 @media (max-width:1420px){
   .header-content{
-    min-width:840px;
+    min-width:845px;
   }
 
   .header-register-close{
@@ -324,6 +328,7 @@ header{
     border:none;
     background-color:white;
     margin:0;
+    padding:0;
     margin-right:auto;
   }
 
@@ -335,10 +340,6 @@ header{
     display:none;
   }
 
-  /* #header{
-    margin-bottom:1000px !important
-  } */
-  
   .header-nav-links.visible{
     position:absolute;
     display:flex;
@@ -358,9 +359,85 @@ header{
   }
 }
 
-                                        /* разметка при ширине экрана не менее 845px */
+                                        /* разметка при ширине экрана меньше 845px */
                                             
 @media (max-width:845px){
+
+  .header-content{
+    padding:0 16px 0 16px;
+    min-width:390px;
+  }
+
+  .header-nav{
+    min-width:345px;
+    position:relative;
+  }
+
+  .header-register{
+    margin:0;
+    height:34px;
+  }
+
+  #header{
+    height:78px;
+    /* margin-bottom: 1000px !important; */
+  }
+
+  .header-nav-more{
+    width:18.75px !important;
+    height:14.25px !important;
+  }
+
+  .header-nav-logo img{
+    width:126px !important;
+    height:18px !important;
+  }
+
+  .header-nav-logo{
+    width:126px !important;
+    height:18px !important;
+    margin-left:16px;
+
+  }
+
+  .header-nav-search{
+    display:none;
+  }
+
+  .header-nav-other{
+    max-width:200px;
+    min-width:96px;
+    justify-content:space-between;
+    margin-left:97.8px;
+  }
+
+  .Magnifying_glass-button , .telegka{
+    display:block;
+    background-color:white;
+    padding:0;
+    margin-right:13.87px;
+  }
+
+  .account{
+    margin:0;
+  }
+
+  .header-nav-search.visible{
+    width:100%;
+    /* min-width:300px;
+    max-width:800px; */
+    top:100%;
+    display:flex;
+    position:absolute;
+    margin:0;
+  }
+
+  /* #header-nav-input{
+
+    margin:0;
+  } */
+
+
   
 }
 

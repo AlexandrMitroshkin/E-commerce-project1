@@ -4,23 +4,44 @@ let headerRegister = document.querySelector(".header-register");
 
 headerRegisterClose.onclick = function(){
   headerRegister.style.display = "none";
-  header.style.paddingTop = "10px" 
-  header.style.height = "48px"
+  header.style.paddingTop = "10px" ;
+  header.style.height = "48px";
 }
 
-//                                               реализация кнопки header-nav-more
+                                              // реализация кнопки header-nav-more
 
 let headerNavMore = document.querySelector(".header-nav-more");
 let headerNavLinks = document.querySelector(".header-nav-links");
 
 headerNavMore.onclick = function(){
+  headerNavSearch.classList.remove("visible");
   headerNavLinks.classList.toggle("visible");
   headerNavMore.classList.toggle("inverted");
   if (headerNavLinks.classList.contains("visible")){
-    header.style.marginBottom = "60px"
+    header.style.marginBottom = "60px";
   }
+
+
 }
 
+                                            // реализация кнопки Magnifying_glass-button
+
+let MagnifyingGlassButton = document.querySelector(".Magnifying_glass-button");
+
+MagnifyingGlassButton.onclick = function(){
+  headerNavSearch.classList.toggle("visible");
+  if (headerNavLinks.classList.contains("visible")){
+    headerNavLinks.classList.remove("visible");
+    headerNavMore.classList.remove("inverted")
+    // if(headerNavSearch.classList.contains("visible") && !customDatalist.classList.contains('show')){
+    //   header.style.marginBottom = "72px";
+    // }
+  
+  }else if (!headerNavLinks.classList.contains("visible") && !customDatalist.classList.contains('show') && headerNavSearch.classList.contains("visible")){
+    header.style.marginBottom = "72px";
+  }
+
+}
 
                                             // реализация выпадающего списка
 
@@ -34,14 +55,14 @@ function toggleOptions() {
   if (optionsContainer.classList.contains('visible')) {
     optionsContainer.classList.remove('visible');
     selectedOptionArrow.classList.add("notInverted");
-    if (!headerNavLinks.classList.contains('visible')) {
-      header.style.marginBottom = "24px";
-    }else if(headerNavLinks.classList.contains('visible')){
-      header.style.marginBottom = "148px";
-    }
-    else{
-      header.style.marginBottom = "100px";
-    }
+    // if (!headerNavLinks.classList.contains('visible')) {
+    //   header.style.marginBottom = "24px";
+    // }else if(headerNavLinks.classList.contains('visible')){
+    //   header.style.marginBottom = "148px";
+    // }
+    // else{
+    //   header.style.marginBottom = "100px";
+    // }
   } else {
     optionsContainer.classList.add('visible');
     selectedOptionArrow.classList.remove("notInverted");
@@ -53,13 +74,13 @@ selectedOption.onclick = toggleOptions;
 document.onclick = function(event){
   if (!event.target.closest('.select-wrapper')) {
     optionsContainer.classList.remove('visible');
-  if (!headerNavLinks.classList.contains('visible') && !optionsContainer.classList.contains('visible')) {
-    header.style.marginBottom = "24px";
-  }else if(headerNavLinks.classList.contains('visible')){
-    header.style.marginBottom = "60px";
-  }else if (headerNavLinks.classList.contains('visible') && optionsContainer.classList.contains('visible')){
-    header.style.marginBottom = "148px";
-  }
+    if (!headerNavLinks.classList.contains('visible')  && !headerNavSearch.classList.contains("visible") && !headerNavSearch.classList.contains("visible")) {
+      header.style.marginBottom = "24px";
+    }else if(headerNavLinks.classList.contains('visible') && !headerNavSearch.classList.contains("visible") && !optionsContainer.classList.contains('visible')){
+      header.style.marginBottom = "60px";
+    }else if (headerNavLinks.classList.contains('visible') && optionsContainer.classList.contains('visible') && !headerNavSearch.classList.contains("visible")){
+      header.style.marginBottom = "148px";
+    }
   }
 }
 
@@ -98,10 +119,12 @@ const data = {
       option.onclick = function(){
         input.value = item;
         customDatalist.classList.remove('show');
-        if (!optionsContainer.classList.contains('visible') && !headerNavLinks.classList.contains('visible')) {
+        if (!optionsContainer.classList.contains('visible') && !headerNavLinks.classList.contains('visible') && !headerNavSearch.classList.contains("visible")) {
           header.style.marginBottom = "24px";
-        }else{
+        }else if (headerNavLinks.classList.contains('visible')){
           header.style.marginBottom = "60px";
+        }else if(headerNavSearch.classList.contains("visible")){
+          header.style.marginBottom = "72px";
         }
       };
       customDatalist.appendChild(option);
@@ -109,31 +132,54 @@ const data = {
 
     switch (filteredData.length) {
       case 1:
-        if(!optionsContainer.classList.contains('visible')){
-            header.style.marginBottom = "61.5px";
-        }
-        else{
+        if(headerNavSearch.classList.contains("visible")){
             header.style.marginBottom = "100px";
         }
+        else{
+          header.style.marginBottom = "61.5px";
+
+          // if(!optionsContainer.classList.contains('visible')){
+          //   header.style.marginBottom = "61.5px";
+          // }else{
+          //   header.style.marginBottom = "100px";
+          // }
+        }
         break;
-      case 2:
-        header.style.marginBottom = "100px";
+
+      case 2: 
+        if (headerNavSearch.classList.contains("visible")){
+          header.style.marginBottom = "168px";
+        }else{
+          header.style.marginBottom = "100px";
+        }
         break;
+
       case 3:
-        header.style.marginBottom = "136.5px";
+        if (headerNavSearch.classList.contains("visible")){
+          header.style.marginBottom = "204.5px";
+        }else{
+          header.style.marginBottom = "136.5px";
+        }
         break;
+
       default:
-        header.style.marginBottom = "174px";
+        if (headerNavSearch.classList.contains("visible")){
+          header.style.marginBottom = "242px";
+        }else{
+          header.style.marginBottom = "174px";
+        }
         break;
     }
 
     customDatalist.classList.add('show');
   } else {
     customDatalist.classList.remove('show');
-    if (!optionsContainer.classList.contains('visible') && !headerNavLinks.classList.contains('visible')) {
+    if (!optionsContainer.classList.contains('visible') && !headerNavLinks.classList.contains('visible') && !headerNavSearch.classList.contains("visible")) {
       header.style.marginBottom = "24px";
     }else if (headerNavLinks.classList.contains('visible')){
       header.style.marginBottom = "60px";
+    }else if(headerNavSearch.classList.contains("visible")){
+      header.style.marginBottom = "72px";
     }
   }
 }
@@ -143,14 +189,15 @@ input.addEventListener('input', updateDatalist);
 document.addEventListener('click', (event) => {
   if (!event.target.closest('.header-nav-search')) {
     customDatalist.classList.remove('show');
-    if (!optionsContainer.classList.contains('visible') && !headerNavLinks.classList.contains('visible')) {
+    if (!optionsContainer.classList.contains('visible') && !headerNavLinks.classList.contains('visible') && !headerNavSearch.classList.contains("visible")) {
       header.style.marginBottom = "24px";
     }else if (!optionsContainer.classList.contains('visible') && headerNavLinks.classList.contains('visible')){
       header.style.marginBottom = "60px";
+    }else if(headerNavSearch.classList.contains("visible")){
+      header.style.marginBottom = "72px";
     }else if (optionsContainer.classList.contains('visible') && headerNavLinks.classList.contains('visible')){
       header.style.marginBottom = "148px";
-    }
-    else if (optionsContainer.classList.contains('visible') && !headerNavLinks.classList.contains('visible')){
+    }else if (optionsContainer.classList.contains('visible') && !headerNavLinks.classList.contains('visible')){
       header.style.marginBottom = "100px";
     }
   }
