@@ -151,7 +151,6 @@ input[name="header-nav-input"]{
   border: none;
 }
 
-
 /*                                             footer */
 
 .footer-flex1{
@@ -171,7 +170,7 @@ input[name="header-nav-input"]{
     border: none;
 }
 
-input[name="footer-flex1-email"]{
+input[name="footer-flex1-email"]::placeholder{
   font-family: "Satoshi";
   font-size: 16px;
   line-height: 21.6px;
@@ -227,4 +226,92 @@ input[name="footer-flex1-email"]{
 .footer-card{
     background-color:rgba(255, 255, 255, 1) ;
     border-radius: 5.38px;
+}
+
+
+
+
+                                        /* стили при ширине экрана менее 845px */
+@media (max-width:845px){
+  /*                                         Common */
+
+  body {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .H2-IntegralFont{
+    font-size:32px ;
+    line-height: 38.4px;
+  }
+
+  .clothes-name{
+    font-size: 16px;
+    line-height: 21.6px;
+    font-weight: 700;
+  }
+
+  .assessment{
+    font-size: 12px;
+    line-height: 16.2px;
+  }
+
+  .price , .prices p:first-child , .prices p:nth-child(2){
+    font-size: 20px;
+    line-height: 27px;
+  }
+
+  .prices p:last-child{
+    font-size: 10px;
+    line-height: 13.5px;
+  }
+
+  input::placeholder{
+    font-size: 14px;
+    line-height: 18.9px;
+  }
+
+  .button{
+    font-size:14px;
+    line-height:18.9px;
+    font-weight: 500;
+  }
+
+  .buttonBlack{
+    line-height: 21.6px;
+    font-size:14px;
+    line-height:18.9px;
+  }
+
+  .rewiew-name{
+    font-size:16px;
+    line-height:22px;
+    font-weight: 700;
+  }
+
+  /*                                         header */
+
+  .header-register p{
+    font-size:12px ;
+    line-height:16.2px;
+  }
+
+  /*                                             footer */
+
+  .footer-flex1 h2{
+    font-size: 32px;
+    line-height: 35px;
+  }
+
+  input[name="footer-flex1-email"]::placeholder{
+  font-family: "Satoshi";
+  font-size: 16px;
+  line-height: 21.6px;
+  color:rgba(0, 0, 0, 0.4) ;
+  }
+
+  .footer-flex2-part1 p{
+    font-size: 14px;
+    line-height: 20px;
+  }
 }

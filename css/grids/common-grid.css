@@ -129,9 +129,6 @@ header{
   flex-wrap:nowrap;
 }
 
-/* .header-nav-links.visible{
-  
-} */
 
 .header-nav-link{
   margin-right:24px;
@@ -193,7 +190,9 @@ header{
   display: block;
 }
 
-.custom-datalist div {
+.custom-datalist a {
+  display:block;
+  text-decoration:none;
   padding: 8px;
   font-family: "Satoshi";
   font-size: 16px;
@@ -203,7 +202,7 @@ header{
   font-weight:500;
 }
 
-.custom-datalist div:hover {
+.custom-datalist a:hover {
   background-color:rgba(240, 240, 240, 1);
 }
 
@@ -309,7 +308,7 @@ header{
   }
 }
 
-/*                             разметка при ширине экрана не менее 600px , но не более 1420px */
+/*                             разметка при ширине экрана не менее 845px , но не более 1420px */
 
 @media (max-width:1420px){
   .header-content{
@@ -336,15 +335,14 @@ header{
     display:none;
   }
 
-  #header{
+  /* #header{
     margin-bottom:1000px !important
-  }
+  } */
   
   .header-nav-links.visible{
     position:absolute;
     display:flex;
     top:40px;
-    /* left:100px */
   }
 
   .header-nav-search{
@@ -359,6 +357,13 @@ header{
     margin-left:15.88px;
   }
 }
+
+                                        /* разметка при ширине экрана не менее 845px */
+                                            
+@media (max-width:845px){
+  
+}
+
 
 
 
