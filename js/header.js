@@ -167,7 +167,6 @@ document.addEventListener('click', (event) => {
     customDatalist.classList.remove('show');
   }
 
-
   if (
     !headerNavLinks.classList.contains('visible') &&
     !headerNavSearch.classList.contains('visible') &&
@@ -194,7 +193,7 @@ document.addEventListener('click', (event) => {
     header.style.marginBottom = '72px';
   } else if (
     optionsContainer.classList.contains('visible') &&
-    !headerNavLinks.classList.contains('visible')
+    !headerNavLinks.classList.contains('visi8ble')
   ) {
     header.style.marginBottom = '100px';
   }

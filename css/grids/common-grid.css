@@ -64,7 +64,6 @@ header{
     height: 110px;
     margin-bottom:24px;
     transition:margin 1s , padding 1s;
-    /* max-width:1600px; */
 }
 
 .header-register{
@@ -76,7 +75,6 @@ header{
 
 .header-register p{
     margin:0 auto;
-    /* width: 351px; */
     height:20px ;
 }
 
@@ -97,7 +95,6 @@ header{
 }
 
 .header-content{
-  /* min-width:1110px; */
   padding:0 100px;
 }
 
@@ -284,10 +281,8 @@ header{
   display:flex;
   flex-direction:column;
   column-gap:3px;
-  /* background-color:white; */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius:10px;
-  /* padding:3.5px; */
 }
 
 .option {
@@ -300,19 +295,19 @@ header{
   background-color: rgba(240, 240, 240, 1);
 }
 
-/*                                      разметка при ширине экрана более 1420px */
+/*                 разметка header при ширине экрана более 1420px */
 
 @media (min-width: 1420px) {
   .header{
       padding:0;
   }
   .header-content{
-      max-width:1800px;
+      max-width:1420px;
       margin:0 auto;
   }
 }
 
-/*                             разметка при ширине экрана не менее 845px , но не более 1420px */
+/*                 разметка header при ширине экрана не менее 845px , но не более 1420px */
 
 @media (max-width:1420px){
   .header-content{
@@ -359,7 +354,7 @@ header{
   }
 }
 
-                                        /* разметка при ширине экрана меньше 845px */
+/*                разметка header при ширине экрана меньше 845px */
                                             
 @media (max-width:845px){
 
@@ -381,7 +376,6 @@ header{
 
   #header{
     height:78px;
-    /* margin-bottom: 1000px !important; */
   }
 
   .header-nav-more{
