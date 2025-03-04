@@ -503,7 +503,8 @@
 
 /*                                      разметка index1 при не менее 380px , но не более 1180px*/
 
-@media(max-width:1240px){
+
+/* @media(max-width:1180px){
     .hero-content{
         background-position:80%;
         padding:0;
@@ -520,4 +521,27 @@
     .hero-black-star2{
         display:none;
     }
+}  */
+
+
+
+
+
+
+
+
+
+
+
+/*                                      разметка index1 при не менее 400px , но не более 1180px*/
+
+
+@media(max-width:1180px){
+    .hero-content{
+        background-position:100%;
+        padding:0;
+        margin:0 auto;
+        padding:103px 0 116px 50px;
+    }
+
 } 
