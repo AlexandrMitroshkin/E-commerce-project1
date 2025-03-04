@@ -1,11 +1,17 @@
 /*                                                section  hero */
 
 .hero{
-    width: 100%;
-    height: 663px;
-    background-image:url(../../img/couple-img.jpg);
-    padding:103px 0 116px 100px;
+    background-color:rgba(242, 240, 241, 1);
+}
+
+.hero-content{
+    height:663px;
+    margin:0 auto;
+    max-width: 1440px;
     position:relative;
+    padding:103px 0 116px 100px;
+    background-image:url(../../img/couple-img.jpg);
+    background-repeat:no-repeat;
 }
 
 .hero-title-wrapper{
@@ -20,13 +26,14 @@
 .hero-black-star1{
     position: absolute;
     top:297px;
-    left: 750px;
+    right: 630px;
 }
 
 .hero-black-star2{
     position: absolute;
     top:86px;
-    left:1225px;
+    /* left:1225px; */
+    right:100px;
 }
 
 .hero-text{
@@ -81,6 +88,10 @@
 
 .hero-inf-item h2 ,p{
     margin:0;
+}
+
+.hero-couple_ForsmallerVersion{
+    display:none;
 }
 
 
@@ -451,42 +462,62 @@
     margin: 0;
 }
 
-/* .carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 1.5em;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 
-/* .next */
+/*                                         разметка index1 при не менее 1180px , но не более 1420px*/
 
-/* .carousel-button.prev {
-    left: 20px;
+@media(max-width:1420px){
+    .hero-content{
+        background-position:80%;
+        margin:0;
+        padding:103px 100px 116px 100px;
+    }
+
+    .hero-inf{
+        width:361px;
+        flex-wrap:wrap;
+        row-gap:15px;
+    }
+
+    .hero-inf-item:nth-child(2){
+        width:156px;
+        padding:0;
+        margin:0;
+        border:none;
+    }
+    
+    .hero-inf-item:last-child{
+        width:171px;
+        border:none;
+        margin:0 auto;
+    }
+
+    .hero-black-star1{
+        right:570px;
+        top: 235px;
+    }
+
+    .hero-black-star2{
+        right:100px;
+    }
 }
 
-.carousel-button.next {
-    right: 20px;
-} */
+/*                                      разметка index1 при не менее 380px , но не более 1180px*/
 
+@media(max-width:1240px){
+    .hero-content{
+        background-position:80%;
+        padding:0;
+        background-image:none;
+        margin:0 auto;
+        height:1000px;
+        width:558px;
+    }
 
+    .hero-black-star1{
+        display:none;
+    }
 
-
-
-
-
-/*                                         разметка index1 при более 1420px */
-
-/* @media(min-width:1420px){
-    
-} */
+    .hero-black-star2{
+        display:none;
+    }
+} 

@@ -95,7 +95,9 @@ header{
 }
 
 .header-content{
+  max-width:1440px;
   padding:0 100px;
+  margin:0 auto;
 }
 
 .header-nav{
@@ -295,17 +297,6 @@ header{
   background-color: rgba(240, 240, 240, 1);
 }
 
-/*                 разметка header при ширине экрана более 1420px */
-
-@media (min-width: 1420px) {
-  .header{
-      padding:0;
-  }
-  .header-content{
-      max-width:1420px;
-      margin:0 auto;
-  }
-}
 
 /*                 разметка header при ширине экрана не менее 845px , но не более 1420px */
 
@@ -313,7 +304,7 @@ header{
   .header-content{
     min-width:845px;
   }
-
+  
   .header-register-close{
     display:none;
   }
@@ -357,6 +348,74 @@ header{
 /*                разметка header при ширине экрана меньше 845px */
                                             
 @media (max-width:845px){
+
+  .header-content{
+    min-width:390px;
+  }
+
+  .header-nav{
+    min-width:395px;
+    position:relative;
+  }
+
+  .header-nav-logo{
+
+    margin-left:16px;
+
+  }
+
+  .header-nav-search{
+    display:none;
+  }
+
+  .header-nav-other{
+    max-width:200px;
+    min-width:96px;
+    justify-content:space-between;
+    margin-left:97.8px;
+  }
+
+  .Magnifying_glass-button{
+    display:block;
+    background-color:white;
+    padding:0;
+    margin-right:13.87px;
+    border:none;
+    color:black
+  }
+  
+  .telegka{
+    padding:0;
+    margin-right:13.87px;
+  }
+
+  .account{
+    margin:0;
+  }
+
+  .header-nav-search.visible{
+    width:100%;
+    top:100%;
+    display:flex;
+    position:absolute;
+    margin:0;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+/*                разметка header при ширине экрана меньше 845px */
+
+
+@media (max-width:500px){
 
   .header-content{
     padding:0 16px 0 16px;
@@ -438,14 +497,7 @@ header{
 
     margin:0;
   } */
-
-
-  
 }
-
-
-
-
 
 /*                                             footer */
 

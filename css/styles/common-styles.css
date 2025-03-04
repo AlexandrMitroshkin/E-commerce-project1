@@ -231,8 +231,8 @@ input[name="footer-flex1-email"]::placeholder{
 
 
 
-                                        /* стили при ширине экрана менее 845px */
-@media (max-width:845px){
+                                        /* стили при ширине экрана менее 400px */
+@media (max-width:400px){
   /*                                         Common */
 
   body {
