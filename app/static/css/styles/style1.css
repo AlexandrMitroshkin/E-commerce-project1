@@ -35,14 +35,18 @@ h1{
 }
 
 
-/*                                         section Styles*/
-/* 
+                                        /* section Styles */
+
 
 .Styles{
   background-color: rgba(240, 240, 240, 1);
 }
 
-@media(max-width:1180px){
+.Styles h2{
+  font-size: 36px;
+}
+
+/* @media(max-width:1180px){
   h1{
     font-size:36px ;
     line-height:34px;
@@ -60,4 +64,4 @@ h1{
     line-height:20px;
 }
 
-}  */
+} */

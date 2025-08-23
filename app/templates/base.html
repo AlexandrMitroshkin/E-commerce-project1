@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Shop.CO{% endblock %}</title>
+
+    {% block styles %}
+        <link href="{{ url_for('static', filename='css/styles/common-styles.css') }}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/grids/common-grid.css')}}" rel="stylesheet">
+    {% endblock %}
+
+    {% block extra_styles %}{% endblock  %}
+</head>
+<body>
+    <header id="header">
+        <article class="header-register">
+            <p>Sign up and get 20% off to your first order. <a class="header-register-link" href="#">Sign Up Now</a></p>
+            
+            <button class="header-register-close">
+                <img src="{{ url_for('static', filename='img/white_closing_icon.svg') }}" width="13" height="13" alt="close">
+            </button>
+        </article>
+
+        <article class="header-content">
+            <nav class="header-nav">
+
+                <button class="header-nav-more">
+                    <img src="{{url_for('static' , filename='img/header-nav-more.svg')}}" width="22" height="17" alt="read more">
+                </button>
+
+                <a class="header-nav-logo" href="{{url_for('main.home')}}">
+                    <img src="{{ url_for('static', filename='img/SHOP.CO.svg') }}" width="160" height="22" alt="Logo of company">
+                </a>
+            
+                <ul class="header-nav-links">
+                    <li class="select-wrapper header-nav-link">
+                        <div class="custom-select">
+                            <div class="selected-option" id="selected-option">
+                                <span class="selected-option-title">Shop</span>
+                                <span class="selected-option-img"><img class="selected-option-arrow notInverted" src="{{url_for('static', filename='img/inverted-black-arrow.svg')}}" width="12" height="7"></span>
+                            </div>
+                            <div class="options">
+                                <a class="option" href="{{url_for('main.Men')}}">Men</a>
+                                <a class="option" href="{{url_for('main.Women')}}">Women</a>
+                                <a class="option" href="{{url_for('main.Unisex')}}">Unisex</a>
+                                <a class="option" href="{{url_for('main.Combined')}}">Combined</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="header-nav-link"><a href="{{url_for('main.Sales')}}">On Sale</a></li>
+                    <li class="header-nav-link"><a href="{{url_for('main.Novelty')}}">New Arrivals</a></li>
+                    <li class="header-nav-link"><a href="{{url_for('main.Brands')}}">Brands</a></li>
+                </ul>
+            
+                <div class="header-nav-search">
+                    <label class="header-nav-img" for="header-nav-input">
+                        <img src="{{url_for('static', filename='img/Magnifying_glass.svg')}}" width="20" height="20" alt="Magnifying glass in input">
+                    </label>
+                    <input id="header-nav-input" name="header-nav-input" type="text" autocomplete="off" placeholder="Search for products...">
+                    <div id="custom-datalist" class="custom-datalist"></div>
+                </div>
+
+                <div class="header-nav-other">
+                    <button class="Magnifying_glass-button">
+                        <img src="{{url_for('static' , filename='img/Magnifying_glass_black.svg')}}" width="20" height="20" alt="Magnifying glass in input">
+                    </button>
+                    <a class="telegka" href="{{ url_for('main.Cart') }}">
+                        <img src="{{ url_for('static', filename='img/catr(telegka).svg') }}" width="22" height="20" alt="basket of user">
+                    </a>
+                    <a class="account" href="{{ url_for('main.Account')}}">
+                        <img src="{{ url_for('static', filename='img/account.svg') }}" width="20" height="20" alt="user account">
+                    </a>
+                </div>
+            </nav>
+        </article>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <article class="footer-flex1">
+            <h2 class="H2-IntegralFont">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
+
+            <form class="footer-form">
+                <div>
+                    <label for="footer-flex1-email"><img class="footer-form-img" src="{{ url_for('static', filename='img/Email.svg') }}" width="20" height="16" alt="photo of the envelope"></label>
+                    <input id="footer-flex1-email" name="footer-flex1-email" type="email" placeholder="Enter your email address">
+                </div>
+                <input id="footer-flex1-sending" name="footer-flex1-sending" type="submit" value="Subscribe to Newsletter" placeholder="Subscribe to Newsletter">
+            </form>
+        </article>
+
+        <div class="footer-flex2and3-wrapper">
+            <article class="footer-flex2">
+                <div class="footer-flex2-part1">
+                    <h3>SHOP.CO</h3>
+                    <p>We have clothes that suits your style and which you're proud to wear. From women to men.</p>
+
+                    <ul class="footer-messagers">
+                        <li class="footer-messager">
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='img/twitter_icon.svg') }}" width="11" height="9" alt="icon of twitter">
+                            </a>
+                        </li>
+
+                        <li class="footer-messager">
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='img/Facebook_icon.svg') }}" width="11" height="9" alt="icon of factbook">
+                            </a>
+                        </li>
+
+                        <li class="footer-messager">
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='img/logo-instagram 1.svg') }}" width="11" height="9" alt="icon of instagramm">
+                            </a>
+                        </li>
+
+                        <li class="footer-messager">
+                            <a href="#">
+                                <img src="{{ url_for('static', filename='img/git_icon.svg') }}" width="11" height="9" alt="icon of githab">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <ul class="footer-links">
+                    <li class="footer-links-column">
+                        <ul>
+                            <li class="footer-link"><a href="#"><h4>COMPANY</h4></a></li>
+                            <li class="footer-link"><a href="#">About</a></li>
+                            <li class="footer-link"><a href="#">Features</a></li>
+                            <li class="footer-link"><a href="#">Works</a></li>
+                            <li class="footer-link"><a href="#">Career</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="footer-links-column">
+                        <ul>
+                            <li class="footer-link"><a href="#"><h4>HELP</h4></a></li>
+                            <li class="footer-link"><a href="#">Customer Support</a></li>
+                            <li class="footer-link"><a href="#">Delivery Details</a></li>
+                            <li class="footer-link"><a href="#">Terms & Conditions</a></li>
+                            <li class="footer-link"><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="footer-links-column">
+                        <ul>
+                            <li class="footer-link"><a href="#"><h4>FAQ</h4></a></li>
+                            <li class="footer-link"><a href="#">Account</a></li>
+                            <li class="footer-link"><a href="#">Manage Deliveries</a></li>
+                            <li class="footer-link"><a href="#">Orders</a></li>
+                            <li class="footer-link"><a href="#">Payments</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="footer-links-column">
+                        <ul>
+                            <li class="footer-link"><a href="#"><h4>RESOURCES</h4></a></li>
+                            <li class="footer-link"><a href="#">Free eBooks</a></li>
+                            <li class="footer-link"><a href="#">Development Tutorial</a></li>
+                            <li class="footer-link"><a href="#">How to - Blog</a></li>
+                            <li class="footer-link"><a href="#">Youtube Playlist</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="footer-flex3">
+                <div class="footer-copyringPolicy">
+                    <a class="footer-copyring" href="#">Shop.co © 2000-2023,</a>
+                    <a class="footer-policy" href="#">All Rights Reserved</a>
+                </div>
+
+                <ul class="footer-cards">
+                    <li class="footer-card">
+                        <a href="#">
+                            <img src="{{ url_for('static', filename='img/Visa.svg') }}" width="33" height="11" alt="Logo of Visa cards">
+                        </a>
+                    </li>
+
+                    <li class="footer-card">
+                        <a href="#">
+                            <img src="{{ url_for('static', filename='img/Mastercard.svg') }}" width="25" height="16" alt="Logo of Mastercard cards">
+                        </a>
+                    </li>
+
+                    <li class="footer-card">
+                        <a href="#">
+                            <img src="{{ url_for('static', filename='img/Paypal.svg') }}" width="35" height="9" alt="Logo of PayPal cards">
+                        </a>
+                    </li>
+
+                    <li class="footer-card">
+                        <a href="#">
+                            <img src="{{ url_for('static', filename='img/Logo_apple_pay.svg') }}" width="26" height="11" alt="Logo of apple pay">
+                        </a>
+                    </li>
+
+                    <li class="footer-card">
+                        <a href="#">
+                            <img src="{{ url_for('static', filename='img/G Pay.svg') }}" width="29" height="11" alt="Logo of Google pay">
+                        </a>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </footer>
+
+    {% block scripts %}
+    <script src="{{ url_for('static', filename='js/header.js') }}"></script>
+    {% endblock %}
+    
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
+</html>

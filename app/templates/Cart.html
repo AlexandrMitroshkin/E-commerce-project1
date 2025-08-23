@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+
+{% block title %}Shop.CO - Cart{% endblock %}
+
+{% block extra_styles %}
+<link href="{{ url_for('static', filename='css/styles/style4.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <section class="hero section-special_margin">
+        <nav class="hero-breadcrumbs">
+            <a href="{{ url_for('main.home') }}">Home</a>
+            <a class="active" href="{{ url_for('main.Cart') }}">Cart</a>
+        </nav>
+
+        <h1>YOUR CART</h1>
+
+        <article class="Cart">
+            <ul class="Cart-list">
+                <li class="Cart-item">
+                    <img src="{{ url_for('static', filename='img/Gradient Graphic T-shirt.jpg') }}" width="100" height="100" alt="Gradient Graphic T-shirt">
+                    
+                    <div class="Cart-item-info">
+                        <h2 class="clothes-name">Gradient Graphic T-shirt</h2>
+                        <p class="size">
+                            <span class="size-black">Size: </span>
+                            <span class="size">Large</span>
+                        </p>
+                        <p class="color">Color: White</p>
+                        <p class="priсe">145$</p>
+                    </div>
+
+                    <div class="Cart-item-control">
+                        <img src="{{ url_for('static', filename='img/trash_icon.svg') }}" width="18" height="20" alt="delete this item">
+                        <!-- <input> -->
+                    </div>
+                </li>
+
+                <li class="Cart-item">
+                    <img src="{{ url_for('static', filename='img/CHECKERED SHIRT.jpg') }}" width="100" height="100" alt="Checkered Shirt">
+                    
+                    <div class="Cart-item-info">
+                        <h2 class="clothes-name">Checkered Shirt</h2>
+                        <p class="size">
+                            <span class="size-black">Size:</span> 
+                            <span class="size">Medium</span>
+                        </p>
+                        <p class="color">Color: Red</p>
+                        <p class="priсe">180$</p>
+                    </div>
+
+                    <div class="Cart-item-control">
+                        <img src="{{ url_for('static', filename='img/trash_icon.svg') }}" width="18" height="20" alt="delete this item">
+                        <!-- <input> -->
+                    </div>
+                </li>
+
+                <li class="Cart-item">
+                    <img src="{{ url_for('static', filename='img/SKINNY FIT JEANS.jpg') }}" width="100" height="100" alt="Skinny Fit Jeans">
+                    
+                    <div class="Cart-item-info">
+                        <h2 class="clothes-name">Skinny Fit Jeans</h2>
+                        <p class="size">
+                            <span class="size-black">Size:</span> 
+                            <span class="size">Large</span>
+                        </p>
+                        <p class="color">Color: Blue</p>
+                        <p class="priсe">240$</p>
+                    </div>
+
+                    <div class="Cart-item-control">
+                        <img src="{{ url_for('static', filename='img/trash_icon.svg') }}" width="18" height="20" alt="delete this item">
+                        <!-- <input> -->
+                    </div>
+                </li>
+            </ul>
+
+            <div class="Summary">
+                <h3>Order Summary</h3>
+                
+                <div class="Summary-flex1">
+                    <h4>Subtotal</h4>
+                    <p class="price">$565</p>
+                </div>
+
+                <div class="Summary-flex2">
+                    <h4>Discount (-20%)</h4>
+                    <p>-$113</p>
+                </div>
+
+                <div class="Summary-flex3">
+                    <h4>Delivery Fee</h4>
+                    <p class="price">$15</p>
+                </div>
+
+                <div class="Summary-flex4">
+                    <h4 class="Summary-flex4-blackTitle">Total</h4>
+                    <p class="price">$467</p>
+                </div>
+
+                <div class="Summary-flex5">
+                    <div class="Summary-flex5-input">
+                        <label for="Summary-promocode-id">
+                            <img src="{{ url_for('static', filename='img/Promocode_icon.svg') }}" width="21" height="21" alt="tag(icon of promocode)">
+                        </label>
+                        <input id="Summary-promocode-id" name="Summary-promocode" placeholder="Add promo code">
+                    </div>
+
+                    <button class="Summary-flex5-apply buttonBlack" type="button">
+                        Apply
+                    </button>
+                </div>
+
+                <div class="Summary-flex6">
+                    <a class="Summary-GoCheckout buttonBlack" href="#">
+                        Go to Checkout
+                    </a>
+                    <img src="{{ url_for('static', filename='img/Checout_arrow.svg') }}" width="16" height="19">
+                </div>
+            </div>
+        </article>
+    </section>
+{% endblock %}

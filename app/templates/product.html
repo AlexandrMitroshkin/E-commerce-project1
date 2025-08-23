@@ -1,0 +1,358 @@
+{% extends "base.html" %}
+
+{% block title %}Shop.CO - T-shirt{% endblock %}
+
+{% block extra_styles %}
+    <link href="{{ url_for('static', filename='css/styles/style2.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <nav class="hero-breadcrumbs">
+        <a href="{{ url_for('main.home') }}">Home</a>
+                                                            <!-- при завершении шаблонизации удалить SHOP элемент -->
+        <a href="#">Shop</a>
+        <a href="{{ url_for('main.Men') }}">Men</a>
+        <a class="active" href="{{ url_for('main.product.html') }}">T-shirts</a>
+    </nav>
+
+    <section class="hero section-special_margin"> 
+        <article class="hero-description">
+            <figure class="description-part1">
+                <img class="description-mainImage" src="{{ url_for('static', filename='img/T-One-life-graphic.png') }}" width="444" height="530" alt="main image of this product">
+
+                <ul class="description-images">
+                    <li class="description-img">
+                        <img class="active" src="{{ url_for('static', filename='img/T-One-life-graphic.png') }}" width="152" height="167" alt="One Life Graphic T-shirt">
+                    </li>
+
+                    <li class="description-img">
+                        <img src="{{ url_for('static', filename='img/T-One-life-graphic (2).png') }}" width="152" height="167" alt="One Life Graphic T-shirt">
+                    </li>
+
+                    <li class="description-img">
+                        <img src="{{ url_for('static', filename='img/T-One-life-graphic (3).png') }}" width="152" height="167" alt="One Life Graphic T-shirt">
+                    </li>
+                </ul>
+            </figure>
+        
+            <div class="description-part2">
+                <h1>ONE LIFE GRAPHIC T-SHIRT</h1>
+
+                <ul class="description-stars">
+                    <li class="description-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="description-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="description-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="description-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="description-star half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                </ul>
+                <p>4.5/5</p>
+            
+                <div class="description-prices prices">
+                    <p class="description-priсesnow">260$</p>
+                    <p class="description-priсeswas">300$</p>
+                    <p class="description-sale">-40%</p>
+                </div>
+
+                <p class="description-text">This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.</p>
+
+                <ul class="description-colors">
+                    <li class="description-color1"></li>
+                    <li class="description-color2"></li>
+                    <li class="description-color3"></li>
+                </ul>
+
+                <ul class="description-sizes">
+                    <li class="description-size-S">Small</li>
+                    <li class="description-size-M">Medium</li>
+                    <li class="description-size-L">Large</li>
+                    <li class="description-size-XL">X-Large</li>
+                </ul>
+
+                <div class="description-bottomFlex">
+                    <div class="description-amount">
+                        <button class="description-amount-plus" type="button">
+                            <div></div>
+                        </button>
+
+                        <!-- <output></output> -->
+
+                        <button class="description-amount-minus" type="button">
+                            <div></div>
+                        </button>
+                    </div>
+
+                    <a class="description-addingButton buttonBlack" href="#">
+                        Add to Cart
+                    </a>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <section class="Reviews section-special_margin">
+        <header class="Reviews-header">
+            <h2>All Reviews</h2>
+            <p>(451)</p>
+
+            <div class="Reviews-options">
+                <a class="Reviews-filtres" href="#">
+                    <img src="{{ url_for('static', filename='img/filters.svg') }}" width="20" height="19" alt="filters">
+                </a>
+
+                <select name="Reviews-dates">
+                    <option value="latest">latest</option>
+                    <option value="1week">1 week ago</option>
+                    <option value="1moth">1 moth ago</option>
+                    <option value="1year">1 year ago</option>
+                </select>
+
+                <a class="Reviews-write buttonBlack" href="#">
+                    Write a Review
+                </a>    
+            </div>
+        </header> 
+        
+        <ul class="Reviews-list">
+            <li class="Reviews-item">
+                <ul class="Reviews-item-stars">
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                </ul>
+
+                <ul class="Reviews-item-points">
+                    <li class="Reviews-item-point"></li>
+                    <li class="Reviews-item-point"></li>
+                    <li class="Reviews-item-point"></li>
+                </ul>
+
+                <div class="Reviews-item-name">
+                    <h3 class="rewiew-name">Samantha D.</h3>
+                    <img src="{{ url_for('static', filename='img/Green-roun-with-check.svg') }}" width="24" height="24" alt="green check mark">
+                </div>
+
+                <p class="Reviews-item-text">"I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become my favorite go-to shirt."</p>
+
+                <p class="Reviews-item-time">Posted on<time datetime="14.08.23"> August 14, 2023</time></p>
+            </li>
+
+            <li class="Reviews-item">
+                <ul class="Reviews-item-stars">
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                </ul>
+
+                <ul class="Reviews-item-points">
+                    <li class="Reviews-item-point"></li>
+                    <li class="Reviews-item-point"></li>
+                    <li class="Reviews-item-point"></li>
+                </ul>
+
+                <div class="Reviews-item-name">
+                    <h3 class="rewiew-name">Alex M.</h3>
+                    <img src="{{ url_for('static', filename='img/Green-roun-with-check.svg') }}" width="24" height="24" alt="green check mark">
+                </div>
+
+                <p class="Reviews-item-text">"The t-shirt exceeded my expectations! The colors are vibrant and the print quality is top-notch. Being a UI/UX designer myself, I'm quite picky about aesthetics, and this t-shirt definitely gets a thumbs up from me."</p>
+
+                <p class="Reviews-item-time">Posted on<time datetime="15.08.23"> August 15, 2023</time></p>
+            </li>
+
+            <li class="Reviews-item">
+                <ul class="Reviews-item-stars">
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                </ul>
+
+                <ul class="Reviews-item-points">
+                    <li class="Reviews-item-point"></li>
+                    <li class="Reviews-item-point"></li>
+                    <li class="Reviews-item-point"></li>
+                </ul>
+
+                <div class="Reviews-item-name">
+                    <h3 class="rewiew-name">Ethan R.</h3>
+                    <img src="{{ url_for('static', filename='img/Green-roun-with-check.svg') }}" width="24" height="24" alt="green check mark">
+                </div>
+
+                <p class="Reviews-item-text">"This t-shirt is a must-have for anyone who appreciates good design. The minimalistic yet stylish pattern caught my eye, and the fit is perfect. I can see the designer's touch in every aspect of this shirt."</p>
+
+                <p class="Reviews-item-time">Posted on<time datetime="16.08.23"> August 16, 2023</time></p>
+            </li>
+
+            <li class="Reviews-item">
+                <ul class="Reviews-item-stars">
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                </ul>
+
+                <ul class="Reviews-item-points">
+                    <li class="Reviews-item-point"></li>
+                    <li class="Reviews-item-point"></li>
+                    <li class="Reviews-item-point"></li>
+                </ul>
+
+                <div class="Reviews-item-name">
+                    <h3 class="rewiew-name">Olivia P.</h3>
+                    <img src="{{ url_for('static', filename='img/Green-roun-with-check.svg') }}" width="24" height="24" alt="green check mark">
+                </div>
+
+                <p class="Reviews-item-text">"As a UI/UX enthusiast, I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It's evident that the designer poured their creativity into making this t-shirt stand out."</p>
+
+                <p class="Reviews-item-time">Posted on<time datetime="17.08.23"> August 17, 2023</time></p>
+            </li>
+
+            <li class="Reviews-item">
+                <ul class="Reviews-item-stars">
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                </ul>
+
+                <ul class="Reviews-item-points">
+                    <li class="Reviews-item-point"></li>
+                    <li class="Reviews-item-point"></li>
+                    <li class="Reviews-item-point"></li>
+                </ul>
+
+                <div class="Reviews-item-name">
+                    <h3 class="rewiew-name">Liam K.</h3>
+                    <img src="{{ url_for('static', filename='img/Green-roun-with-check.svg') }}" width="24" height="24" alt="green check mark">
+                </div>
+
+                <p class="Reviews-item-text">"This t-shirt is a fusion of comfort and creativity. The fabric is soft, and the design speaks volumes about the designer's skill. It's like wearing a piece of art that reflects my passion for both design and fashion."</p>
+
+                <p class="Reviews-item-time">Posted on<time datetime="18.08.23"> August 18, 2023</time></p>
+            </li>
+
+            <li class="Reviews-item">
+                <ul class="Reviews-item-stars">
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                    <li class="Reviews-item-star half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li>
+                </ul>
+
+                <ul class="Reviews-item-points">
+                    <li class="Reviews-item-point"></li>
+                    <li class="Reviews-item-point"></li>
+                    <li class="Reviews-item-point"></li>
+                </ul>
+
+                <div class="Reviews-item-name">
+                    <h3 class="rewiew-name">Ava H.</h3>
+                    <img src="{{ url_for('static', filename='img/Green-roun-with-check.svg') }}" width="24" height="24" alt="green check mark">
+                </div>
+
+                <p class="Reviews-item-text">"I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter."</p>
+
+                <p class="Reviews-item-time">Posted on<time datetime="19.08.23"> August 19, 2023</time></p>
+            </li>
+        </ul>
+
+        <button class="Reviews-button button" type="button">
+            Load More Reviews
+        </button>
+    </section>
+
+    <section class="Same section-special_margin">
+        <h2 class="H2-IntegralFont">YOU MIGHT ALSO LIKE</h2>
+
+        <ul class="Same-list">
+            <li class="Same-item">
+                <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/Polo with Contrast Trims.jpg') }}" width="295" height="298" alt="Polo with Contrast Trims"></a>
+                <h3 class="clothes-name">Polo with Contrast Trims</h3>
+                <div class="Same-item-mark">
+                    <ul class="Same-item-stars">
+                        <li class="Same-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        <li class="Same-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        <li class="Same-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        <li class="Same-item-star last-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                    </ul>
+                    <p class="Same-item-assessment assessment">
+                        <span class="black">4.0/</span>
+                        <span>5</span>
+                    </p>
+                </div>
+                
+                <div class="Same-item-prices prices">
+                    <p class="Same-item-pricesnow">212$</p>
+                    <p class="Same-item-priceswas">242$</p>
+                    <p class="Same-item-sale">-20%</p>
+                </div>
+            </li>
+
+            <li class="Same-item">
+                <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/Gradient Graphic T-shirt.jpg') }}" width="295" height="298" alt="Gradient Graphic T-shirt"></a>
+                <h3 class="clothes-name">Gradient Graphic T-shirt</h3>
+                <div class="Same-item-mark">
+                    <ul class="Same-item-stars">
+                        <li class="Same-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        <li class="Same-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        <li class="Same-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        <li class="Same-item-star half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                    </ul>
+                    <p class="Same-item-assessment assessment">
+                        <span class="black">3.5/</span>
+                        <span>5</span>
+                    </p>
+                </div>
+                
+                <p class="price">145$</p>
+            </li>
+
+            <li class="Same-item">
+                <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/Polo with Tipping Details.jpg') }}" width="295" height="298" alt="Polo with Tipping Details"></a>
+                <h3 class="clothes-name">Polo with Tipping Details</h3>
+                <div class="Same-item-mark">
+                    <ul class="Same-item-stars">
+                        <li class="Same-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        <li class="Same-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        <li class="Same-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        <li class="Same-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        <li class="Same-item-star half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                    </ul>
+                    <p class="Same-item-assessment assessment">
+                        <span class="black">4.5/</span>
+                        <span>5</span>
+                    </p>
+                </div>
+                
+                <p class="price">180$</p>
+            </li>
+
+            <li class="Same-item">
+                <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/Black Striped T-shirt.jpg') }}" width="295" height="298" alt="Black Striped T-shirt"></a>
+                <h3 class="clothes-name">Black Striped T-shirt</h3>
+                <div class="Same-item-mark">
+                    <ul class="Same-item-stars">
+                        <li class="Same-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        <li class="Same-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        <li class="Same-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        <li class="Same-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        <li class="Same-item-star last-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                    </ul>
+                    <p class="Same-item-assessment assessment">
+                        <span class="black">5.0/</span>
+                        <span>5</span>
+                    </p>
+                </div>
+                    
+                <div class="Same-item-prices prices">
+                    <p class="Same-item-pricesnow">120$</p>
+                    <p class="Same-item-priceswas">150$</p>
+                    <p class="Same-item-sale">-30%</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+{% endblock %}

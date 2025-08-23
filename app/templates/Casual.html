@@ -1,0 +1,324 @@
+{% extends "base.html" %}
+
+{% block title %}Shop.CO - Casual{% endblock %}
+
+{% block extra_styles %}
+<link href="{{ url_for('static', filename='css/styles/style3.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <nav class="main-breadcrumbs">
+        <a href="{{ url_for('main.home') }}">Home</a>
+        <a class="active" href="{{ url_for('main.Casual') }}">Casual</a>
+    </nav>
+
+    <div class="main-content">
+        <section class="main-filters">
+            <article class="filters-part1">
+                <h2>Filters</h2>
+                <img src="{{ url_for('static', filename='img/Filters_Grey.svg') }}" width="20" height="19" alt="icon of using filters">
+            </article> 
+            
+            <ul class="хуйня которую я не понимаю">
+                <!-- крч потом реализую -->
+            </ul>
+
+            <article class="filters-prices">
+                <h3>Price</h3>
+                <img class="active" src="{{ url_for('static', filename='img/Filters-arrow.svg') }}" width="12" height="6" alt="black arrow">
+                <label>
+                    50$<input type="range" name="filters-prices-range" min="50$" max="200$" step="1">200$
+                </label>
+            </article>
+
+            <article class="filters-colors">
+                <h3>Colors</h3>
+                <img class="active" src="{{ url_for('static', filename='img/Filters-arrow.svg') }}" width="12" height="6" alt="black arrow">
+                <ul class="filters-colors-list">
+                    <li class="colors-item-green"> 
+                        <div></div>
+                    </li>
+
+                    <li class="colors-item-green"> 
+                        <div></div>
+                    </li>
+
+                    <li class="colors-item-red"> 
+                        <div></div>
+                    </li>
+
+                    <li class="colors-item-yellow"> 
+                        <div></div>
+                    </li>
+
+                    <li class="colors-item-orange"> 
+                        <div></div> 
+                    </li>
+
+                    <li class="colors-item-lightBlue"> 
+                        <div></div>
+                    </li>
+
+                    <li class="colors-item-darkBlue"> 
+                        <div></div>
+                    </li>
+
+                    <li class="colors-item-violet"> 
+                        <div></div>
+                    </li>
+
+                    <li class="colors-item-pink"> 
+                        <div></div>
+                    </li>
+
+                    <li class="colors-item-white"> 
+                        <div></div>
+                    </li>
+
+                    <li class="colors-item-black"> 
+                        <div></div>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="filters-sizes">
+                <h3>Styles</h3>
+                <img class="active" src="{{ url_for('static', filename='img/Filters-arrow.svg') }}" width="12" height="6" alt="black arrow">
+                <ul class="filters-sizes-list">
+                    <li class="filters-size">XX-Small</li>
+                    <li class="filters-size">X-Small</li>
+                    <li class="filters-size">Small</li>
+                    <li class="filters-size">Medium</li>
+                    <li class="filters-size active">Large</li>
+                    <li class="filters-size">X-Large</li>
+                    <li class="filters-size">XX-Large</li>
+                    <li class="filters-size">3X-Large</li>
+                    <li class="filters-size">4X-Large</li>
+                </ul>
+            </article>
+
+            <article class="filters-DressStyle">
+                <h3>Dress Style</h3>
+                <img class="active" src="{{ url_for('static', filename='img/Filters-arrow.svg') }}" width="12" height="6" alt="black arrow">
+                <ul class="Dress-Style-list">
+                    <!-- <li>Хуйня которую буду реализовывать потом</li> -->
+                </ul>
+            </article>
+
+            <a class="filters-button buttonBlack" href="#">
+                Apply Filter
+            </a>
+        </section>
+
+        <section class="main-Casual">
+            <div class="Casual-topPart">
+                <h1>Casual</h1>
+
+                <p>Showing 1-10 of 100 Products</p>
+
+                <div class="Casual-topPart-Sort">
+                    <label for="Casual-topPart-select">Sort by:</label>
+                    <select id="Casual-topPart-select">
+                        <option class="active" value="Most Popular">Most Popular</option>
+                        <option value="Have The Casual Reviews">Have The Casual Reviews</option>
+                        <option value="Not ussuall/Specical collections">Not ussuall/Specical collections</option>
+                    </select>
+                </div>
+            </div>
+
+            <ul class="Casual-list">
+                <li class="Casual-item">
+                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/Gradient Graphic T-shirt.jpg') }}" width="295" height="298" alt="Gradient Graphic T-shirt">
+                    <h3 class="clothes-name">Gradient Graphic T-shirt</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">3.5/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    
+                    <p class="price">145$</p>
+                </li>
+
+                <li class="Casual-item">
+                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/Polo with Tipping Details.jpg') }}" width="295" height="298" alt="Polo with Tipping Details"></a>
+                    <h3 class="clothes-name">Polo with Tipping Details</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">4.5/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    
+                    <p class=" price">180$</p>
+                </li>
+
+                <li class="Casual-item">
+                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/Black Striped T-shirt.jpg') }}" width="295" height="298" alt="Black Striped T-shirt"></a>
+                    <h3 class="clothes-name">Black Striped T-shirt</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star last-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">5.0/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+
+                    <div class="Casual-item-prices prices">
+                        <p class="Casual-item-pricesnow">120$</p>
+                        <p class="Casual-item-priceswas">150$</p>
+                        <p class="Casual-item-sale">-30%</p>
+                    </div>
+                </li>
+
+                <li class="Casual-item">
+                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/SKINNY FIT JEANS.jpg') }}" width="295" height="298" alt="Skinny Fit Jeans"></a>
+                    <h3 class="clothes-name">Skinny Fit Jeans</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">3.5/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    
+                    <div class="Casual-item-prices prices">
+                        <p class="Casual-item-pricesnow">240$</p>
+                        <p class="Casual-item-priceswas">260$</p>
+                        <p class="Casual-item-sale">-20%</p>
+                    </div>
+                </li>
+                
+                <li class="Casual-item">
+                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/CHECKERED SHIRT.jpg') }}" width="295" height="298" alt="Checkered Shirt"></a>
+                    <h3 class="clothes-name">Checkered Shirt</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">4.5/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+
+                    <p class="price">180$</p>
+                </li>
+
+                <li class="Casual-item">
+                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/Black Striped T-shirt.jpg') }}" width="295" height="298" alt="Slevve Striped T-shirt"></a>
+                    <h3 class="clothes-name">Slevve Striped T-shirt</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">4.5/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    
+                    <div class="Casual-item-prices prices">
+                        <p class="Casual-item-pricesnow">130$</p>
+                        <p class="Casual-item-priceswas">160$</p>
+                        <p class="Casual-item-sale">-30%</p>
+                    </div>
+                </li>
+
+                <li class="Casual-item">
+                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/VERTICAL STRIPED .jpg') }}" width="295" height="298" alt="Vertical Striped Shirt"></a>
+                    <h3 class="clothes-name">Vertical Striped Shirt</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star last-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">5.0/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+
+                    <div class="Casual-item-prices prices">
+                        <p class="Casual-item-pricesnow">212$</p>
+                        <p class="Casual-item-priceswas">232$</p>
+                        <p class="Casual-item-sale">-20%</p>
+                    </div>
+                </li>
+
+                <li class="Casual-item">
+                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/T-COURAGE GRAPHIC .jpg') }}" width="295" height="298" alt="Courage Graphic T-shirt"></a>
+                    <h3 class="clothes-name">Courage Graphic T-shirt</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star last-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">4.0/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    
+                    <p class="price">145$</p>
+                </li>
+                
+                <li class="Casual-item">
+                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/LOOSE FIT BERMUDA SHORTS.jpg') }}" width="295" height="298" alt="Loose Fit Bermuda Shorts"></a>
+                    <h3 class="clothes-name">Loose Fit Bermuda Shorts</h3>
+                    <div class="Casual-item-mark">
+                        <ul class="Casual-item-stars">
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            <li class="Casual-item-star last-star"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                        </ul>
+                        <p class="Casual-item-assessment assessment">
+                            <span class="black">3.0/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+
+                    <p class=" price">80$</p>
+                </li>
+            </ul>
+        </section>
+    </div>
+{% endblock %}
+
