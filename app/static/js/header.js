@@ -93,7 +93,7 @@ const data = {
       option.onclick = function(){
         input.value = item;
         customDatalist.classList.remove('show');
-        if (!optionsContainer.classList.contains('visible') && 
+        if (!optionsContainer.classList.contains('visible') &&  
         !headerNavLinks.classList.contains('visible') && 
         !headerNavSearch.classList.contains("visible")){
           header.style.marginBottom = "24px";

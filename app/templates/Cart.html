@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Shop.CO - Cart{% endblock %}
+{% block title %}Shop.CO - cart{% endblock %}
 
 {% block extra_styles %}
 <link href="{{ url_for('static', filename='css/styles/style4.css') }}" rel="stylesheet">
@@ -10,7 +10,7 @@
     <section class="hero section-special_margin">
         <nav class="hero-breadcrumbs">
             <a href="{{ url_for('main.home') }}">Home</a>
-            <a class="active" href="{{ url_for('main.Cart') }}">Cart</a>
+            <a class="active" href="{{ url_for('main.cart') }}">Cart</a>
         </nav>
 
         <h1>YOUR CART</h1>

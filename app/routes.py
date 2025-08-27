@@ -11,42 +11,42 @@ def home():
 def product():
     return render_template('product.html')
   
-@bp.route('/Casual')
-def Casual():
-    return render_template('Casual.html')
+@bp.route('/casual')
+def casual():
+    return render_template('casual.html')
 
-@bp.route('/Cart')
-def Cart(): 
-    return render_template('Cart.html')
+@bp.route('/cart')
+def cart(): 
+    return render_template('cart.html')
 
-@bp.route('/Men')
-def Men():
-    return render_template('Men.html')
+@bp.route('/men')
+def men():
+    return render_template('men.html')
 
-@bp.route('/Women')
-def Women():
-    return render_template('Women.html')
+@bp.route('/women')
+def women():
+    return render_template('women.html')
 
-@bp.route('/Unisex')
-def Unisex():
-    return render_template('Unisex.html')
+@bp.route('/unisex')
+def unisex():
+    return render_template('unisex.html')
 
-@bp.route('/Combined')
-def Combined():
-    return render_template('Combined.html')
+@bp.route('/combined')
+def combined():
+    return render_template('combined.html')
 
-@bp.route('/Sales')
-def Sales():
-    return render_template('Sales.html')
+@bp.route('/sales')
+def sales():
+    return render_template('sales.html')
 
-@bp.route('/Novelty')
-def Novelty():
-    return render_template('Novelty.html')
+@bp.route('/novelty')
+def novelty():
+    return render_template('novelty.html')
 
-@bp.route('/Brands')
-def Brands():
-    return render_template('Brands.html')
+@bp.route('/brands')
+def brands():
+    return render_template('brands.html')
 
-@bp.route('/Account')
-def Account():
-    return render_template('Account.html')
+@bp.route('/account')
+def account():
+    return render_template('account.html')

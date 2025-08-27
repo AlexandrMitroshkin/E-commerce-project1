@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Shop.CO - T-shirt{% endblock %}
+{% block title %}Shop.CO - one_Life_Graphic_T_shirt{% endblock %}
 
 {% block extra_styles %}
     <link href="{{ url_for('static', filename='css/styles/style2.css') }}" rel="stylesheet">
@@ -11,7 +11,7 @@
         <a href="{{ url_for('main.home') }}">Home</a>
                                                             <!-- при завершении шаблонизации удалить SHOP элемент -->
         <a href="#">Shop</a>
-        <a href="{{ url_for('main.Men') }}">Men</a>
+        <a href="{{ url_for('main.men') }}">Men</a>
         <a class="active" href="{{ url_for('main.product.html') }}">T-shirts</a>
     </nav>
 
