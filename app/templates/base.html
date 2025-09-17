@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Shop.CO{% endblock %}</title>
 
+    <link href="{{ url_for('static', filename='css/base.css') }}" rel="stylesheet">
+
     {% block styles %}
-        <link href="{{ url_for('static', filename='css/styles/common-styles.css') }}" rel="stylesheet">
-        <link href="{{ url_for('static', filename='css/grids/common-grid.css')}}" rel="stylesheet">
+        <link href="{{ url_for('static', filename='css/common.css') }}" rel="stylesheet">
     {% endblock %}
 
     {% block extra_styles %}{% endblock  %}
@@ -217,5 +218,4 @@
     
     {% block extra_scripts %}{% endblock %}
 </body>
-</html>
 </html>

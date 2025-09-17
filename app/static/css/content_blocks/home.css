@@ -501,38 +501,6 @@
     }
 }
 
-/*                                      разметка index1 при не менее 380px , но не более 1180px*/
-
-
-/* @media(max-width:1180px){
-    .hero-content{
-        background-position:80%;
-        padding:0;
-        background-image:none;
-        margin:0 auto;
-        height:1000px;
-        width:558px;
-    }
-
-    .hero-black-star1{
-        display:none;
-    }
-
-    .hero-black-star2{
-        display:none;
-    }
-}  */
-
-
-
-
-
-
-
-
-
-
-
 /*                                      разметка index1 при не менее 400px , но не более 1180px*/
 
 
@@ -545,3 +513,91 @@
     }
 
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*                              section  hero */
+
+h1{
+  font-size:64px ;
+  line-height:64px;
+  text-align: left;
+}
+
+.hero-button{
+  font-size: 16px;
+  line-height: 21.6px;
+  font-weight: 500;
+  color:rgba(240, 240, 240, 1) ;
+  list-style: none;
+  text-decoration:none;
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 62px;
+}
+
+.hero-inf-item h2{
+  font-size: 40px;
+  line-height: 54px;
+}
+
+
+/*                                         section  brends */
+
+.brends{
+  background-color:rgba(0, 0, 0, 1) ;
+}
+
+.brends-list{
+  list-style: none;
+}
+
+
+                                        /* section Styles */
+
+
+.Styles{
+  background-color: rgba(240, 240, 240, 1);
+}
+
+.Styles h2{
+  font-size: 36px;
+}
+
+/* @media(max-width:1180px){
+  h1{
+    font-size:36px ;
+    line-height:34px;
+    text-align: left;
+  }
+
+
+  .hero-inf-item h2{
+    font-size: 40px;
+    line-height: 54px;
+  }
+
+  .hero-text p{
+    font-size:14px;
+    line-height:20px;
+}
+
+} */

@@ -1,0 +1,214 @@
+@font-face {
+  font-family: 'Satoshi';
+  font-weight: normal;
+  font-style: normal;
+  src: local("Satoshi"),
+       url(../fonts/Satoshi-Regular.woff2) format(woff2),
+}
+
+@font-face {
+  font-family: 'Integral CF';
+  font-weight: normal;
+  font-style: normal;
+  src: local("Integral CF"),
+       url(../fonts/IntegralCF-Regular.woff2) format(woff2)
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color:rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 1);
+  font-family:"Satoshi";
+}
+
+*{
+    box-sizing: border-box;
+}
+
+h1{
+  font-family:"Integral CF";
+}
+
+h1, h2, h3, h4 , .price , .price_now{
+  color: rgba(0, 0, 0, 1);
+} 
+
+.H2-IntegralFont{
+  font-family:"Integral CF";
+  font-size:48px ;
+  line-height: 57.6px;
+}
+
+.black{
+  color: rgba(0, 0, 0, 1);
+}
+
+.clothes-name{
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 700;
+}
+
+.assessment{
+  font-size: 14px;
+  line-height: 18px;
+  margin-right: auto;
+}
+
+ul , li{
+  padding: 0;
+}
+
+.prices{
+  width: 200px;
+  height: 32px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  margin-right:auto;
+}
+
+.price , .price_now , .price_was{
+  font-size: 24px;
+  line-height: 32.4px;
+  font-weight: 700;
+}
+
+.price_was{
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color:rgba(0, 0, 0, 0.4);
+  color:rgba(0, 0, 0, 0.4);
+}
+
+
+.price_sale{
+  color: rgba(255, 51, 51, 1);
+  background-color: rgba(255, 51, 51, 0.1);
+  border-radius: 62px;
+  font-size: 12px;
+  line-height: 16.2px;
+  width: 56px;
+  height: 28px;
+  padding:6px 13.5px
+}
+
+input::placeholder{
+  font-size: 16px;
+  line-height: 21.6px;
+  color:rgba(0, 0, 0, 0.4);
+}
+
+.button{
+  line-height: 21.6px;
+  font-weight: 500;
+  text-decoration:none ;
+  color:rgba(0, 0, 0, 1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 62px;
+}
+
+.buttonBlack{
+  line-height: 21.6px;
+  font-weight: 500;
+  text-decoration:none ;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 1);
+  border-radius: 62px;
+}
+
+.rewiew-name{
+  font-size: 20px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.clothes-img{
+  border-radius:20px;
+}
+
+
+
+.half {
+  width: 8.79px !important;
+  margin:0 !important;
+}
+
+.half img {
+  clip-path: inset(0 50% 0 0);
+  width: 18.49px;
+  height: 16.72px;
+  margin: 0;
+}
+
+.last-star{
+  margin:0 !important;
+}
+
+.wrapper-clothes-img{
+  display: block;
+  width:295px;
+  height:298px;
+  margin-bottom:16px;
+}
+
+                                        /* стили при ширине экрана менее 400px */
+@media (max-width:400px){
+  body {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .H2-IntegralFont{
+    font-size:32px ;
+    line-height: 38.4px;
+  }
+
+  .clothes-name{
+    font-size: 16px;
+    line-height: 21.6px;
+    font-weight: 700;
+  }
+
+  .assessment{
+    font-size: 12px;
+    line-height: 16.2px;
+  }
+
+  .price , .prices p:first-child , .prices p:nth-child(2){
+    font-size: 20px;
+    line-height: 27px;
+  }
+
+  .prices p:last-child{
+    font-size: 10px;
+    line-height: 13.5px;
+  }
+
+  input::placeholder{
+    font-size: 14px;
+    line-height: 18.9px;
+  }
+
+  .button{
+    font-size:14px;
+    line-height:18.9px;
+    font-weight: 500;
+  }
+
+  .buttonBlack{
+    line-height: 21.6px;
+    font-size:14px;
+    line-height:18.9px;
+  }
+
+  .rewiew-name{
+    font-size:16px;
+    line-height:22px;
+    font-weight: 700;
+  }
+}
+

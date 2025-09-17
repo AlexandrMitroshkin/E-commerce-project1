@@ -3,8 +3,7 @@
 {% block title %}Shop.CO - home{% endblock %}
 
 {% block extra_styles %}
-    <link href="{{ url_for('static', filename='css/styles/style1.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/grids/grid1.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/content_blocks/home.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
@@ -93,9 +92,9 @@
                     </p>
                 </div>
                 <div class="Arrivals-item-prices prices">
-                    <p>240$</p>
-                    <p>260$</p>
-                    <p>-20%</p>
+                    <p class="price_now">240$</p>
+                    <p class="price_was">260$</p>
+                    <p class="price_sale">-20%</p>
                 </div>
             </li>
             
@@ -134,10 +133,11 @@
                         <span>5</span>
                     </p>
                 </div>
+
                 <div class="Arrivals-item-prices prices">
-                    <p>130$</p>
-                    <p>160$</p>
-                    <p>-30%</p>
+                    <p class="price_now">130$</p>
+                    <p class="price_was">160$</p>
+                    <p class="price_sale">-30%</p>
                 </div>
             </li>
         </ul>
@@ -165,9 +165,9 @@
                     </p>
                 </div>
                 <div class="prices">
-                    <p>212$</p>
-                    <p>232$</p>
-                    <p class="Bests-item-sale">-20%</p>
+                    <p class="price_now">212$</p>
+                    <p class="price_was">232$</p>
+                    <p class="price_sale">-20%</p>
                 </div>
             </li>
 
