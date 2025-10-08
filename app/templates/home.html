@@ -9,16 +9,8 @@
 {% block content %}
     <section class="hero"> 
         <div class="hero-content">
-            <div class="hero-title-wrapper">
-                <h1>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
-            </div>
-
-            <img class="hero-black-star1" src="{{ url_for('static', filename='img/Black_star.svg') }}" width="56" height="56" alt="black star">
-            <img class="hero-black-star2" src="{{ url_for('static', filename='img/Black_star.svg') }}" width="104" height="104" alt="black star">
-
-            <div class="hero-text">  
-                <p>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
-            </div>
+            <h1>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
+            <p class="hero-text">Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
             <a class="hero-button buttonBlack" href="#">Shop Now</a>
 
             <article class="hero-inf"> 
@@ -35,21 +27,20 @@
                     <p>Happy Customers</p>
                 </div>
             </article>
-
-            <div class="hero-couple_ForsmallerVersion">
-                <img class="hero-black-star1-smallerVersion" src="{{ url_for('static', filename='img/Black_star.svg') }}" width="56" height="56" alt="black star">
-                <img class="hero-black-star2-smallerVersion" src="{{ url_for('static', filename='img/Black_star.svg') }}" width="104" height="104" alt="black star">
-            </div>
         </div>
+        <img class="hero-black-star1-smallerVersion" src="{{ url_for('static', filename='img/Black_star.svg') }}" width="56" height="56" alt="black star">
+        <img class="hero-black-star2-smallerVersion" src="{{ url_for('static', filename='img/Black_star.svg') }}" width="104" height="104" alt="black star">
+        <img class="site-logoImg1" src="{{ url_for('static', filename='img/SHOP.CO.svg') }}" width="160" height="22" alt="Logo of company">
+        <img class="site-logoImg2" src="{{ url_for('static', filename='img/SHOP.CO.svg') }}" width="160" height="22" alt="Logo of company">
     </section>
 
     <section class="brends">
         <ul class="brends-list">
             <li class="brends-list-item"><a href="#"><img src="{{ url_for('static', filename='img/Versage.svg') }}" width="166" height="33" alt="Logo of Versage"></a></li>
             <li class="brends-list-item"><a href="#"><img src="{{ url_for('static', filename='img/Zara.svg') }}" width="91" height="38" alt="Logo of Zara"></a></li>
-            <li class="brends-list-item"><a href="#"><img src="{{ url_for('static', filename='img/Gucci.svg') }}" width="156" height="32" alt="Logo of Gucci"></a></li>
+            <li class="brends-list-item brend-without-margin"><a href="#"><img src="{{ url_for('static', filename='img/Gucci.svg') }}" width="156" height="32" alt="Logo of Gucci"></a></li>
             <li class="brends-list-item"><a href="#"><img src="{{ url_for('static', filename='img/Prada.svg') }}" width="194" height="31" alt="Logo of Prada"></a></li>
-            <li class="brends-list-item"><a href="#"><img src="{{ url_for('static', filename='img/Calvin-clien.svg') }}" width="207" height="33" alt="Logo of Calvin Clien"></a></li>
+            <li class="brends-list-item brend-without-margin"><a href="#"><img src="{{ url_for('static', filename='img/Calvin-clien.svg') }}" width="207" height="33" alt="Logo of Calvin Clien"></a></li>
         </ul>
     </section>
 
