@@ -1,4 +1,4 @@
-/* ==================== GLOBAL STYLES ==================== */
+                                        /* ==================== FONTS ==================== */
 @font-face {
   font-family: 'Satoshi';
   font-weight: normal;
@@ -15,7 +15,7 @@
        url(../fonts/IntegralCF-Regular.woff2) format(woff2)
 }
 
-/* ==================== BASE TYPOGRAPHY ==================== */
+                                    /* ==================== BASE TYPOGRAPHY ==================== */
 body {
   margin: 0;
   padding: 0;
@@ -30,7 +30,7 @@ body {
   box-sizing: border-box;
 }
 
-/* ==================== HEADINGS & TEXT ==================== */
+                                    /* ==================== HEADINGS & TEXT ==================== */
 h1 {
   font-family: "Integral CF";
 }
@@ -60,54 +60,24 @@ h1, h2, h3, h4, .price, .price_now {
   line-height: 18px;
 }
 
-/* ==================== LISTS ==================== */
+                                    /* ==================== LISTS ==================== */
 ul, li {
   padding: 0;
   list-style: none;
 }
 
-/* ==================== PRICE COMPONENTS ==================== */
-.price-container {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.price, .price_now, .price_was {
-  font-size: 24px;
-  line-height: 32.4px;
-  font-weight: 700;
-}
-
-.price_was {
-  text-decoration: line-through;
-  text-decoration-thickness: 2px;
-  text-decoration-color: rgba(0, 0, 0, 0.4);
-  color: rgba(0, 0, 0, 0.4);
-}
-
-.price_sale {
-  color: rgba(255, 51, 51, 1);
-  background-color: rgba(255, 51, 51, 0.1);
-  border-radius: 62px;
-  font-size: 12px;
-  line-height: 16.2px;
-  padding: 6px 13.5px;
-}
-
-/* ==================== FORM ELEMENTS ==================== */
+                                  /* ==================== FORM ELEMENTS ==================== */
 input::placeholder {
   font-size: 16px;
   line-height: 21.6px;
   color: rgba(0, 0, 0, 0.4);
 }
 
-/* ==================== BUTTONS ==================== */
+                                  /* ==================== BUTTONS ==================== */
 .button {
-  display: inline-flex;
+  display:flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
   font-size: 16px;
   line-height: 21.6px;
   font-weight: 500;
@@ -139,22 +109,19 @@ input::placeholder {
   transform: translateY(-1px);
 }
 
-/* ==================== REVIEWS ==================== */
+                                  /* ==================== REVIEWS ==================== */
 .rewiew-name {
   font-size: 20px;
   line-height: 22px;
   font-weight: 700;
 }
 
-/* ==================== IMAGES ==================== */
+                                  /* ==================== IMAGES ==================== */
 .clothes-img {
   border-radius: 20px;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
-/* ==================== RATING STARS ==================== */
+                                  /* ==================== RATING STARS ==================== */
 .rating-stars {
   display: flex;
   gap: 2px;
@@ -179,5 +146,115 @@ input::placeholder {
 
 .last-star {
   margin: 0;
+}
+
+                                    /*==================  ProductSections =================  */
+
+.ProductSection{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+
+.ProductSection h2{
+  margin:0 auto 55px auto;
+}
+
+.ProductList{
+  max-width: 1440px;
+  height: 100%;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  row-gap: 30px;
+  column-gap: 20px;
+  margin: 0 auto 36px auto;
+}
+
+.ProductList-item{
+  display: flex;
+  flex-direction: column;
+  width: 290px;
+  height: 403px;
+}
+
+.wrapper-clothes-img{
+  margin-bottom: 16px;
+}
+
+.clothes-name{
+  margin:0 0 8px 0;
+}
+
+.ProductList-item-mark{
+  width: 100%;
+  height: 19px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:0 auto 8px 0;
+}
+
+.ProductList-item-stars{
+  display: flex;
+  gap:5.3px;
+}
+
+.ProductList-item-assessment{
+  display: flex;
+  margin: 0 auto 0 0;
+}
+
+.price{
+  margin: 0;
+}
+
+.price, .price_now, .price_was {
+  font-size: 24px;
+  line-height: 32.4px;
+  font-weight: 700;
+}
+
+.price_was {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.price_sale {
+  color: rgba(255, 51, 51, 1);
+  background-color: rgba(255, 51, 51, 0.1);
+  border-radius: 62px;
+  font-size: 12px;
+  padding: 6px 13.5px;
+}
+
+.ProductList-item-prices{
+  display: flex;
+  column-gap: 10px;
+}
+
+.ProductList-item-prices p{
+  margin: 0;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ProductList-button{  
+  width: 218px;
+  height: 52px;
+  margin:0 auto;
+}
+
+
+                                  /*=================== MEDIA QUERIES ====================== */
+
+
+@media(max-width:1280px){
+
 }
 
