@@ -1,15 +1,17 @@
 from flask import Blueprint, render_template
-from app.models import Product
+# from app.models import Product
 
 bp = Blueprint('main', __name__)
+
+# Blueprint у меня сдесь плохо использован подкорректуй
 
 @bp.route('/')
 def home():
     return render_template('home.html')
 
 @bp.route('/product/<int:id>')
-def product():
-    return render_template('product.html')
+def product(id):
+    return render_template('product.html', product_id=id)
   
 @bp.route('/casual')
 def casual():

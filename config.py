@@ -1,5 +1,8 @@
 import os
 
+
+# Я плохо  помню что это 
+
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'your-secret-key-here'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///shop.db'
