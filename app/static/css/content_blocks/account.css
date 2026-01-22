@@ -1,0 +1,384 @@
+/* ============ ACCOUNT PAGE STYLES ============ */
+
+.account-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    min-height: 80vh;
+}
+
+.account-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.account-header h1 {
+    font-family: "Integral CF";
+    font-size: 48px;
+    line-height: 57.6px;
+    margin-bottom: 16px;
+}
+
+.account-welcome {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Основной контент аккаунта */
+.account-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* Панель профиля */
+.profile-panel {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.profile-info h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: rgba(0, 0, 0, 1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 10px;
+}
+
+.info-item {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.info-label {
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.8);
+    min-width: 120px;
+    font-size: 16px;
+}
+
+.info-value {
+    color: rgba(0, 0, 0, 1);
+    font-size: 16px;
+    flex: 1;
+}
+
+.member-since {
+    background-color: rgba(240, 240, 240, 1);
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-top: 30px;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* Действия аккаунта */
+.account-actions {
+    margin-top: 30px;
+}
+
+.action-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
+    border: none;
+    border-radius: 62px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: "Satoshi";
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.action-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-2px);
+}
+
+.action-button.secondary {
+    background-color: white;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.action-button.secondary:hover {
+    background-color: rgba(240, 240, 240, 1);
+}
+
+/* Секция заказов */
+.orders-panel {
+    flex: 2;
+    min-width: 300px;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.orders-header h2 {
+    font-size: 28px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.orders-count {
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* Список заказов */
+.order-list {
+    margin-bottom: 40px;
+}
+
+.order-item {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.order-item:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.order-id {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1);
+}
+
+.order-date {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+}
+
+.order-status {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.status-processing {
+    background-color: rgba(255, 243, 205, 1);
+    color: rgba(133, 100, 4, 1);
+}
+
+.status-delivered {
+    background-color: rgba(212, 237, 218, 1);
+    color: rgba(21, 87, 36, 1);
+}
+
+.order-details {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.order-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.order-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.order-info {
+    flex: 1;
+}
+
+.order-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.order-price {
+    color: rgba(0, 0, 0, 1);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.no-orders {
+    text-align: center;
+    padding: 40px 20px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.no-orders-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+/* Бонусы и скидки */
+.bonus-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    margin-top: 40px;
+}
+
+.bonus-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.bonus-icon {
+    font-size: 48px;
+}
+
+.bonus-text h3 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+}
+
+.bonus-text p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* ============ АДАПТИВНОСТЬ ============ */
+
+/* Планшеты (768px - 1024px) */
+@media (max-width: 1024px) {
+    .account-section {
+        padding: 40px 20px;
+    }
+    
+    .account-header h1 {
+        font-size: 40px;
+        line-height: 48px;
+    }
+    
+    .account-content {
+        gap: 30px;
+    }
+    
+    .profile-panel,
+    .orders-panel {
+        padding: 25px;
+    }
+}
+
+/* Большие мобильные (576px - 768px) */
+@media (max-width: 768px) {
+    .account-section {
+        padding: 30px 15px;
+    }
+    
+    .account-header h1 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+    
+    .account-welcome {
+        font-size: 18px;
+    }
+    
+    .account-content {
+        flex-direction: column;
+    }
+    
+    .profile-panel,
+    .orders-panel {
+        width: 100%;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .info-label {
+        margin-bottom: 5px;
+    }
+    
+    .order-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .order-image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Малые мобильные (до 576px) */
+@media (max-width: 576px) {
+    .account-section {
+        padding: 20px 10px;
+    }
+    
+    .account-header h1 {
+        font-size: 28px;
+        line-height: 34px;
+    }
+    
+    .profile-panel,
+    .orders-panel {
+        padding: 20px;
+    }
+    
+    .profile-info h2,
+    .orders-header h2 {
+        font-size: 24px;
+    }
+    
+    .action-button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    
+    .bonus-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

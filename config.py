@@ -4,6 +4,6 @@ import os
 # Я плохо  помню что это 
 
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'your-secret-key-here'
+    SECRET_KEY = '1NZqsu3leV43JS4o6VlY'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///shop.db'
     SQLALCHEMY_TRACK_MODIFICATIONS = False

@@ -1,7 +1,110 @@
 {% extends "base.html" %}
 
-{% block title %}Shop.CO - account{% endblock %}
+{% block title %}Shop.CO - My Account{% endblock %}
+
+{% block extra_styles %}
+<link href="{{ url_for('static', filename='css/content_blocks/account.css') }}" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
-    <h1>Account </h1>
- {% endblock %}
+<section class="account-section">
+    <!-- Заголовок -->
+    <div class="account-header">
+        <h1>My Account</h1>
+        <p class="account-welcome">Welcome back, {{ user.username }}! Here's your personal dashboard.</p>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="account-content">
+        <!-- Левая панель: Профиль -->
+        <div class="profile-panel">
+            <div class="profile-info">
+                <h2>Profile Information</h2>
+                
+                <div class="info-item">
+                    <div class="info-label">Username:</div>
+                    <div class="info-value">{{ user.username }}</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Email:</div>
+                    <div class="info-value">{{ user.email }}</div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-label">Account ID:</div>
+                    <div class="info-value">#{{ user.id }}</div>
+                </div>
+                
+                <div class="member-since">
+                    Member since: {{ user.created_at.strftime('%B %d, %Y') }}
+                </div>
+            </div>
+
+            <!-- Действия -->
+            <div class="account-actions">
+                <a href="{{ url_for('main.home') }}" class="action-button">
+                    Continue Shopping
+                </a>
+                <a href="{{ url_for('main.cart') }}" class="action-button secondary">
+                    View Cart
+                </a>
+                <a href="{{ url_for('main.logout') }}" class="action-button secondary">
+                    Logout
+                </a>
+            </div>
+        </div>
+
+        <!-- Правая панель: Заказы -->
+        <div class="orders-panel">
+            <div class="orders-header">
+                <h2>Order History</h2>
+                <div class="orders-count">0 orders</div>
+            </div>
+
+            <div class="order-list">
+                <!-- Если есть заказы -->
+                <!-- 
+                <div class="order-item">
+                    <div class="order-header">
+                        <div class="order-id">Order #1001</div>
+                        <div class="order-date">January 15, 2024</div>
+                        <div class="order-status status-delivered">Delivered</div>
+                    </div>
+                    <div class="order-details">
+                        <div class="order-image">
+                            <img src="{{ url_for('static', filename='img/T-COURAGE GRAPHIC.jpg') }}" alt="Product">
+                        </div>
+                        <div class="order-info">
+                            <div class="order-name">Courage Graphic T-shirt</div>
+                            <div class="order-price">$145.00</div>
+                        </div>
+                    </div>
+                </div>
+                -->
+                
+                <!-- Если нет заказов -->
+                <div class="no-orders">
+                    <div class="no-orders-icon">🛒</div>
+                    <h3>No Orders Yet</h3>
+                    <p>You haven't placed any orders yet. Start shopping to see your order history here!</p>
+                    <a href="{{ url_for('main.home') }}" class="action-button" style="margin-top: 20px;">
+                        Browse Products
+                    </a>
+                </div>
+            </div>
+
+            <!-- Бонусный раздел -->
+            <div class="bonus-section">
+                <div class="bonus-content">
+                    <div class="bonus-icon">🎁</div>
+                    <div class="bonus-text">
+                        <h3>Exclusive Member Benefits</h3>
+                        <p>As a registered member, you get early access to sales, special discounts, and free shipping on orders over $100.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

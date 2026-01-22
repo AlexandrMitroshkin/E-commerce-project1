@@ -16,13 +16,27 @@
 <body>
     <header id="header">
         <article class="header-register">
-            <p>Sign up and get 20% off to your first order. <a class="header-register-link" href="#">Sign Up Now</a></p>
+            {% if session.get('user_id') %}
+                <!-- ЕСЛИ ПОЛЬЗОВАТЕЛЬ ВОШЁЛ -->
+                <p>Welcome, {{ session.username }}! 
+                    <a class="header-register-link" href="{{ url_for('main.account') }}">
+                        My Account
+                    </a>
+                </p>
+            {% else %}
+                <!-- ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ВОШЁЛ -->
+                <p>Sign up and get 20% off to your first order. 
+                    <a class="header-register-link" href="{{ url_for('main.register') }}">
+                        Sign Up Now
+                    </a>
+                </p>
+            {% endif %}
             
             <button class="header-register-close">
                 <img src="{{ url_for('static', filename='img/white_closing_icon.svg') }}" width="13" height="13" alt="close">
             </button>
         </article>
-
+        
         <article class="header-content">
             <nav class="header-nav">
 
@@ -45,7 +59,7 @@
                                 <a class="option" href="{{url_for('main.men')}}">Men</a>
                                 <a class="option" href="{{url_for('main.women')}}">Women</a>
                                 <a class="option" href="{{url_for('main.unisex')}}">Unisex</a>
-                                <a class="option" href="{{ url_for('main.product', id=1) }}">Product</a>
+                                <a class="option" href="{{ url_for('main.product', id=1) }}">T-shirt1</a>
                             </div>
                         </div>
                     </li>
