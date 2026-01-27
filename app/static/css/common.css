@@ -251,6 +251,111 @@ input::placeholder {
 }
 
 
+
+/*                                                    CategoryPage */
+
+
+.CategoryPage{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+
+.CategoryPage h2{
+  margin:0 auto 55px auto;
+}
+
+.Category{
+  max-width: 1440px;
+  height: 100%;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  row-gap: 30px;
+  column-gap: 20px;
+  margin: 0 auto 36px auto;
+}
+
+.Category-item{
+  display: flex;
+  flex-direction: column;
+  width: 290px;
+  height: 403px;
+}
+
+.wrapper-clothes-img{
+  margin-bottom: 16px;
+}
+
+.clothes-name{
+  margin:0 0 8px 0;
+}
+
+.Category-item-mark{
+  width: 100%;
+  height: 19px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:0 auto 8px 0;
+}
+
+.Category-item-stars{
+  display: flex;
+  gap:5.3px;
+}
+
+.Category-item-assessment{
+  display: flex;
+  margin: 0 auto 0 0;
+}
+
+.price{
+  margin: 0;
+}
+
+.price, .price_now, .price_was {
+  font-size: 24px;
+  line-height: 32.4px;
+  font-weight: 700;
+}
+
+.price_was {
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.price_sale {
+  color: rgba(255, 51, 51, 1);
+  background-color: rgba(255, 51, 51, 0.1);
+  border-radius: 62px;
+  font-size: 12px;
+  padding: 6px 13.5px;
+}
+
+.Category-item-prices{
+  display: flex;
+  column-gap: 10px;
+}
+
+.Category-item-prices p{
+  margin: 0;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.Category-button{  
+  width: 218px;
+  height: 52px;
+  margin:0 auto;
+}
+
+
                                   /*=================== MEDIA QUERIES ====================== */
 
 
