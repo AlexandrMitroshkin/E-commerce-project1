@@ -141,11 +141,14 @@ input::placeholder {
   clip-path: inset(0 50% 0 0);
   width: 18px;
   height: 18px;
-  margin-left: -9px;
 }
 
 .last-star {
   margin: 0;
+}
+
+.rating-number{
+  margin-left:9px;
 }
 
                                     /*==================  ProductSections =================  */

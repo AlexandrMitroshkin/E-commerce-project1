@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Server Error{% endblock %}
+
+{% block content %}
+<div style="text-align: center; padding: 100px 20px;">
+    <h1>500 - Internal Server Error</h1>
+    <p>Something went wrong on our end. Please try again later.</p>
+    <a href="{{ url_for('main.home') }}" class="buttonBlack">Go Home</a>
+</div>
+{% endblock %}

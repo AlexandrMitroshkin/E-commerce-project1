@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Shop.CO - {{ category_name }}{% endblock %}
+
+{% block extra_styles %}
+<link href="{{ url_for('static', filename='css/content_blocks/casual.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <nav class="main-breadcrumbs">
+        <a href="{{ url_for('main.home') }}">Home</a>
+        <a class="active" href="{{ url_for('main.category', category_name=category_slug) }}">{{ category_name }}</a>
+    </nav>
+
+    <div class="main-content">
+        <!-- Фильтры (пока упрощённые) -->
+        <section class="main-filters">
+            <article class="filters-part1">
+                <h2>Filters</h2>
+                <img src="{{ url_for('static', filename='img/Filters_Grey.svg') }}" width="20" height="19" alt="Filters">
+            </article>
+            
+            <!-- Простые фильтры -->
+            <div class="simple-filters">
+                <p>Price Range</p>
+                <input type="range" min="0" max="500" value="250" class="price-slider">
+                <p>Colors</p>
+                <div class="color-filters">
+                    <span class="color-dot" style="background: #000;"></span>
+                    <span class="color-dot" style="background: #fff; border: 1px solid #ccc;"></span>
+                    <span class="color-dot" style="background: #ff0000;"></span>
+                    <span class="color-dot" style="background: #00ff00;"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Основной контент -->
+        <section class="main-Casual">
+            <div class="Casual-topPart">
+                <h1>{{ category_name }}</h1>
+                <p>Showing {{ products|length }} of {{ total_count }} Products</p>
+                
+                <div class="Casual-topPart-Sort">
+                    <label for="Casual-topPart-select">Sort by:</label>
+                    <select id="Casual-topPart-select">
+                        <option class="active" value="Most Popular">Most Popular</option>
+                        <option value="rating">Highest Rating</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Список товаров -->
+            <ul class="Category">
+                {% for product in products %}
+                <li class="Category-item">
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=product.id) }}">
+                        <img class="clothes-img" 
+                             src="{{ url_for('static', filename='img/' + product.image) }}" 
+                             width="295" 
+                             height="298" 
+                             alt="{{ product.name }}">
+                    </a>
+                    
+                    <h3 class="clothes-name">{{ product.name }}</h3>
+                    
+                    <div class="Category-item-mark">
+                        <ul class="Category-item-stars">
+                            {% set full_stars = product.rating|int %}
+                            {% set has_half = product.rating - full_stars >= 0.5 %}
+                            
+                            {% for i in range(full_stars) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endfor %}
+                            
+                            {% if has_half %}
+                            <li class="half"><img src="{{ url_for('static', filename='img/Half_star.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endif %}
+<!--                             
+                            {% for i in range(5 - full_stars - (1 if has_half else 0)) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star" style="opacity: 0.3;"></li>
+                            {% endfor %} -->
+                        </ul>
+                        
+                        <p class="Category-item-assessment assessment">
+                            <span class="black">{{ "%.1f"|format(product.rating) }}/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    
+                    <div class="Category-item-prices">
+                        {% if product.old_price %}
+                        <p class="price_now">${{ "%.2f"|format(product.price) }}</p>
+                        <p class="price_was">${{ "%.2f"|format(product.old_price) }}</p>
+                        {% set discount = ((product.old_price - product.price) / product.old_price * 100)|int %}
+                        <p class="price_sale">-{{ discount }}%</p>
+                        {% else %}
+                        <p class="price">${{ "%.2f"|format(product.price) }}</p>
+                        {% endif %}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+{% endblock %}

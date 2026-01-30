@@ -11,7 +11,7 @@
         <div class="hero-content">
             <h1>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
             <p class="hero-text">Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
-            <a class="hero-button buttonBlack" href="#">Shop Now</a>
+            <a class="hero-button buttonBlack" href="{{ url_for('main.category', category_name='novelty') }}">Shop Now</a>
 
             <article class="hero-inf"> 
                 <div class="hero-inf-item"> 
@@ -50,7 +50,39 @@
 
             <ul class="ProductList">
                 <li class="ProductList-item">
-                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/T-TAPE DETAILS.jpg') }}" width="290" height="293" alt="T-shirt with Tape Details"></a> 
+                    {% if new_arrivals and new_arrivals|length > 0 %}
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=new_arrivals[0].id) }}">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/' + new_arrivals[0].image) }}" width="290" height="293" alt="{{ new_arrivals[0].name }}">
+                    </a> 
+                    <h3 class="clothes-name">{{ new_arrivals[0].name }}</h3>
+                    <div class="ProductList-item-mark">
+                        <ul class="ProductList-item-stars">
+                            {% set full_stars = new_arrivals[0].rating|int %}
+                            {% set has_half = new_arrivals[0].rating - full_stars >= 0.5 %}
+                            
+                            {% for i in range(full_stars) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endfor %}
+                            
+                            {% if has_half %}
+                            <li class="half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endif %}
+                            
+                            {% for i in range(5 - full_stars - (1 if has_half else 0)) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star" style="opacity: 0.3;"></li>
+                            {% endfor %}
+                        </ul>
+                        <p class="ProductList-item-assessment assessment">
+                            <span class="black">{{ "%.1f"|format(new_arrivals[0].rating) }}/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    <p class="price">${{ "%.2f"|format(new_arrivals[0].price) }}</p>
+                    {% else %}
+                    <!-- Заглушка если товаров нет -->
+                    <a class="wrapper-clothes-img" href="#">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/T-TAPE DETAILS.jpg') }}" width="290" height="293" alt="T-shirt with Tape Details">
+                    </a> 
                     <h3 class="clothes-name">T-shirt with Tape Details</h3>
                     <div class="ProductList-item-mark">
                         <ul class="ProductList-item-stars">
@@ -66,10 +98,54 @@
                         </p>
                     </div>
                     <p class="price">120$</p>
+                    {% endif %}
                 </li>
 
                 <li class="ProductList-item">
-                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/SKINNY FIT JEANS.jpg') }}" width="290" height="293" alt="Skinny Fit Jeans"></a>
+                    {% if new_arrivals and new_arrivals|length > 1 %}
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=new_arrivals[1].id) }}">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/' + new_arrivals[1].image) }}" width="290" height="293" alt="{{ new_arrivals[1].name }}">
+                    </a>
+                    <h3 class="clothes-name">{{ new_arrivals[1].name }}</h3>
+                    <div class="ProductList-item-mark">
+                        <ul class="ProductList-item-stars">
+                            {% set full_stars = new_arrivals[1].rating|int %}
+                            {% set has_half = new_arrivals[1].rating - full_stars >= 0.5 %}
+                            
+                            {% for i in range(full_stars) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endfor %}
+                            
+                            {% if has_half %}
+                            <li class="half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endif %}
+                            
+                            {% for i in range(5 - full_stars - (1 if has_half else 0)) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star" style="opacity: 0.3;"></li>
+                            {% endfor %}
+                        </ul>
+                        <p class="ProductList-item-assessment assessment">
+                            <span class="black">{{ "%.1f"|format(new_arrivals[1].rating) }}/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    
+                    {% if new_arrivals[1].old_price %}
+                    <div class="ProductList-item-prices prices">
+                        <p class="price_now">${{ "%.2f"|format(new_arrivals[1].price) }}</p>
+                        <p class="price_was">${{ "%.2f"|format(new_arrivals[1].old_price) }}</p>
+                        {% set discount = ((new_arrivals[1].old_price - new_arrivals[1].price) / new_arrivals[1].old_price * 100)|int %}
+                        <p class="price_sale">-{{ discount }}%</p>
+                    </div>
+                    {% else %}
+                    <p class="price">${{ "%.2f"|format(new_arrivals[1].price) }}</p>
+                    {% endif %}
+                    
+                    {% else %}
+                    <!-- Заглушка -->
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=2) }}">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/SKINNY FIT JEANS.jpg') }}" width="290" height="293" alt="Skinny Fit Jeans">
+                    </a>
                     <h3 class="clothes-name">Skinny Fit Jeans</h3>
                     <div class="ProductList-item-mark">
                         <ul class="ProductList-item-stars">
@@ -88,10 +164,43 @@
                         <p class="price_was">260$</p>
                         <p class="price_sale">-20%</p>
                     </div>
+                    {% endif %}
                 </li>
                 
                 <li class="ProductList-item">
-                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/CHECKERED SHIRT.jpg') }}" width="290" height="293" alt="Checkered Shirt"></a> 
+                    {% if new_arrivals and new_arrivals|length > 2 %}
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=new_arrivals[2].id) }}">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/' + new_arrivals[2].image) }}" width="290" height="293" alt="{{ new_arrivals[2].name }}">
+                    </a> 
+                    <h3 class="clothes-name">{{ new_arrivals[2].name }}</h3>
+                    <div class="ProductList-item-mark">
+                        <ul class="ProductList-item-stars">
+                            {% set full_stars = new_arrivals[2].rating|int %}
+                            {% set has_half = new_arrivals[2].rating - full_stars >= 0.5 %}
+                            
+                            {% for i in range(full_stars) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endfor %}
+                            
+                            {% if has_half %}
+                            <li class="half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endif %}
+                            
+                            {% for i in range(5 - full_stars - (1 if has_half else 0)) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star" style="opacity: 0.3;"></li>
+                            {% endfor %}
+                        </ul>
+                        <p class="ProductList-item-assessment assessment">
+                            <span class="black">{{ "%.1f"|format(new_arrivals[2].rating) }}/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    <p class="price">${{ "%.2f"|format(new_arrivals[2].price) }}</p>
+                    {% else %}
+                    <!-- Заглушка -->
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=3) }}">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/CHECKERED SHIRT.jpg') }}" width="290" height="293" alt="Checkered Shirt">
+                    </a> 
                     <h3 class="clothes-name">Checkered Shirt</h3>
                     <div class="ProductList-item-mark">
                         <ul class="ProductList-item-stars">
@@ -107,10 +216,54 @@
                         </p>
                     </div>
                     <p class="price">180$</p>
+                    {% endif %}
                 </li>
 
                 <li class="ProductList-item">
-                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/SLEEVE STRIPED.jpg') }}" width="290" height="293" alt="Slevve Striped T-shirt"></a> 
+                    {% if new_arrivals and new_arrivals|length > 3 %}
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=new_arrivals[3].id) }}">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/' + new_arrivals[3].image) }}" width="290" height="293" alt="{{ new_arrivals[3].name }}">
+                    </a> 
+                    <h3 class="clothes-name">{{ new_arrivals[3].name }}</h3>
+                    <div class="ProductList-item-mark">
+                        <ul class="ProductList-item-stars">
+                            {% set full_stars = new_arrivals[3].rating|int %}
+                            {% set has_half = new_arrivals[3].rating - full_stars >= 0.5 %}
+                            
+                            {% for i in range(full_stars) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endfor %}
+                            
+                            {% if has_half %}
+                            <li class="half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endif %}
+                            
+                            {% for i in range(5 - full_stars - (1 if has_half else 0)) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star" style="opacity: 0.3;"></li>
+                            {% endfor %}
+                        </ul>
+                        <p class="ProductList-item-assessment assessment">
+                            <span class="black">{{ "%.1f"|format(new_arrivals[3].rating) }}/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+
+                    {% if new_arrivals[3].old_price %}
+                    <div class="ProductList-item-prices prices">
+                        <p class="price_now">${{ "%.2f"|format(new_arrivals[3].price) }}</p>
+                        <p class="price_was">${{ "%.2f"|format(new_arrivals[3].old_price) }}</p>
+                        {% set discount = ((new_arrivals[3].old_price - new_arrivals[3].price) / new_arrivals[3].old_price * 100)|int %}
+                        <p class="price_sale">-{{ discount }}%</p>
+                    </div>
+                    {% else %}
+                    <p class="price">${{ "%.2f"|format(new_arrivals[3].price) }}</p>
+                    {% endif %}
+                    
+                    {% else %}
+                    <!-- Заглушка -->
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=4) }}">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/SLEEVE STRIPED.jpg') }}" width="290" height="293" alt="Slevve Striped T-shirt">
+                    </a> 
                     <h3 class="clothes-name">Sleve Striped T-shirt</h3>
                     <div class="ProductList-item-mark">
                         <ul class="ProductList-item-stars">
@@ -131,17 +284,61 @@
                         <p class="price_was">160$</p>
                         <p class="price_sale">-30%</p>
                     </div>
+                    {% endif %}
                 </li>
             </ul>
-            <a class="ProductList-button button" href="#">View All</a>
+            <a class="ProductList-button button" href="{{ url_for('main.category', category_name='novelty') }}">View All</a>
         </section>
 
         <section class="Bests ProductSection">
-            <h2 class="H2-IntegralFont">TOP  SELLING</h2>
+            <h2 class="H2-IntegralFont">TOP SELLING</h2>
 
             <ul class="ProductList">
                 <li class="ProductList-item">
-                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/VERTICAL STRIPED .jpg') }}" width="290" height="293" alt="Vertical Striped Shirt"></a> 
+                    {% if top_selling and top_selling|length > 0 %}
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=top_selling[0].id) }}">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/' + top_selling[0].image) }}" width="290" height="293" alt="{{ top_selling[0].name }}">
+                    </a> 
+                    <h3 class="clothes-name">{{ top_selling[0].name }}</h3>
+                    <div class="ProductList-item-mark">
+                        <ul class="ProductList-item-stars">
+                            {% set full_stars = top_selling[0].rating|int %}
+                            {% set has_half = top_selling[0].rating - full_stars >= 0.5 %}
+                            
+                            {% for i in range(full_stars) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endfor %}
+                            
+                            {% if has_half %}
+                            <li class="half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endif %}
+                            
+                            {% for i in range(5 - full_stars - (1 if has_half else 0)) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star" style="opacity: 0.3;"></li>
+                            {% endfor %}
+                        </ul>
+                        <p class="ProductList-item-assessment assessment">
+                            <span class="black">{{ "%.1f"|format(top_selling[0].rating) }}/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    
+                    {% if top_selling[0].old_price %}
+                    <div class="ProductList-item-prices">
+                        <p class="price_now">${{ "%.2f"|format(top_selling[0].price) }}</p>
+                        <p class="price_was">${{ "%.2f"|format(top_selling[0].old_price) }}</p>
+                        {% set discount = ((top_selling[0].old_price - top_selling[0].price) / top_selling[0].old_price * 100)|int %}
+                        <p class="price_sale">-{{ discount }}%</p>
+                    </div>
+                    {% else %}
+                    <p class="price">${{ "%.2f"|format(top_selling[0].price) }}</p>
+                    {% endif %}
+                    
+                    {% else %}
+                    <!-- Заглушка -->
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=5) }}">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/VERTICAL STRIPED .jpg') }}" width="290" height="293" alt="Vertical Striped Shirt">
+                    </a> 
                     <h3 class="clothes-name">Vertical Striped Shirt</h3>
                     <div class="ProductList-item-mark">
                         <ul class="ProductList-item-stars">
@@ -161,10 +358,43 @@
                         <p class="price_was">232$</p>
                         <p class="price_sale">-20%</p>
                     </div>
+                    {% endif %}
                 </li>
 
                 <li class="ProductList-item">
-                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/T-COURAGE GRAPHIC .jpg') }}" width="290" height="293" alt="Courage Graphic T-shirt"></a> 
+                    {% if top_selling and top_selling|length > 1 %}
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=top_selling[1].id) }}">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/' + top_selling[1].image) }}" width="290" height="293" alt="{{ top_selling[1].name }}">
+                    </a> 
+                    <h3 class="clothes-name">{{ top_selling[1].name }}</h3>
+                    <div class="ProductList-item-mark">
+                        <ul class="ProductList-item-stars">
+                            {% set full_stars = top_selling[1].rating|int %}
+                            {% set has_half = top_selling[1].rating - full_stars >= 0.5 %}
+                            
+                            {% for i in range(full_stars) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endfor %}
+                            
+                            {% if has_half %}
+                            <li class="half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endif %}
+                            
+                            {% for i in range(5 - full_stars - (1 if has_half else 0)) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star" style="opacity: 0.3;"></li>
+                            {% endfor %}
+                        </ul>
+                        <p class="ProductList-item-assessment assessment">
+                            <span class="black">{{ "%.1f"|format(top_selling[1].rating) }}/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    <p class="price">${{ "%.2f"|format(top_selling[1].price) }}</p>
+                    {% else %}
+                    <!-- Заглушка -->
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=6) }}">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/T-COURAGE GRAPHIC .jpg') }}" width="290" height="293" alt="Courage Graphic T-shirt">
+                    </a> 
                     <h3 class="clothes-name">Courage Graphic T-shirt</h3>
                     <div class="ProductList-item-mark">
                         <ul class="ProductList-item-stars">
@@ -179,10 +409,43 @@
                         </p>
                     </div>
                     <p class="price">145$</p>
+                    {% endif %}
                 </li>
                 
                 <li class="ProductList-item">
-                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/LOOSE FIT BERMUDA SHORTS.jpg') }}" width="290" height="293" alt="Loose Fit Bermuda Shorts"></a> 
+                    {% if top_selling and top_selling|length > 2 %}
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=top_selling[2].id) }}">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/' + top_selling[2].image) }}" width="290" height="293" alt="{{ top_selling[2].name }}">
+                    </a> 
+                    <h3 class="clothes-name">{{ top_selling[2].name }}</h3>
+                    <div class="ProductList-item-mark">
+                        <ul class="ProductList-item-stars">
+                            {% set full_stars = top_selling[2].rating|int %}
+                            {% set has_half = top_selling[2].rating - full_stars >= 0.5 %}
+                            
+                            {% for i in range(full_stars) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endfor %}
+                            
+                            {% if has_half %}
+                            <li class="half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endif %}
+                            
+                            {% for i in range(5 - full_stars - (1 if has_half else 0)) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star" style="opacity: 0.3;"></li>
+                            {% endfor %}
+                        </ul>
+                        <p class="ProductList-item-assessment assessment">
+                            <span class="black">{{ "%.1f"|format(top_selling[2].rating) }}/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    <p class="price">${{ "%.2f"|format(top_selling[2].price) }}</p>
+                    {% else %}
+                    <!-- Заглушка -->
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=7) }}">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/LOOSE FIT BERMUDA SHORTS.jpg') }}" width="290" height="293" alt="Loose Fit Bermuda Shorts">
+                    </a> 
                     <h3 class="clothes-name">Loose Fit Bermuda Shorts</h3>
                     <div class="ProductList-item-mark">
                         <ul class="ProductList-item-stars">
@@ -196,10 +459,43 @@
                         </p>
                     </div>
                     <p class="price">80$</p>
+                    {% endif %}
                 </li>
 
                 <li class="ProductList-item">
-                    <a class="wrapper-clothes-img" href="#"><img class="clothes-img" src="{{ url_for('static', filename='img/FADED SKINNY JEANS.jpg') }}" width="290" height="293" alt="Faded Skinny Jeans"></a> 
+                    {% if top_selling and top_selling|length > 3 %}
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=top_selling[3].id) }}">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/' + top_selling[3].image) }}" width="290" height="293" alt="{{ top_selling[3].name }}">
+                    </a> 
+                    <h3 class="clothes-name">{{ top_selling[3].name }}</h3>
+                    <div class="ProductList-item-mark">
+                        <ul class="ProductList-item-stars">
+                            {% set full_stars = top_selling[3].rating|int %}
+                            {% set has_half = top_selling[3].rating - full_stars >= 0.5 %}
+                            
+                            {% for i in range(full_stars) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endfor %}
+                            
+                            {% if has_half %}
+                            <li class="half"><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star"></li>
+                            {% endif %}
+                            
+                            {% for i in range(5 - full_stars - (1 if has_half else 0)) %}
+                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star" style="opacity: 0.3;"></li>
+                            {% endfor %}
+                        </ul>
+                        <p class="ProductList-item-assessment assessment">
+                            <span class="black">{{ "%.1f"|format(top_selling[3].rating) }}/</span>
+                            <span>5</span>
+                        </p>
+                    </div>
+                    <p class="price">${{ "%.2f"|format(top_selling[3].price) }}</p>
+                    {% else %}
+                    <!-- Заглушка -->
+                    <a class="wrapper-clothes-img" href="{{ url_for('main.product', id=8) }}">
+                        <img class="clothes-img" src="{{ url_for('static', filename='img/Faded Skinny Jeans.jpg') }}" width="290" height="293" alt="Faded Skinny Jeans">
+                    </a> 
                     <h3 class="clothes-name">Faded Skinny Jeans</h3>
                     <div class="ProductList-item-mark">
                         <ul class="ProductList-item-stars">
@@ -215,9 +511,10 @@
                         </p>
                     </div>
                     <p class="price">210$</p>
+                    {% endif %}
                 </li>
             </ul>
-            <a class="ProductList-button button" href="#">View All</a>    
+            <a class="ProductList-button button" href="{{ url_for('main.category', category_name='sales') }}">View All</a>    
         </section>
     </div>
 
@@ -226,16 +523,16 @@
 
         <ul class="Styles-list">
             <li class="Styles-item Casual-item">
-                <a href="#"><h2>Casual</h2></a>                    
+                <a href="{{ url_for('main.category', category_name='casual') }}"><h2>Casual</h2></a>                    
             </li>
             <li class="Styles-item Formal-item">
-                <a href="#"><h2>Formal</h2></a>                    
+                <a href="{{ url_for('main.category', category_name='men') }}?style=formal"><h2>Formal</h2></a>                    
             </li>
             <li class="Styles-item Party-item">
-                <a href="#"><h2>Party</h2></a>                    
+                <a href="{{ url_for('main.category', category_name='novelty') }}"><h2>Party</h2></a>                    
             </li>
             <li class="Styles-item Gym-item">
-                <a href="#"><h2>Gym</h2></a>
+                <a href="{{ url_for('main.category', category_name='casual') }}?style=gym"><h2>Gym</h2></a>
             </li>
         </ul>
     </section>

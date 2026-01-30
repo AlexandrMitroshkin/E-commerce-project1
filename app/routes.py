@@ -1,16 +1,78 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session
-from app.models import User, db
+from app.models import User, Product, db
 
 bp = Blueprint('main', __name__)
 
-# ===== ГЛАВНЫЕ СТРАНИЦЫ =====
+# ===== ГЛАВНАЯ СТРАНИЦА =====
 @bp.route('/')
 def home():
-    return render_template('home.html')
+    # Получаем товары для главной страницы
+    new_arrivals = Product.query.filter_by(category='men').limit(4).all()
+    top_selling = Product.query.filter_by(category='women').limit(4).all()
+    
+    return render_template('home.html', 
+                         new_arrivals=new_arrivals, 
+                         top_selling=top_selling)
 
+# ===== УНИВЕРСАЛЬНАЯ СТРАНИЦА КАТЕГОРИИ =====
+@bp.route('/category/<category_name>')
+def category(category_name):
+    # Имена категорий для отображения
+    display_names = {
+        'men': 'Men',
+        'women': 'Women', 
+        'casual': 'Casual',
+        'unisex': 'Unisex',
+        'novelty': 'New Arrivals',
+        'sales': 'Sale'
+    }
+    
+    display_name = display_names.get(category_name, category_name.capitalize())
+    
+    # Для распродажи фильтруем по старой цене
+    if category_name == 'sales':
+        products = Product.query.filter(Product.old_price.isnot(None)).all()
+    else:
+        products = Product.query.filter_by(category=category_name).all()
+    
+    return render_template(
+        'category_base.html',
+        category_name=display_name,
+        category_slug=category_name,
+        products=products,
+        total_count=len(products)
+    )
+
+# ===== СТРАНИЦА ТОВАРА =====
 @bp.route('/product/<int:id>')
 def product(id):
-    return render_template('product.html', product_id=id)
+    product = Product.query.get_or_404(id)
+    return render_template('product.html', product=product)
+
+# ===== ПЕРЕАДРЕСАЦИЯ СТАРЫХ МАРШРУТОВ =====
+@bp.route('/men')
+def men():
+    return redirect(url_for('main.category', category_name='men'))
+
+@bp.route('/women')
+def women():
+    return redirect(url_for('main.category', category_name='women'))
+
+@bp.route('/casual')
+def casual():
+    return redirect(url_for('main.category', category_name='casual'))
+
+@bp.route('/unisex')
+def unisex():
+    return redirect(url_for('main.category', category_name='unisex'))
+
+@bp.route('/novelty')
+def novelty():
+    return redirect(url_for('main.category', category_name='novelty'))
+
+@bp.route('/sales')
+def sales():
+    return redirect(url_for('main.category', category_name='sales'))
 
 # ===== АВТОРИЗАЦИЯ =====
 @bp.route('/register', methods=['GET', 'POST'])
@@ -80,37 +142,13 @@ def account():
     return render_template('account.html', user=user)
 
 # ===== ОСТАЛЬНЫЕ СТРАНИЦЫ =====
-@bp.route('/casual')
-def casual():
-    return render_template('casual.html')
-
 @bp.route('/cart')
 def cart(): 
     return render_template('cart.html')
 
-@bp.route('/men')
-def men():
-    return render_template('men.html')
-
-@bp.route('/women')
-def women():
-    return render_template('women.html')
-
-@bp.route('/unisex')
-def unisex():
-    return render_template('unisex.html')
-
 @bp.route('/combined')
 def combined():
     return render_template('combined.html')
-
-@bp.route('/sales')
-def sales():
-    return render_template('sales.html')
-
-@bp.route('/novelty')
-def novelty():
-    return render_template('novelty.html')
 
 @bp.route('/brands')
 def brands():
