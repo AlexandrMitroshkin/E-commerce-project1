@@ -1,6 +1,10 @@
+"""
+Главный файл приложения для Render
+"""
 import os
 from app import create_app
 
+# СОЗДАЕМ ПЕРЕМЕННУЮ app - ОНА НУЖНА ДЛЯ GUNICORN!
 app = create_app()
 
 if __name__ == '__main__':

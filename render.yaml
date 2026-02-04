@@ -1,3 +1,4 @@
+# Render конфигурация
 services:
   - type: web
     name: ecommerce-shop
@@ -8,10 +9,11 @@ services:
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
+    # ВАЖНО! Используем application:app
     startCommand: gunicorn application:app
     envVars:
       - key: FLASK_APP
-        value: app.py
+        value: application.py
       - key: SECRET_KEY
         generateValue: true
       - key: DATABASE_URL
