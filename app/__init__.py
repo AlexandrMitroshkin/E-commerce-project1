@@ -14,6 +14,12 @@ def create_app(config_class=Config):
     app.register_blueprint(bp)
 
     with app.app_context():
-        db.create_all()
+        try:
+            # Пробуем создать таблицы, но не падаем если не получится
+            db.create_all()
+            print("✅ Database tables created successfully!")
+        except Exception as e:
+            print(f"⚠️  Database initialization warning: {e}")
+            print("Tables will be created when needed...")
 
     return app

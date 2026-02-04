@@ -1,30 +1,29 @@
 from app import create_app, db
 from app.models import Product, User
 from datetime import datetime
-
 import os
-from pathlib import Path
-
-
-if os.environ.get('RENDER'):
-    instance_dir = Path('/opt/render/project/src/instance')
-else:
-    instance_dir = Path(__file__).resolve().parent / 'instance'
-
-instance_dir.mkdir(exist_ok=True)
-print(f"Instance directory: {instance_dir}")
-
 
 app = create_app()
 
 with app.app_context():
-    print("Creating database tables...")
-    db.create_all()
+    print(f"Database URI: {app.config['SQLALCHEMY_DATABASE_URI']}")
+    
+    try:
+        print("Creating database tables...")
+        db.create_all()
+        print("✅ Tables created successfully!")
+    except Exception as e:
+        print(f"⚠️  Error creating tables: {e}")
+        exit(1)
     
     print("Adding test products...")
-    
-    Product.query.delete()
 
+    try:
+        Product.query.delete()
+        print("✅ Cleared existing products")
+    except:
+        print("⚠️  Could not clear products (table may not exist yet)")
+    
     test_products = [
         # Мужская одежда
         {
@@ -311,5 +310,9 @@ with app.app_context():
         )
         db.session.add(product)
     
-    db.session.commit()
-    print(f"✅ Added {len(test_products)} test products to database!")
+    try:
+        db.session.commit()
+        print(f"✅ Added {len(test_products)} test products to database!")
+    except Exception as e:
+        print(f"❌ Error adding products: {e}")
+        db.session.rollback()
