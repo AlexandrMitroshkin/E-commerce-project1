@@ -8,8 +8,8 @@ services:
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
-      # Создаем базу данных при сборке
-      python init_render_db.py  # ЗАМЕНИТЕ populate_db.py на init_render_db.py
+      # Создаем базу данных - ВАЖНО: используйте init_render_db.py
+      python init_render_db.py
     startCommand: gunicorn application:app
     envVars:
       - key: FLASK_APP
@@ -17,7 +17,7 @@ services:
       - key: SECRET_KEY
         generateValue: true
       - key: DATABASE_URL
-        value: sqlite:////tmp/shop.db  # На Render используйте /tmp
+        value: sqlite:////tmp/shop.db
       - key: RENDER
         value: true
     healthCheckPath: /
