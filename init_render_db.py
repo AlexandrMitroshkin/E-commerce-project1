@@ -1,93 +1,84 @@
-
+#!/usr/bin/env python3
 """
-init_render_db.py - Создает базу данных на Render
+Создание базы данных на Render
 """
 
+print("=" * 60)
+print("🚀 INIT_RENDER_DB.PY STARTED")
+print("=" * 60)
+
+# 1. Сначала создаем файл базы данных
+import sqlite3
 import os
-import sys
-from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
+print("📁 Creating database file...")
+db_path = '/tmp/shop.db'
 
 try:
+    # Удаляем старый файл если есть
+    if os.path.exists(db_path):
+        os.remove(db_path)
+        print("🗑️  Removed old database file")
+    
+    # Создаем новую базу данных
+    conn = sqlite3.connect(db_path)
+    conn.close()
+    print(f"✅ Database file created at: {db_path}")
+except Exception as e:
+    print(f"❌ Error creating database file: {e}")
+    exit(1)
+
+# 2. Теперь создаем таблицы через Flask
+print("📦 Creating database tables...")
+try:
+    # Импортируем после создания файла БД
     from app import create_app, db
-    from app.models import Product
-    print("✅ Модули успешно импортированы")
-except ImportError as e:
-    print(f"❌ Ошибка импорта: {e}")
-    sys.exit(1)
-
-def main():
-    print("=" * 60)
-    print("🚀 НАЧАЛО СОЗДАНИЯ БАЗЫ ДАННЫХ НА RENDER")
-    print("=" * 60)
     
-    try:
-
-        app = create_app()
-        print(f"✅ Приложение создано")
-        print(f"📁 Путь к БД: {app.config['SQLALCHEMY_DATABASE_URI']}")
+    app = create_app()
+    
+    with app.app_context():
+        # Создаем все таблицы
+        db.create_all()
+        print("✅ Database tables created successfully!")
         
-        with app.app_context():
-
-            print("📦 Создаем таблицы...")
-            db.create_all()
-            print("✅ Таблицы созданы успешно!")
+        # Проверяем таблицу product
+        from app.models import Product
+        from sqlalchemy import inspect
+        
+        inspector = inspect(db.engine)
+        tables = inspector.get_table_names()
+        print(f"📊 Tables in database: {tables}")
+        
+        # Добавляем тестовые данные
+        if 'product' in tables:
+            print("📥 Adding test products...")
             
-
-            try:
-                count = Product.query.count()
-                print(f"📊 В таблице product: {count} записей")
-            except:
-                print("⚠️  Таблица product пуста или недоступна")
+            # Добавляем один тестовый товар
+            test_product = Product(
+                name="Test T-shirt",
+                description="Test product for Render deployment",
+                price=99.99,
+                category="men",
+                status="bests",
+                image="T-TAPE DETAILS.jpg",
+                rating=4.5
+            )
             
+            db.session.add(test_product)
+            db.session.commit()
+            print("✅ Test product added successfully!")
+            
+            # Проверяем
+            product_count = Product.query.count()
+            print(f"📊 Total products in database: {product_count}")
+        else:
+            print("⚠️  Table 'product' not found!")
+            
+except Exception as e:
+    print(f"❌ Error creating tables: {e}")
+    import traceback
+    traceback.print_exc()
 
-            try:
-                if Product.query.count() == 0:
-                    print("📥 Добавляем тестовые товары...")
-                    
-
-                    products = [
-                        Product(
-                            name="Test T-shirt",
-                            description="Test product for Render",
-                            price=99.99,
-                            category="men",
-                            status="bests",
-                            image="T-TAPE DETAILS.jpg",
-                            rating=4.5
-                        ),
-                        Product(
-                            name="Test Jeans",
-                            description="Another test product",
-                            price=149.99,
-                            category="men",
-                            status="bests",
-                            image="SKINNY FIT JEANS.jpg",
-                            rating=4.0
-                        )
-                    ]
-                    
-                    for product in products:
-                        db.session.add(product)
-                    
-                    db.session.commit()
-                    print(f"✅ Добавлено {len(products)} тестовых товара")
-                else:
-                    print("✅ В базе уже есть товары")
-            except Exception as e:
-                print(f"⚠️  Ошибка при добавлении товаров: {e}")
-                db.session.rollback()
-    
-    except Exception as e:
-        print(f"❌ КРИТИЧЕСКАЯ ОШИБКА: {e}")
-        import traceback
-        traceback.print_exc()
-        sys.exit(1)
-    
-    print("=" * 60)
-    print("✅ БАЗА ДАННЫХ УСПЕШНО СОЗДАНА НА RENDER")
-    print("=" * 60)
-
-if __name__ == "__main__":
-    main()
+print("=" * 60)
+print("✅ INIT_RENDER_DB.PY COMPLETED")
+print("=" * 60)     

@@ -8,8 +8,9 @@ services:
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
-      # Создаем базу данных - ВАЖНО: используйте init_render_db.py
+      echo "🚀 Starting database initialization..."
       python init_render_db.py
+      echo "✅ Database initialization completed!"
     startCommand: gunicorn application:app
     envVars:
       - key: FLASK_APP
