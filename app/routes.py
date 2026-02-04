@@ -248,6 +248,17 @@ def logout():
     flash('You are logged out', 'info')
     return redirect(url_for('main.home'))
 
+# @bp.route('/account')
+# def account():
+#     if 'user_id' not in session:
+#         flash('Please log in', 'error')
+#         return redirect(url_for('main.login'))
+    
+#     user = User.query.get(session['user_id'])
+#     return render_template('account.html', user=user)
+
+
+
 @bp.route('/account')
 def account():
     if 'user_id' not in session:
@@ -255,7 +266,26 @@ def account():
         return redirect(url_for('main.login'))
     
     user = User.query.get(session['user_id'])
-    return render_template('account.html', user=user)
+    
+    # ВРЕМЕННОЕ РЕШЕНИЕ - возвращаем простой HTML
+    return f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>My Account</title>
+        <link href="{url_for('static', filename='css/base.css')}" rel="stylesheet">
+    </head>
+    <body>
+        <h1>My Account</h1>
+        <p>Welcome, {user.username}!</p>
+        <p>Email: {user.email}</p>
+        <p>Account ID: #{user.id}</p>
+        <p><a href="/">Home</a> | <a href="/cart">Cart</a> | <a href="/logout">Logout</a></p>
+    </body>
+    </html>
+    """
+    # return render_template('account.html', user=user)  # ЗАКОММЕНТИРУЙТЕ
+
 
 
 @bp.route('/search-products')
