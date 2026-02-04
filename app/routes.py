@@ -281,25 +281,6 @@ def search_products():
     
     return jsonify(results)
 
-@bp.route('/db-status')
-def db_status():
-    """Страница статуса базы данных"""
-    with app.app_context():
-        try:
-            total_products = Product.query.count()
-            total_users = User.query.count()
-            
-            html = f"""
-            <h1>Database Status</h1>
-            <p>✅ Database is working</p>
-            <p>📊 Total products: {total_products}</p>
-            <p>👤 Total users: {total_users}</p>
-            <p>🔄 <a href="/">Go to homepage</a></p>
-            """
-            return html
-        except Exception as e:
-            return f"<h1>Database Error</h1><pre>{str(e)}</pre>"
-
 @bp.route('/under-construction')
 def under_construction():
     return render_template('under_construction.html')
