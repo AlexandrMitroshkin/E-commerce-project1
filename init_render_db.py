@@ -1,83 +1,93 @@
+
+"""
+init_render_db.py - Создает базу данных на Render
+"""
+
 import os
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).parent))
 
-current_dir = Path(__file__).parent
-project_root = current_dir
+try:
+    from app import create_app, db
+    from app.models import Product
+    print("✅ Модули успешно импортированы")
+except ImportError as e:
+    print(f"❌ Ошибка импорта: {e}")
+    sys.exit(1)
 
-
-sys.path.insert(0, str(project_root))
-
-from app import create_app, db
-from app.models import Product, User
-from datetime import datetime
-
-test_products = [
-    # Мужская одежда
-    {
-        'name': 'T-shirt with Tape Details',
-        'description': 'Comfortable cotton t-shirt with stylish tape details.',
-        'price': 120.00,
-        'category': 'men',
-        'status':'bests',
-        'image': 'T-TAPE DETAILS.jpg',
-        'rating': 4.5
-    },
-
-]
-
-def init_database():
-    print("🚀 Initializing database...")
+def main():
+    print("=" * 60)
+    print("🚀 НАЧАЛО СОЗДАНИЯ БАЗЫ ДАННЫХ НА RENDER")
+    print("=" * 60)
     
     try:
+
         app = create_app()
+        print(f"✅ Приложение создано")
+        print(f"📁 Путь к БД: {app.config['SQLALCHEMY_DATABASE_URI']}")
+        
+        with app.app_context():
+
+            print("📦 Создаем таблицы...")
+            db.create_all()
+            print("✅ Таблицы созданы успешно!")
+            
+
+            try:
+                count = Product.query.count()
+                print(f"📊 В таблице product: {count} записей")
+            except:
+                print("⚠️  Таблица product пуста или недоступна")
+            
+
+            try:
+                if Product.query.count() == 0:
+                    print("📥 Добавляем тестовые товары...")
+                    
+
+                    products = [
+                        Product(
+                            name="Test T-shirt",
+                            description="Test product for Render",
+                            price=99.99,
+                            category="men",
+                            status="bests",
+                            image="T-TAPE DETAILS.jpg",
+                            rating=4.5
+                        ),
+                        Product(
+                            name="Test Jeans",
+                            description="Another test product",
+                            price=149.99,
+                            category="men",
+                            status="bests",
+                            image="SKINNY FIT JEANS.jpg",
+                            rating=4.0
+                        )
+                    ]
+                    
+                    for product in products:
+                        db.session.add(product)
+                    
+                    db.session.commit()
+                    print(f"✅ Добавлено {len(products)} тестовых товара")
+                else:
+                    print("✅ В базе уже есть товары")
+            except Exception as e:
+                print(f"⚠️  Ошибка при добавлении товаров: {e}")
+                db.session.rollback()
+    
     except Exception as e:
-        print(f"❌ Error creating app: {e}")
+        print(f"❌ КРИТИЧЕСКАЯ ОШИБКА: {e}")
+        import traceback
+        traceback.print_exc()
         sys.exit(1)
     
-    with app.app_context():
-        try:
+    print("=" * 60)
+    print("✅ БАЗА ДАННЫХ УСПЕШНО СОЗДАНА НА RENDER")
+    print("=" * 60)
 
-            instance_dir = project_root / 'instance'
-            instance_dir.mkdir(exist_ok=True)
-            
-            print(f"📁 Database path: {app.config['SQLALCHEMY_DATABASE_URI']}")
-            
- 
-            db.create_all()
-            print("✅ Database tables created successfully!")
-            
-
-            product_count = Product.query.count()
-            print(f"📊 Current product count: {product_count}")
-            
-            if product_count == 0:
-                print("📦 No products found, populating database...")
-                
-                for prod_data in test_products:
-                    product = Product(
-                        name=prod_data['name'],
-                        description=prod_data['description'],
-                        price=prod_data['price'],
-                        old_price=prod_data.get('old_price'),
-                        category=prod_data['category'],
-                        status=prod_data['status'],
-                        image=prod_data['image'],
-                        rating=prod_data['rating']
-                    )
-                    db.session.add(product)
-                
-                db.session.commit()
-                print(f"✅ Added {len(test_products)} test products to database!")
-            else:
-                print(f"✅ Database already contains {product_count} products")
-                
-        except Exception as e:
-            print(f"❌ Database initialization failed: {e}")
-            import traceback
-            traceback.print_exc()
-            sys.exit(1)
-
-if __name__ == '__main__':
-    init_database()
+if __name__ == "__main__":
+    main()

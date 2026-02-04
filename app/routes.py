@@ -6,9 +6,13 @@ bp = Blueprint('main', __name__)
 
 @bp.route('/')
 def home():
-
-    new_arrivals = Product.query.filter_by(category='novelty').limit(8).all()
-    top_selling = Product.query.filter_by(status='bests').limit(8).all()
+    try:
+        new_arrivals = Product.query.filter_by(category='novelty').limit(8).all()
+        top_selling = Product.query.filter_by(status='bests').limit(8).all()
+    except Exception as e:
+        print(f"⚠️  Ошибка базы данных: {e}")
+        new_arrivals = []
+        top_selling = []
     
     return render_template('home.html', 
                          new_arrivals=new_arrivals, 
