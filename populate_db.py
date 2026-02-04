@@ -31,7 +31,43 @@ with app.app_context():
             'category': 'men',
             'status':'bests',
             'image': 'SKINNY FIT JEANS.jpg',
-            'rating': 3.5
+            'rating': 4.5
+        },
+        {
+            'name': 'Long sleeved T-shirt',
+            'description': 'Comfortable cotton Long sleeved T-shirt.',
+            'price': 150.00,
+            'category': 'men',
+            'status':'bests',
+            'image': 'long sleeved T-shirt.jpg',
+            'rating': 5.0
+        },
+        {
+            'name': 'Teyes Team T-shirt',
+            'description': 'Comfortable cotton T-shirt.',
+            'price': 170.00,
+            'category': 'men',
+            'status':'bests',
+            'image': 'Teyes Team T-shirt.jpg',
+            'rating': 4.5
+        },
+        {
+            'name': 'Tom tailor T-shirt',
+            'description': 'Comfortable cotton t-shirt.',
+            'price': 180.00,
+            'category': 'men',
+            'status':'bests',
+            'image': 'Tom tailor T-shirt.jpg',
+            'rating': 5.0
+        },
+        {
+            'name': 'Zara shirt',
+            'description': 'Comfortable cotton Zara shirt.',
+            'price': 200.00,
+            'category': 'men',
+            'status':'bests',
+            'image': 'Zara shirt.jpg',
+            'rating': 5.0
         },
         
         # Женская одежда
@@ -73,6 +109,24 @@ with app.app_context():
             'image': 'VERTICAL STRIPED .jpg',
             'rating': 5.0
         },
+        {
+            'name': 'Pink shirt',
+            'description': 'Comfortable cotton shirt.',
+            'price': 145.00,
+            'category': 'women',
+            'status':'bests',
+            'image': 'pink shirt.jpg',
+            'rating': 4.5
+        },
+        {
+            'name': 'Pink cap',
+            'description': 'Comfortable cotton cap.',
+            'price': 50.00,
+            'category': 'women',
+            'status':'bests',
+            'image': 'pink cap.jpg',
+            'rating': 4.5
+        },
         
         # Casual
         {
@@ -110,6 +164,24 @@ with app.app_context():
             'status':'.',
             'image': 'T-orange_color.jpg',
             'rating': 4.2
+        },
+        {
+            'name': 'Tommy Helfiger T-shirt',
+            'description': 'Original Tommy Helfiger T-shirt',
+            'price': 195.00,
+            'category': 'casual',
+            'status':'.',
+            'image': 'Tom tailor T-shirt.jpg',
+            'rating': 4.5
+        },
+        {
+            'name': 'Balensiaga jacket',
+            'description': 'balensiaga jacket.jpg',
+            'price': 295.00,
+            'category': 'casual',
+            'status':'.',
+            'image': 'balensiaga jacket.jpg',
+            'rating': 5.0
         },
         
         # Новинки
@@ -180,9 +252,37 @@ with app.app_context():
             'status':'.',
             'image': 'White sport T-shirt.jpg',
             'rating': 5.0
-        }
-
-        
+        },
+        {
+            'name': 'Puma Jacket',
+            'description': 'Sport Jacket for sportsmens',
+            'price': 150.00,
+            'old_price': 170.00,
+            'category': 'gym',
+            'status':'.',
+            'image': 'puma jacket.jpg',
+            'rating': 4.0
+        },
+        {
+            'name': 'Sportive long sleeved T-shirt',
+            'description': 'Sportive long sleeved for sportsmens',
+            'price': 160.00,
+            'old_price': 180.00,
+            'category': 'gym',
+            'status':'.',
+            'image': 'sportive long sleeved T-shirt.jpg',
+            'rating': 4.0
+        },
+        {
+            'name': 'Stussy T-shirt',
+            'description': 'Original Stussy T-shirt',
+            'price': 170.00,
+            'old_price': 180.00,
+            'category': 'gym',
+            'status':'.',
+            'image': 'stussy T-shirt.jpg',
+            'rating': 3.5
+        }     
     ]
     
     for prod_data in test_products:

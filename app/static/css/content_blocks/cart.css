@@ -36,9 +36,17 @@
     transform: translateY(-2px);
 }
 
-.cart-item img {
+.cart-item img:first-child{
     width: 100px;
     height: 100px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.cart-item img:last-child {
+    width: 40px;
+    height: 40px;
     border-radius: 10px;
     object-fit: cover;
     margin-right: 20px;
