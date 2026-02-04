@@ -2,6 +2,19 @@ from app import create_app, db
 from app.models import Product, User
 from datetime import datetime
 
+import os
+from pathlib import Path
+
+
+if os.environ.get('RENDER'):
+    instance_dir = Path('/opt/render/project/src/instance')
+else:
+    instance_dir = Path(__file__).resolve().parent / 'instance'
+
+instance_dir.mkdir(exist_ok=True)
+print(f"Instance directory: {instance_dir}")
+
+
 app = create_app()
 
 with app.app_context():

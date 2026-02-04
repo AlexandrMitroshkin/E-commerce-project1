@@ -1,4 +1,3 @@
-# Render конфигурация
 services:
   - type: web
     name: ecommerce-shop
@@ -9,7 +8,7 @@ services:
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
-    # ВАЖНО! Используем application:app
+      python init_render_db.py
     startCommand: gunicorn application:app
     envVars:
       - key: FLASK_APP
@@ -17,6 +16,8 @@ services:
       - key: SECRET_KEY
         generateValue: true
       - key: DATABASE_URL
-        value: sqlite:///shop.db
+        value: sqlite:////opt/render/project/src/instance/shop.db
+      - key: RENDER
+        value: true
     healthCheckPath: /
     autoDeploy: true
