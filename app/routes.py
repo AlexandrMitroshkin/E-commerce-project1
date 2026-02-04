@@ -194,7 +194,7 @@ def update_cart(item_id):
 @bp.route('/register', methods=['GET', 'POST'])
 def register():
     if 'user_id' in session:
-        return redirect(url_for('main.Account'))
+        return redirect(url_for('main.account'))
     
     if request.method == 'POST':
         username = request.form['username']
@@ -215,14 +215,14 @@ def register():
         session['username'] = user.username
         
         flash('Registration successful!', 'success')
-        return redirect(url_for('main.Account'))
+        return redirect(url_for('main.account'))
     
     return render_template('register.html')
 
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
     if 'user_id' in session:
-        return redirect(url_for('main.Account'))
+        return redirect(url_for('main.account'))
     
     if request.method == 'POST':
         username = request.form['username']
@@ -235,7 +235,7 @@ def login():
             session['username'] = user.username
             
             flash('You have successfully logged in!', 'success')
-            return redirect(url_for('main.Account'))
+            return redirect(url_for('main.account'))
         else:
             flash('Incorrect username or password', 'error')
             return redirect(url_for('main.login'))
@@ -248,19 +248,19 @@ def logout():
     flash('You are logged out', 'info')
     return redirect(url_for('main.home'))
 
-@bp.route('/Account')
-def Account():
+@bp.route('/account')
+def account():
     if 'user_id' not in session:
         flash('Please log in', 'error')
         return redirect(url_for('main.login'))
     
     user = User.query.get(session['user_id'])
-    return render_template('Account.html', user=user)
+    return render_template('account.html', user=user)
 
 
 
-# @bp.route('/Account')
-# def Account():
+# @bp.route('/account')
+# def account():
 #     if 'user_id' not in session:
 #         flash('Please log in', 'error')
 #         return redirect(url_for('main.login'))
@@ -284,7 +284,7 @@ def Account():
 #     </body>
 #     </html>
 #     """
-    # return render_template('Account.html', user=user)  # ЗАКОММЕНТИРУЙТЕ
+    # return render_template('account.html', user=user)  # ЗАКОММЕНТИРУЙТЕ
 
 
 
