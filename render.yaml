@@ -8,10 +8,10 @@ services:
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
-    startCommand: gunicorn run:app
+    startCommand: gunicorn app:app
     envVars:
       - key: FLASK_APP
-        value: run.py
+        value: app.py
       - key: SECRET_KEY
         generateValue: true
       - key: DATABASE_URL
