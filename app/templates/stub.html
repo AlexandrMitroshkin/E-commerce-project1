@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Shop.CO - stub{% endblock %}
+
+{% block extra_styles %}
+<link href="{{ url_for('static', filename='css/content_blocks/stub.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section class="stub-section">
+    <div class="stub-container">
+        <div class="stub-content">
+            <h1 class="stub-title">Site under development</h1>
+            <p class="stub-message">
+                At the moment the site is under development.
+                This section will be available soon.
+            </p>
+
+            
+            <a href="{{ url_for('main.home') }}" class="stub-button">
+                ← Back to Home
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

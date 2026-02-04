@@ -2,56 +2,25 @@
 
 {% block title %}Shop.CO - {{ category_name }}{% endblock %}
 
-{% block extra_styles %}
-<link href="{{ url_for('static', filename='css/content_blocks/casual.css') }}" rel="stylesheet">
-{% endblock %}
-
 {% block content %}
-    <nav class="main-breadcrumbs">
-        <a href="{{ url_for('main.home') }}">Home</a>
-        <a class="active" href="{{ url_for('main.category', category_name=category_slug) }}">{{ category_name }}</a>
-    </nav>
+
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <nav class="hero-breadcrumbs">
+            <a href="{{ url_for('main.home') }}">
+                <p>Home</p>
+                <img class="breadcrums_arrow" src="{{ url_for('static' , filename='img/breadcrums arrow.svg')}}" width="10.4px" height="18,4px">
+            </a>
+            <a href="{{ url_for('main.category', category_name=category_slug) }}">
+                <p>{{ category_name }}</p>
+                <img class="breadcrums_arrow" src="{{ url_for('static' , filename='img/breadcrums arrow.svg')}}" width="10.4px" height="18,4px">
+            </a>
+        </nav>
+
+        <h1 style="text-align: center; margin-bottom: 65px; font-size: 45px;">{{ category_name }}</h1>
+    </div>
 
     <div class="main-content">
-        <!-- Фильтры (пока упрощённые) -->
-        <section class="main-filters">
-            <article class="filters-part1">
-                <h2>Filters</h2>
-                <img src="{{ url_for('static', filename='img/Filters_Grey.svg') }}" width="20" height="19" alt="Filters">
-            </article>
-            
-            <!-- Простые фильтры -->
-            <div class="simple-filters">
-                <p>Price Range</p>
-                <input type="range" min="0" max="500" value="250" class="price-slider">
-                <p>Colors</p>
-                <div class="color-filters">
-                    <span class="color-dot" style="background: #000;"></span>
-                    <span class="color-dot" style="background: #fff; border: 1px solid #ccc;"></span>
-                    <span class="color-dot" style="background: #ff0000;"></span>
-                    <span class="color-dot" style="background: #00ff00;"></span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Основной контент -->
-        <section class="main-Casual">
-            <div class="Casual-topPart">
-                <h1>{{ category_name }}</h1>
-                <p>Showing {{ products|length }} of {{ total_count }} Products</p>
-                
-                <div class="Casual-topPart-Sort">
-                    <label for="Casual-topPart-select">Sort by:</label>
-                    <select id="Casual-topPart-select">
-                        <option class="active" value="Most Popular">Most Popular</option>
-                        <option value="rating">Highest Rating</option>
-                        <option value="price-low">Price: Low to High</option>
-                        <option value="price-high">Price: High to Low</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Список товаров -->
             <ul class="Category">
                 {% for product in products %}
                 <li class="Category-item">
@@ -77,10 +46,7 @@
                             {% if has_half %}
                             <li class="half"><img src="{{ url_for('static', filename='img/Half_star.svg') }}" width="18" height="18" alt="star"></li>
                             {% endif %}
-<!--                             
-                            {% for i in range(5 - full_stars - (1 if has_half else 0)) %}
-                            <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="18" height="18" alt="star" style="opacity: 0.3;"></li>
-                            {% endfor %} -->
+
                         </ul>
                         
                         <p class="Category-item-assessment assessment">

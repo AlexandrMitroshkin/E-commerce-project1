@@ -1,11 +1,10 @@
-/*                                                            HEADER STYLES*/
+                                                            /*header*/
 header {
   height: 110px;
   margin-bottom: 24px;
   transition: margin 1s, padding 1s;
 }
 
-                                                        /* Header register banner */
 .header-register {
   background-color: rgba(0, 0, 0, 1); 
   height: 38px;
@@ -44,7 +43,7 @@ header {
   justify-content: center;
 }
 
-              /* Main header content */
+
 .header-content {
   max-width: 1440px;
   padding: 0 100px;
@@ -59,7 +58,6 @@ header {
   gap: 24px;
 }
 
-/* Navigation toggle for mobile */
 .header-nav-more {
   display: none;
   background: none;
@@ -68,7 +66,6 @@ header {
   padding: 0;
 }
 
-/* Logo */
 .header-nav-logo {
   width: 160px;
   height: 22px;
@@ -77,7 +74,6 @@ header {
   align-items: center;
 }
 
-/* Navigation links */
 .header-nav-links {
   display: flex;
   gap: 24px;
@@ -96,7 +92,6 @@ header {
   font-size: 16px;
 }
 
-/* Custom select dropdown */
 .select-wrapper {
   position: relative;
 }
@@ -124,6 +119,118 @@ header {
   justify-content: center;
   width: 16px;
   height: 16px;
+}
+
+.custom-datalist {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 20px;
+  max-height: 150px;
+  overflow-y: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: 5px;
+}
+
+.custom-datalist.show {
+  display: block;
+}
+
+.custom-datalist a {
+  display: flex;
+  padding: 9px 20px;
+  text-decoration: none;
+  font-family: "Satoshi";
+  font-size: 16px;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 500;
+}
+
+.search-result-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 16px;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item:hover {
+  background-color: rgba(240, 240, 240, 0.8);
+}
+
+.search-item-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.search-product-name {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 14px;
+  margin-bottom: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.search-product-category {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2px 8px;
+  border-radius: 10px;
+  display: inline-block;
+  width: fit-content;
+  text-transform: capitalize;
+}
+
+.search-product-price {
+  color: rgba(0, 0, 0, 1);
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+.no-results {
+  padding: 20px 16px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  font-style: italic;
+  font-size: 14px;
+}
+
+.custom-datalist a:hover {
+  background-color: rgba(240, 240, 240, 1);
+}
+
+.custom-datalist::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-datalist::-webkit-scrollbar-track {
+  background: rgba(240, 240, 240, 1);
+}
+
+.custom-datalist::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+}
+
+.custom-datalist::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .header-nav-more.inverted img{
@@ -165,7 +272,6 @@ header {
   background-color: rgba(240, 240, 240, 1);
 }
 
-/* Search container */
 .header-nav-search {
   position: relative;
   width: 557px;
@@ -202,57 +308,6 @@ header {
   color: rgba(0, 0, 0, 0.4);
 }
 
-.custom-datalist {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 20px;
-  max-height: 150px;
-  overflow-y: auto;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  margin-top: 5px;
-}
-
-.custom-datalist.show {
-  display: block;
-}
-
-.custom-datalist a {
-  display: block;
-  padding: 12px 20px;
-  text-decoration: none;
-  font-family: "Satoshi";
-  font-size: 16px;
-  color: rgba(0, 0, 0, 1);
-  font-weight: 500;
-}
-
-.custom-datalist a:hover {
-  background-color: rgba(240, 240, 240, 1);
-}
-
-.custom-datalist::-webkit-scrollbar {
-  width: 8px;
-}
-
-.custom-datalist::-webkit-scrollbar-track {
-  background: rgba(240, 240, 240, 1);
-}
-
-.custom-datalist::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 4px;
-}
-
-.custom-datalist::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-/* Header actions */
 .header-nav-other {
   display: flex;
   align-items: center;
@@ -277,8 +332,45 @@ header {
 
 
 
+                                                /*Адаптивность*/
 
-/* ==================== FOOTER STYLES ==================== */
+
+
+@media (max-width: 768px) {
+    .search-result-item {
+        padding: 10px 14px;
+    }
+    
+    .search-product-name {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-datalist {
+        max-height: 200px;
+        border-radius: 10px;
+    }
+    
+    .search-result-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 12px;
+    }
+    
+    .search-product-price {
+        margin-left: 0;
+        margin-top: 4px;
+    }
+}
+
+
+
+
+
+
+                                                        /*footer*/
+
 .footer {
   margin-top: 10px;
 }
@@ -408,13 +500,14 @@ header {
 
 .footer-links {
   display: flex;
-  gap: 113px;
+  gap: 80px;
+  margin-left:25px;
 }
 
 .footer-links-column ul {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 9px;
 }
 
 .footer-link a {
@@ -428,7 +521,7 @@ header {
 }
 
 .footer-link a h4 {
-  margin: 0 0 26px 0;
+  margin:0;
   letter-spacing: 3px;
   color: rgba(0, 0, 0, 1);
 }
@@ -472,9 +565,10 @@ header {
   transform: translateY(-2px);
 }
 
-/* ==================== RESPONSIVE: HEADER & FOOTER ==================== */
 
-/* Tablet (max-width: 1420px) */
+
+                                                      /*Адаптивность*/
+
 @media (max-width: 1420px) {
   .header-content {
     min-width: 845px;
@@ -503,7 +597,6 @@ header {
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    /* flex-direction: column; */
     flex-direction: row;
     gap: 16px; 
   }
@@ -524,7 +617,6 @@ header {
   }
 }
 
-/* Small screens (max-width: 845px) */
 @media (max-width: 845px) {
   .header-content {
     min-width: 390px;
@@ -586,7 +678,6 @@ header {
   }
 }
 
-/* Mobile (max-width: 500px) */
 @media (max-width: 500px) {
   .header-content {
     padding: 0 16px;

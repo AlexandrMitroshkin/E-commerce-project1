@@ -1,4 +1,4 @@
-/* ============ REGISTRATION PAGE STYLES ============ */
+                                                /*registration-section*/
 
 .registration-section {
     max-width: 1200px;
@@ -35,7 +35,7 @@
     margin: 0 auto;
 }
 
-/* Форма регистрации */
+                                                /* .registration-form-wrapper*/
 .registration-form-wrapper {
     width: 100%;
     max-width: 500px;
@@ -85,7 +85,7 @@
     color: rgba(0, 0, 0, 0.4);
 }
 
-/* Кнопка регистрации */
+                                                /* register-button */
 .register-button {
     width: 100%;
     padding: 18px;
@@ -106,7 +106,7 @@
     transform: translateY(-2px);
 }
 
-/* Ссылка на вход */
+                                                /* login-link */
 .login-link {
     text-align: center;
     margin-top: 30px;
@@ -126,7 +126,7 @@
     border-color: rgba(0, 0, 0, 1);
 }
 
-/* Сообщения об ошибках/успехе */
+                                                /*flash-messages*/
 .flash-messages {
     margin-bottom: 30px;
 }
@@ -157,9 +157,12 @@
     border: 1px solid rgba(187, 222, 251, 1);
 }
 
-/* ============ АДАПТИВНОСТЬ ============ */
 
-/* Планшеты (768px - 1024px) */
+
+
+                                                    /*Адаптивность*/
+
+
 @media (max-width: 1024px) {
     .registration-section {
         padding: 40px 20px;
@@ -176,7 +179,6 @@
     }
 }
 
-/* Большие мобильные (576px - 768px) */
 @media (max-width: 768px) {
     .registration-section {
         padding: 30px 15px;
@@ -205,7 +207,6 @@
     }
 }
 
-/* Малые мобильные (до 576px) */
 @media (max-width: 576px) {
     .registration-section {
         padding: 20px 10px;
@@ -246,7 +247,6 @@
     }
 }
 
-/* Очень маленькие экраны (до 390px) */
 @media (max-width: 390px) {
     .registration-header h1 {
         font-size: 24px;

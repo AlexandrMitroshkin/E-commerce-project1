@@ -15,7 +15,6 @@
         </div>
 
         <div class="registration-form-wrapper">
-            <!-- Сообщения об ошибках/успехе -->
             <div class="flash-messages">
                 {% with messages = get_flashed_messages(with_categories=true) %}
                     {% if messages %}
@@ -28,7 +27,6 @@
                 {% endwith %}
             </div>
 
-            <!-- Форма регистрации -->
             <form method="POST" action="{{ url_for('main.register') }}" class="registration-form">
                 <div class="form-group">
                     <label for="username">Username</label>

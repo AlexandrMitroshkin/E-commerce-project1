@@ -1,5 +1,7 @@
-                                                /* ============ SECTION HERO ============ */
+                                                        /* hero */
 
+
+                                                
 .hero{
     background-color: rgba(240, 240, 240, 1);
     height: 633px;
@@ -11,9 +13,6 @@
     min-width: 1200px;
     height: 633px;
     background-image: url(../../img/couple-img.jpg);
-    /* background-image:url("{{ url_for('static', filename='img/couple-img.jpg')}}") ; */
-    /* <li><img src="{{ url_for('static', filename='img/Star 5.svg') }}" width="23" height="23" alt="star"></li> */
-    /* background-image: url("{{ url_for('static', filename='img/photo.jpg') }}"); */
     background-size: 100%;
     background-repeat: no-repeat;
     padding:50px 0 116px 100px;
@@ -60,8 +59,6 @@
 .hero-inf-item h2{
     margin-bottom:15px;
     font-size: 40px;
-    /* font-weight: 700;
-    font-style: bold; */
 }
 
 .hero-black-star1-smallerVersion{
@@ -81,7 +78,7 @@
     display: none;
 }
 
-                                                /*============== SECTION BRENDS =============== */
+                                                        /*brends*/
 
 .brends{
     width: 100%;
@@ -97,7 +94,7 @@
     margin: 0;
 }
 
-                                                /* ===============  SECTION ARRIVALS ============ */
+                                                        /*Arrivals*/
 
 .Arrivals{
     width: 100%;
@@ -106,7 +103,7 @@
     margin-bottom: 64px;
 }
 
-                                                /* =============== SECTION STYLES ================ */
+                                                        /*Styles*/
 
 .Styles{
     max-width: 1240px;
@@ -132,6 +129,10 @@
     row-gap: 30px;
 }
 
+.Styles-list a{
+    text-decoration: none;
+}
+
 .Styles-item{
     position:relative;
     border-radius: 40px;
@@ -140,11 +141,10 @@
     height: 289px;
 }
 
-.Styles-item a{
-    position: absolute;
-    top:25px;
-    left:36px;
-    text-decoration: none;
+.Styles-item h2{
+    position:relative;
+    top:15px;
+    left:15px
 }
 
 .Casual-item{
@@ -157,18 +157,21 @@
     margin:0;
 }
 
-.Party-item{
+.Novelty-item{
     background-image: url(../../img/Party.jpg);
     width: 684px;
 }
 
 .Gym-item{
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
     background-image: url(../../img/Gym.jpg);
     margin:0;
 } 
 
 
-/*                                                         carousel */
+                                                    /*carousel */
 
 
 
@@ -193,6 +196,7 @@
 }
 
 .carousel-header h2{
+    text-align: center;
     padding-right:25px;
     width: 100%;
     height:58px;
@@ -236,7 +240,7 @@
 
 .Reviews-item {
     flex: 1;
-    min-width: 300px; /* Базовый минимальный размер */
+    min-width: 300px;
     height: auto;
     background-color: white;
     border-radius: 20px;
@@ -275,7 +279,7 @@
 
 
                                                 
-                                                /* ============  MEDIA QUERIES   =============  */
+                                                /*Адаптивность*/
 
 @media(max-width:1280px){
     .hero{
@@ -390,14 +394,13 @@
     }
     
     .Styles h2{
-        display: block;
+        display: none;
         margin: 0 auto 64px auto;
     }
 
     .Styles-list{
         width: 100%;
         justify-content: space-around;
-        /* column-gap: 20px; */
         row-gap: 30px;
     }
     
@@ -419,7 +422,7 @@
         background-image: url(../../img/Formal_small.png);
     }
 
-    .Party-item{
+    .Novelty-item{
         background-image: url(../../img/Party_small.png);
     }
 
@@ -443,7 +446,7 @@
     }
 }
 
-/* Планшеты (900px - 1024px) */
+
 @media (max-width: 1024px) {
 
     .Reviews-item {
@@ -535,7 +538,7 @@
         background-position: 50% 100%;
     }
 
-    .Party-item{
+    .Novelty-item{
         background-image: url(../../img/Party.jpg);
         background-position: 50% 100%;
     }
@@ -550,22 +553,12 @@
         min-width: 390px;
     }
     
-    /* .carousel-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-        margin: 0 auto 30px 0;
-        height: auto;
-        max-width: 100%;
-        padding: 0 10px;
-    } */
-    
     .carousel-header h2 {
         position: relative;
         bottom: 0;
         height: auto;
         padding-right: 0;
-        font-size: 1.8em; /* Уменьшаем размер шрифта */
+        font-size: 1.8em;
     }
     
     .carousel-container {
@@ -584,11 +577,11 @@
     }
     
     .review-name {
-        font-size: 1.3em; /* Уменьшаем размер имени */
+        font-size: 1.3em;
     }
     
     .review-text {
-        font-size: 1em; /* Уменьшаем размер текста */
+        font-size: 1em;
         line-height: 1.4;
     }
     
@@ -597,12 +590,12 @@
     }
     
     .Reviews-item-stars img {
-        width: 18px; /* Уменьшаем звезды */
+        width: 18px;
         height: 18px;
     }
     
     .review-header img {
-        width: 20px; /* Уменьшаем иконку verified */
+        width: 20px;
         height: 20px;
     }
 
@@ -695,7 +688,7 @@
         background-image: url(../../img/Formal_small.png);
     }
 
-    .Party-item{
+    .Novelty-item{
         background-image: url(../../img/Party_small.png);
     }
 
@@ -709,7 +702,6 @@
 }
 
 
-/* Маленькие мобильные (480px и меньше) */
 @media (max-width: 480px) {
     .carousel {
         min-width: 350px;
@@ -764,7 +756,7 @@
     }
 }
 
-/* Очень маленькие экраны (390px и меньше) */
+
 @media (max-width: 390px) {
     .carousel {
         min-width: 320px;
@@ -825,698 +817,4 @@
         width: 14px;
         height: 17px;
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .hero {
-    background-color: rgba(242, 240, 241, 1);
-    position: relative;
-}
-
-.hero-content {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 80px 20px;
-    position: relative;
-    min-height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.hero-text-content {
-    max-width: 600px;
-    position: relative;
-    z-index: 2;
-}
-
-.hero-title-wrapper {
-    margin-bottom: 24px;
-    width: 100%;
-}
-
-.hero-title-wrapper h1 {
-    font-size: 64px;
-    line-height: 1.1;
-    margin: 0;
-}
-
-.hero-text {
-    margin-bottom: 32px;
-    max-width: 500px;
-}
-
-.hero-text p {
-    margin: 0;
-    font-size: 18px;
-    line-height: 1.5;
-    color: #666;
-}
-
-.hero-button {
-    width: 210px;
-    height: 52px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    font-weight: 500;
-    color: white;
-    text-decoration: none;
-    background-color: black;
-    border-radius: 62px;
-    margin-bottom: 48px;
-    transition: all 0.3s ease;
-}
-
-.hero-button:hover {
-    background-color: #333;
-    transform: translateY(-2px);
-}
-
-.hero-inf {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    max-width: 600px;
-}
-
-.hero-inf-item {
-    display: flex;
-    flex-direction: column;
-    padding-right: 24px;
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.hero-inf-item:last-child {
-    border-right: none;
-    padding-right: 0;
-}
-
-.hero-inf-item h2 {
-    font-size: 40px;
-    line-height: 1.2;
-    margin: 0 0 4px 0;
-}
-
-.hero-inf-item p {
-    font-size: 14px;
-    margin: 0;
-    color: #666;
-}
-
-.hero-bg-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 50%;
-    background-image: url(../../img/couple-img.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-black-star1,
-.hero-black-star2 {
-    position: absolute;
-    z-index: 3;
-}
-
-.hero-black-star1 {
-    top: 40%;
-    right: 45%;
-}
-
-.hero-black-star2 {
-    top: 15%;
-    right: 10%;
-}
-
-.hero-couple_ForsmallerVersion {
-    display: none;
-} */
-
-
-
-                                /* ============ SECTION BRANDS ============ */
-
-
-
-/* .brends {
-    background-color: black;
-    padding: 40px 0;
-    margin-bottom: 72px;
-}
-
-.brends-list {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    list-style: none;
-}
-
-.brends-list-item {
-    flex: 0 0 auto;
-}
-
-.brends-list-item a {
-    display: block;
-    height: 38px;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-}
-
-.brends-list-item a:hover {
-    opacity: 1;
-} */
-
-
-
-                            /* ============ SECTION ARRIVALS ============ */
-
-
-
-/* .Arrivals {
-    max-width: 1240px;
-    margin: 0 auto 64px;
-    padding: 0 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.Arrivals h2 {
-    text-align: center;
-    margin: 0 auto 55px;
-    font-size: 48px;
-}
-
-.Arrivals-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin: 0 0 36px 0;
-    padding: 0;
-    list-style: none;
-}
-
-.Arrivals-item {
-    flex: 0 1 350px;
-    max-width: 444px;
-    text-align: center;
-}
-
-.Arrivals-item img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 16px;
-    border-radius: 12px;
-}
-
-.Arrivals-item h3 {
-    margin: 0 0 8px 0;
-    font-size: 18px;
-}
-
-.Arrivals-item-mark {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-}
-
-.Arrivals-item-stars {
-    display: flex;
-    gap: 4px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.Arrivals-button {
-    display: block;
-    width: 218px;
-    height: 52px;
-    margin: 0 auto;
-    background: black;
-    color: white;
-    border-radius: 62px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.Arrivals-button:hover {
-    background: #333;
-    transform: translateY(-2px);
-} */
-
-
-                                    /* ============ SECTION BESTS ============ */
-
-
-/* .Bests {
-    max-width: 1240px;
-    margin: 0 auto 64px;
-    padding: 0 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.Bests h2 {
-    text-align: center;
-    margin: 0 auto 55px;
-    font-size: 48px;
-}
-
-.Bests-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin: 0 0 36px 0;
-    padding: 0;
-    list-style: none;
-}
-
-.Bests-item {
-    flex: 0 1 350px;
-    max-width: 444px;
-    text-align: center;
-}
-
-.Bests-item img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 16px;
-    border-radius: 12px;
-}
-
-.Bests-item h3 {
-    margin: 0 0 8px 0;
-    font-size: 18px;
-}
-
-.Bests-item-mark {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-}
-
-.Bests-item-stars {
-    display: flex;
-    gap: 4px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.Bests-button {
-    display: block;
-    width: 218px;
-    height: 52px;
-    margin: 0 auto;
-    background: black;
-    color: white;
-    border-radius: 62px;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.Bests-button:hover {
-    background: #333;
-    transform: translateY(-2px);
-} */
-
-
-
-
-                                        /* ============ SECTION STYLES ============ */
-
-
-
-/* .Styles {
-    max-width: 1240px;
-    margin: 0 auto 80px;
-    padding: 70px 20px;
-    background-color: rgba(240, 240, 240, 1);
-    border-radius: 40px;
-}
-
-.Styles h2 {
-    text-align: center;
-    margin: 0 auto 64px;
-    font-size: 48px;
-    max-width: 687px;
-}
-
-.Styles-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.Styles-item {
-    flex: 1 1 300px;
-    max-width: 400px;
-    height: 289px;
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-}
-
-.Styles-item a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: white;
-    position: relative;
-}
-
-.Styles-item h2 {
-    position: absolute;
-    top: 25px;
-    left: 36px;
-    margin: 0;
-    font-size: 24px;
-    text-align: left;
-}
-
-.Styles-item:first-child {
-    background-image: url(../../img/Causal.jpg);
-}
-
-.Styles-item:nth-child(2) {
-    background-image: url(../../img/Formal.jpg);
-}
-
-.Styles-item:nth-child(3) {
-    background-image: url(../../img/Party.jpg);
-}
-
-.Styles-item:last-child {
-    background-image: url(../../img/Gym.jpg);
-} */
-
-
-
-
-                                        /* ============ SECTION CAROUSEL ============ */
-
-
-
-/* .carousel {
-    position: relative;
-    width:1240px;
-    margin:0 auto 10px auto;
-    overflow: hidden;
-}
-
-.carousel-header{
-    width:1240px;
-    height: 58px;
-    margin:0 auto 40px auto;
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-}
-
-.carousel-header h2{
-    width:654px;
-    height:58px;
-    margin:0;
-    margin-right:524.62px;
-}
-
-.carousel-button{
-    width:24px;
-    height:24px;
-    cursor: pointer;
-    border: none;
-    background-color:rgba(255, 255, 255, 1);
-    padding:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.prev{
-    margin-right:16px;
-}
-
-.next{
-    transform: rotate(180deg);
-}
-
-.carousel-container{
-    display: flex;
-    transition: transform 1s;
-    width:1240px;
-}
-
-.review-group {
-    display: flex;
-    min-width: 100%;
-    gap: 20px;
-    padding: 0 20px;
-}
-
-.Reviews-item {
-    width:400px;
-    height:240px;
-    background-color: white;
-    border-radius: 20px;
-    border:1px solid rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding:28px 32px 50.42px 32px;
-}
-
-.review-header {
-    display:flex;
-
-    margin:0;
-    margin-right:auto;
-    margin-bottom: 15px;
-}
-
-.review-name {
-    font-size: 1.5em;
-    margin: 0;
-}
-
-.Reviews-item-stars {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-    padding: 0;
-    margin: 0 0 20px 0;
-    list-style: none;
-}
-
-.review-text {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #333;
-    margin: 0;
-}
-  */
-
-
-
-
-                                            /* ============ MEDIA QUERIES ============ */
-
-
-
-/* Планшеты */
-@media (max-width: 1024px) {
-    /* .hero-content {
-        min-height: 500px;
-        padding: 60px 20px;
-    }
-    
-    .hero-title-wrapper h1 {
-        font-size: 48px;
-    }
-    
-    .hero-bg-image {
-        width: 45%;
-        opacity: 0.8;
-    }
-    
-    .hero-inf {
-        gap: 20px;
-    }
-    
-    .hero-inf-item {
-        flex: 1 1 120px;
-        padding-right: 15px;
-    }
-    
-    .hero-inf-item h2 {
-        font-size: 32px;
-    }
-    
-    .Arrivals h2,
-    .Bests h2,
-    .Styles h2,
-    .carousel-header h2 {
-        font-size: 36px;
-    } */
-}
-
-
-
-                                                        /* Мобильные устройства */
-
-
-@media (max-width: 768px) {
-
-    /* .hero-content {
-        text-align: center;
-        min-height: auto;
-    }
-    
-    .hero-text-content {
-        max-width: 100%;
-    }
-    
-    .hero-title-wrapper h1 {
-        font-size: 36px;
-    }
-    
-    .hero-text p {
-        font-size: 16px;
-    }
-    
-    .hero-bg-image {
-        position: relative;
-        width: 100%;
-        height: 300px;
-        margin-top: 30px;
-        border-radius: 20px;
-    }
-    
-    .hero-inf {
-        justify-content: center;
-    }
-    
-    .hero-inf-item {
-        flex: 0 0 140px;
-        border-right: none;
-        padding-right: 0;
-        text-align: center;
-        align-items: center;
-    }
-    
-    .hero-inf-item h2 {
-        font-size: 28px;
-    }
-    
-    .Styles-item {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-    
-    .carousel-header {
-        justify-content: center;
-        text-align: center;
-    }
-    
-    .carousel-header h2 {
-        font-size: 28px;
-    }
-    
-    .Arrivals h2,
-    .Bests h2,
-    .Styles h2 {
-        font-size: 28px;
-    } */
-}
-
-
-
-                                                    /* Маленькие мобильные устройства */
-
-
-@media (max-width: 480px) {
-    /* .hero-content {
-        padding: 40px 15px;
-    }
-    
-    .hero-title-wrapper h1 {
-        font-size: 32px;
-    }
-    
-    .hero-button {
-        width: 100%;
-        max-width: 280px;
-    }
-    
-    .brends-list {
-        gap: 20px;
-    }
-    
-    .Arrivals-item,
-    .Bests-item {
-        flex: 1 1 100%;
-    }
-    
-    .Reviews-item {
-        width: 280px;
-    }
-    
-    .Styles {
-        padding: 40px 15px;
-    }
-    
-    .Styles-item h2 {
-        font-size: 20px;
-        left: 20px;
-        top: 20px;
-    }
-    
-    .Arrivals h2,
-    .Bests h2,
-    .Styles h2,
-    .carousel-header h2 {
-        font-size: 24px;
-    } */
 }

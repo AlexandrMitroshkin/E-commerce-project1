@@ -17,14 +17,12 @@
     <header id="header">
         <article class="header-register">
             {% if session.get('user_id') %}
-                <!-- ЕСЛИ ПОЛЬЗОВАТЕЛЬ ВОШЁЛ -->
                 <p>Welcome, {{ session.username }}! 
                     <a class="header-register-link" href="{{ url_for('main.account') }}">
                         My Account
                     </a>
                 </p>
             {% else %}
-                <!-- ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ВОШЁЛ -->
                 <p>Sign up and get 20% off to your first order. 
                     <a class="header-register-link" href="{{ url_for('main.register') }}">
                         Sign Up Now
@@ -58,7 +56,7 @@
                             <div class="options">
                                 <a class="option" href="{{url_for('main.men')}}">Men</a>
                                 <a class="option" href="{{url_for('main.women')}}">Women</a>
-                                <a class="option" href="{{url_for('main.unisex')}}">Unisex</a>
+                                <a class="option" href="{{url_for('main.gym')}}">gym</a>
                                 <a class="option" href="{{ url_for('main.product', id=1) }}">T-shirt1</a>
                             </div>
                         </div>
@@ -66,7 +64,7 @@
 
                     <li class="header-nav-link"><a href="{{url_for('main.sales')}}">On Sale</a></li>
                     <li class="header-nav-link"><a href="{{url_for('main.novelty')}}">New Arrivals</a></li>
-                    <li class="header-nav-link"><a href="{{url_for('main.brands')}}">Brands</a></li>
+                    <li class="header-nav-link"><a href="{{url_for('main.bests')}}">Bests</a></li>
                 </ul>
             
                 <div class="header-nav-search">
@@ -82,7 +80,8 @@
                         <img src="{{url_for('static' , filename='img/Magnifying_glass_black.svg')}}" width="20" height="20" alt="Magnifying glass in input">
                     </button>
                     <a class="telegka" href="{{ url_for('main.cart') }}">
-                        <img src="{{ url_for('static', filename='img/catr(telegka).svg') }}" width="22" height="20" alt="basket of user">
+                        <img src="{{ url_for('static', filename='img/catr(telegka).svg') }}" 
+                            width="22" height="20" alt="basket of user">
                     </a>
                     <a class="account" href="{{ url_for('main.account')}}">
                         <img src="{{ url_for('static', filename='img/account.svg') }}" width="20" height="20" alt="user account">
@@ -96,135 +95,135 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="footer">
-        <article class="footer-flex1">
-            <h2 class="H2-IntegralFont">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
+<footer class="footer">
+    <article class="footer-flex1">
+        <h2 class="H2-IntegralFont">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
 
-            <form class="footer-form">
-                <div>
-                    <label for="footer-flex1-email"><img class="footer-form-img" src="{{ url_for('static', filename='img/Email.svg') }}" width="20" height="16" alt="photo of the envelope"></label>
-                    <input id="footer-flex1-email" name="footer-flex1-email" type="email" placeholder="Enter your email address">
-                </div>
-                <input id="footer-flex1-sending" name="footer-flex1-sending" type="submit" value="Subscribe to Newsletter" placeholder="Subscribe to Newsletter">
-            </form>
+        <form class="footer-form">
+            <div>
+                <label for="footer-flex1-email"><img class="footer-form-img" src="{{ url_for('static', filename='img/Email.svg') }}" width="20" height="16" alt="photo of the envelope"></label>
+                <input id="footer-flex1-email" name="footer-flex1-email" type="email" placeholder="Enter your email address">
+            </div>
+            <input id="footer-flex1-sending" name="footer-flex1-sending" type="submit" value="Subscribe to Newsletter" placeholder="Subscribe to Newsletter">
+        </form>
+    </article>
+
+    <div class="footer-flex2and3-wrapper">
+        <article class="footer-flex2">
+            <div class="footer-flex2-part1">
+                <h3>SHOP.CO</h3>
+                <p>We have clothes that suits your style and which you're proud to wear. From women to men.</p>
+
+                <ul class="footer-messagers">
+                    <li class="footer-messager">
+                        <a href="{{ url_for('main.stub') }}">
+                            <img src="{{ url_for('static', filename='img/twitter_icon.svg') }}" width="11" height="9" alt="icon of twitter">
+                        </a>
+                    </li>
+
+                    <li class="footer-messager">
+                        <a href="{{ url_for('main.stub') }}">
+                            <img src="{{ url_for('static', filename='img/Facebook_icon.svg') }}" width="11" height="9" alt="icon of factbook">
+                        </a>
+                    </li>
+
+                    <li class="footer-messager">
+                        <a href="{{ url_for('main.stub') }}">
+                            <img src="{{ url_for('static', filename='img/logo-instagram 1.svg') }}" width="11" height="9" alt="icon of instagramm">
+                        </a>
+                    </li>
+
+                    <li class="footer-messager">
+                        <a href="{{ url_for('main.stub') }}">
+                            <img src="{{ url_for('static', filename='img/git_icon.svg') }}" width="11" height="9" alt="icon of githab">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <ul class="footer-links">
+                <li class="footer-links-column">
+                    <ul>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}"><h4>COMPANY</h4></a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">About</a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">Features</a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">Works</a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">Career</a></li>
+                    </ul>
+                </li>
+
+                <li class="footer-links-column">
+                    <ul>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}"><h4>HELP</h4></a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">Support</a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">Delivery Details</a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">Terms & Conditions</a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">Privacy Policy</a></li>
+                    </ul>
+                </li>
+
+                <li class="footer-links-column">
+                    <ul>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}"><h4>FAQ</h4></a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">Account</a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">Manage Deliveries</a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">Orders</a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">Payments</a></li>
+                    </ul>
+                </li>
+
+                <li class="footer-links-column">
+                    <ul>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}"><h4>RESOURCES</h4></a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">Free eBooks</a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">Development Tutorial</a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">How to - Blog</a></li>
+                        <li class="footer-link"><a href="{{ url_for('main.stub') }}">Youtube Playlist</a></li>
+                    </ul>
+                </li>
+            </ul>
         </article>
 
-        <div class="footer-flex2and3-wrapper">
-            <article class="footer-flex2">
-                <div class="footer-flex2-part1">
-                    <h3>SHOP.CO</h3>
-                    <p>We have clothes that suits your style and which you're proud to wear. From women to men.</p>
+        <article class="footer-flex3">
+            <div class="footer-copyringPolicy">
+                <a class="footer-copyring" href="{{ url_for('main.stub') }}">Shop.co © 2000-2023,</a>
+                <a class="footer-policy" href="{{ url_for('main.stub') }}">All Rights Reserved</a>
+            </div>
 
-                    <ul class="footer-messagers">
-                        <li class="footer-messager">
-                            <a href="#">
-                                <img src="{{ url_for('static', filename='img/twitter_icon.svg') }}" width="11" height="9" alt="icon of twitter">
-                            </a>
-                        </li>
+            <ul class="footer-cards">
+                <li class="footer-card">
+                    <a href="{{ url_for('main.stub') }}">
+                        <img src="{{ url_for('static', filename='img/Visa.svg') }}" width="33" height="11" alt="Logo of Visa cards">
+                    </a>
+                </li>
 
-                        <li class="footer-messager">
-                            <a href="#">
-                                <img src="{{ url_for('static', filename='img/Facebook_icon.svg') }}" width="11" height="9" alt="icon of factbook">
-                            </a>
-                        </li>
+                <li class="footer-card">
+                    <a href="{{ url_for('main.stub') }}">
+                        <img src="{{ url_for('static', filename='img/Mastercard.svg') }}" width="25" height="16" alt="Logo of Mastercard cards">
+                    </a>
+                </li>
 
-                        <li class="footer-messager">
-                            <a href="#">
-                                <img src="{{ url_for('static', filename='img/logo-instagram 1.svg') }}" width="11" height="9" alt="icon of instagramm">
-                            </a>
-                        </li>
+                <li class="footer-card">
+                    <a href="{{ url_for('main.stub') }}">
+                        <img src="{{ url_for('static', filename='img/Paypal.svg') }}" width="35" height="9" alt="Logo of PayPal cards">
+                    </a>
+                </li>
 
-                        <li class="footer-messager">
-                            <a href="#">
-                                <img src="{{ url_for('static', filename='img/git_icon.svg') }}" width="11" height="9" alt="icon of githab">
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                <li class="footer-card">
+                    <a href="{{ url_for('main.stub') }}">
+                        <img src="{{ url_for('static', filename='img/Logo_apple_pay.svg') }}" width="26" height="11" alt="Logo of apple pay">
+                    </a>
+                </li>
 
-                <ul class="footer-links">
-                    <li class="footer-links-column">
-                        <ul>
-                            <li class="footer-link"><a href="#"><h4>COMPANY</h4></a></li>
-                            <li class="footer-link"><a href="#">About</a></li>
-                            <li class="footer-link"><a href="#">Features</a></li>
-                            <li class="footer-link"><a href="#">Works</a></li>
-                            <li class="footer-link"><a href="#">Career</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="footer-links-column">
-                        <ul>
-                            <li class="footer-link"><a href="#"><h4>HELP</h4></a></li>
-                            <li class="footer-link"><a href="#">Customer Support</a></li>
-                            <li class="footer-link"><a href="#">Delivery Details</a></li>
-                            <li class="footer-link"><a href="#">Terms & Conditions</a></li>
-                            <li class="footer-link"><a href="#">Privacy Policy</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="footer-links-column">
-                        <ul>
-                            <li class="footer-link"><a href="#"><h4>FAQ</h4></a></li>
-                            <li class="footer-link"><a href="#">Account</a></li>
-                            <li class="footer-link"><a href="#">Manage Deliveries</a></li>
-                            <li class="footer-link"><a href="#">Orders</a></li>
-                            <li class="footer-link"><a href="#">Payments</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="footer-links-column">
-                        <ul>
-                            <li class="footer-link"><a href="#"><h4>RESOURCES</h4></a></li>
-                            <li class="footer-link"><a href="#">Free eBooks</a></li>
-                            <li class="footer-link"><a href="#">Development Tutorial</a></li>
-                            <li class="footer-link"><a href="#">How to - Blog</a></li>
-                            <li class="footer-link"><a href="#">Youtube Playlist</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </article>
-
-            <article class="footer-flex3">
-                <div class="footer-copyringPolicy">
-                    <a class="footer-copyring" href="#">Shop.co © 2000-2023,</a>
-                    <a class="footer-policy" href="#">All Rights Reserved</a>
-                </div>
-
-                <ul class="footer-cards">
-                    <li class="footer-card">
-                        <a href="#">
-                            <img src="{{ url_for('static', filename='img/Visa.svg') }}" width="33" height="11" alt="Logo of Visa cards">
-                        </a>
-                    </li>
-
-                    <li class="footer-card">
-                        <a href="#">
-                            <img src="{{ url_for('static', filename='img/Mastercard.svg') }}" width="25" height="16" alt="Logo of Mastercard cards">
-                        </a>
-                    </li>
-
-                    <li class="footer-card">
-                        <a href="#">
-                            <img src="{{ url_for('static', filename='img/Paypal.svg') }}" width="35" height="9" alt="Logo of PayPal cards">
-                        </a>
-                    </li>
-
-                    <li class="footer-card">
-                        <a href="#">
-                            <img src="{{ url_for('static', filename='img/Logo_apple_pay.svg') }}" width="26" height="11" alt="Logo of apple pay">
-                        </a>
-                    </li>
-
-                    <li class="footer-card">
-                        <a href="#">
-                            <img src="{{ url_for('static', filename='img/G Pay.svg') }}" width="29" height="11" alt="Logo of Google pay">
-                        </a>
-                    </li>
-                </ul>
-            </article>
-        </div>
-    </footer>
+                <li class="footer-card">
+                    <a href="{{ url_for('main.stub') }}">
+                        <img src="{{ url_for('static', filename='img/G Pay.svg') }}" width="29" height="11" alt="Logo of Google pay">
+                    </a>
+                </li>
+            </ul>
+        </article>
+    </div>
+</footer>
 
     {% block scripts %}
     <script src="{{ url_for('static', filename='js/header.js') }}"></script>

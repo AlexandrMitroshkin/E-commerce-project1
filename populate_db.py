@@ -10,10 +10,8 @@ with app.app_context():
     
     print("Adding test products...")
     
-    # Очищаем старые данные
     Product.query.delete()
-    
-    # Тестовые товары
+
     test_products = [
         # Мужская одежда
         {
@@ -21,7 +19,7 @@ with app.app_context():
             'description': 'Comfortable cotton t-shirt with stylish tape details.',
             'price': 120.00,
             'category': 'men',
-            'style': 'casual',
+            'status':'bests',
             'image': 'T-TAPE DETAILS.jpg',
             'rating': 4.5
         },
@@ -31,28 +29,9 @@ with app.app_context():
             'price': 240.00,
             'old_price': 260.00,
             'category': 'men',
-            'style': 'casual',
+            'status':'bests',
             'image': 'SKINNY FIT JEANS.jpg',
             'rating': 3.5
-        },
-        {
-            'name': 'Checkered Shirt',
-            'description': 'Classic checkered shirt perfect for casual occasions.',
-            'price': 180.00,
-            'category': 'men',
-            'style': 'casual',
-            'image': 'CHECKERED SHIRT.jpg',
-            'rating': 4.5
-        },
-        {
-            'name': 'Sleeve Striped T-shirt',
-            'description': 'Stylish striped t-shirt with unique sleeve design.',
-            'price': 130.00,
-            'old_price': 160.00,
-            'category': 'men',
-            'style': 'casual',
-            'image': 'SLEEVE STRIPED.jpg',
-            'rating': 4.5
         },
         
         # Женская одежда
@@ -61,7 +40,7 @@ with app.app_context():
             'description': 'Fashionable t-shirt with gradient graphic print.',
             'price': 145.00,
             'category': 'women',
-            'style': 'casual',
+            'status':'bests',
             'image': 'Gradient Graphic T-shirt.jpg',
             'rating': 3.5
         },
@@ -70,7 +49,7 @@ with app.app_context():
             'description': 'Elegant polo shirt with tipping details.',
             'price': 180.00,
             'category': 'women',
-            'style': 'casual',
+            'status':'bests',
             'image': 'Polo with Tipping Details.jpg',
             'rating': 4.5
         },
@@ -80,7 +59,7 @@ with app.app_context():
             'price': 120.00,
             'old_price': 150.00,
             'category': 'women',
-            'style': 'casual',
+            'status':'bests',
             'image': 'Black Striped T-shirt.jpg',
             'rating': 5.0
         },
@@ -90,18 +69,18 @@ with app.app_context():
             'price': 212.00,
             'old_price': 232.00,
             'category': 'women',
-            'style': 'casual',
+            'status':'bests',
             'image': 'VERTICAL STRIPED .jpg',
             'rating': 5.0
         },
         
-        # Casual (унисекс)
+        # Casual
         {
             'name': 'Courage Graphic T-shirt',
             'description': 'Graphic t-shirt with courage design.',
             'price': 145.00,
             'category': 'casual',
-            'style': 'casual',
+            'status':'.',
             'image': 'T-COURAGE GRAPHIC .jpg',
             'rating': 4.0
         },
@@ -110,7 +89,7 @@ with app.app_context():
             'description': 'Comfortable loose fit bermuda shorts.',
             'price': 80.00,
             'category': 'casual',
-            'style': 'casual',
+            'status':'.',
             'image': 'LOOSE FIT BERMUDA SHORTS.jpg',
             'rating': 3.0
         },
@@ -119,7 +98,7 @@ with app.app_context():
             'description': 'Fashionable faded skinny jeans.',
             'price': 210.00,
             'category': 'casual',
-            'style': 'casual',
+            'status':'.',
             'image': 'Faded Skinny Jeans.jpg',
             'rating': 4.5
         },
@@ -128,7 +107,7 @@ with app.app_context():
             'description': 'Bright orange t-shirt.',
             'price': 95.00,
             'category': 'casual',
-            'style': 'casual',
+            'status':'.',
             'image': 'T-orange_color.jpg',
             'rating': 4.2
         },
@@ -139,8 +118,8 @@ with app.app_context():
             'description': 'New collection graphic t-shirt.',
             'price': 155.00,
             'category': 'novelty',
-            'style': 'casual',
-            'image': 'T-One Life Graphic.jpg',
+            'status':'.',
+            'image': 'T-One Life Graphic (2).jpg',
             'rating': 4.8
         },
         {
@@ -148,10 +127,62 @@ with app.app_context():
             'description': 'New polo with contrast trims.',
             'price': 190.00,
             'category': 'novelty',
-            'style': 'casual',
+            'status':'.',
             'image': 'Polo with Contrast Trims.jpg',
             'rating': 4.7
+        },
+        {
+            'name': 'Checkered Shirt',
+            'description': 'Classic checkered shirt perfect for casual occasions.',
+            'price': 180.00,
+            'category': 'novelty',
+            'status':'.',
+            'image': 'CHECKERED SHIRT.jpg',
+            'rating': 4.5
+        },
+        {
+            'name': 'Sleeve Striped T-shirt',
+            'description': 'Stylish striped t-shirt with unique sleeve design.',
+            'price': 130.00,
+            'old_price': 160.00,
+            'category': 'novelty',
+            'status':'.',
+            'image': 'SLEEVE STRIPED.jpg',
+            'rating': 4.5
+        },
+        #Спорт
+        {
+            'name': 'Black sport T-shirt',
+            'description': 'Black sport T-shirt for sportsmens',
+            'price': 130.00,
+            'old_price': 160.00,
+            'category': 'gym',
+            'status':'.',
+            'image': 'Black sport T-shirt.jpg',
+            'rating': 4.5
+        },
+        {
+            'name': 'Grey sport T-shirt',
+            'description': 'Grey sport T-shirt for sportsmens',
+            'price': 130.00,
+            'old_price': 160.00,
+            'category': 'gym',
+            'status':'.',
+            'image': 'Grey sport T-shirt.jpg',
+            'rating': 4.5
+        },
+        {
+            'name': 'White sport T-shirt',
+            'description': 'White sport T-shirt for sportsmens',
+            'price': 150.00,
+            'old_price': 170.00,
+            'category': 'gym',
+            'status':'.',
+            'image': 'White sport T-shirt.jpg',
+            'rating': 5.0
         }
+
+        
     ]
     
     for prod_data in test_products:
@@ -161,7 +192,7 @@ with app.app_context():
             price=prod_data['price'],
             old_price=prod_data.get('old_price'),
             category=prod_data['category'],
-            style=prod_data['style'],
+            status=prod_data['status'],
             image=prod_data['image'],
             rating=prod_data['rating']
         )

@@ -1,6 +1,7 @@
-/* ============ ACCOUNT PAGE STYLES ============ */
+                                            /*account-section*/
 
-.account-section {
+
+.account-section{
     max-width: 1200px;
     margin: 0 auto;
     padding: 60px 20px;
@@ -24,14 +25,17 @@
     color: rgba(0, 0, 0, 0.6);
 }
 
-/* Основной контент аккаунта */
 .account-content {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
 }
 
-/* Панель профиля */
+
+
+                                            /*profile*/
+
+
 .profile-panel {
     flex: 1;
     min-width: 300px;
@@ -78,7 +82,11 @@
     color: rgba(0, 0, 0, 0.6);
 }
 
-/* Действия аккаунта */
+
+                                                        /*actions*/
+
+
+
 .account-actions {
     margin-top: 30px;
 }
@@ -115,7 +123,11 @@
     background-color: rgba(240, 240, 240, 1);
 }
 
-/* Секция заказов */
+
+
+                                                        /*orders*/
+
+
 .orders-panel {
     flex: 2;
     min-width: 300px;
@@ -146,7 +158,6 @@
     font-size: 14px;
 }
 
-/* Список заказов */
 .order-list {
     margin-bottom: 40px;
 }
@@ -246,7 +257,10 @@
     color: rgba(0, 0, 0, 0.2);
 }
 
-/* Бонусы и скидки */
+
+                                                /*bonus*/
+
+                                                
 .bonus-section {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: 20px;
@@ -275,9 +289,8 @@
     opacity: 0.9;
 }
 
-/* ============ АДАПТИВНОСТЬ ============ */
 
-/* Планшеты (768px - 1024px) */
+                                                /* Адаптивность */
 @media (max-width: 1024px) {
     .account-section {
         padding: 40px 20px;
@@ -298,7 +311,7 @@
     }
 }
 
-/* Большие мобильные (576px - 768px) */
+
 @media (max-width: 768px) {
     .account-section {
         padding: 30px 15px;
@@ -342,7 +355,7 @@
     }
 }
 
-/* Малые мобильные (до 576px) */
+
 @media (max-width: 576px) {
     .account-section {
         padding: 20px 10px;
