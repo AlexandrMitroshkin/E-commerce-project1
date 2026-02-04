@@ -2,11 +2,22 @@ from app import create_app, db
 from app.models import Product, User
 from datetime import datetime
 import os
+from pathlib import Path
 
 app = create_app()
 
 with app.app_context():
     print(f"Database URI: {app.config['SQLALCHEMY_DATABASE_URI']}")
+
+    db_path = app.config['SQLALCHEMY_DATABASE_URI'].replace('sqlite:///', '')
+
+    if db_path.startswith('/') and os.name == 'nt':
+        db_path = db_path[1:]
+    
+    db_file = Path(db_path)
+    if db_file.parent:
+        db_file.parent.mkdir(parents=True, exist_ok=True)
+        print(f"✅ Directory created: {db_file.parent}")
     
     try:
         print("Creating database tables...")
@@ -14,7 +25,15 @@ with app.app_context():
         print("✅ Tables created successfully!")
     except Exception as e:
         print(f"⚠️  Error creating tables: {e}")
-        exit(1)
+
+        print("Trying alternative path...")
+        alt_path = Path('instance/shop.db')
+        alt_path.parent.mkdir(parents=True, exist_ok=True)
+        
+
+        app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{alt_path}'
+        db.create_all()
+        print("✅ Tables created with alternative path!")
     
     print("Adding test products...")
 
@@ -307,7 +326,7 @@ with app.app_context():
             status=prod_data['status'],
             image=prod_data['image'],
             rating=prod_data['rating']
-        )
+        )   
         db.session.add(product)
     
     try:

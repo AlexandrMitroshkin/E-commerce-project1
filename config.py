@@ -11,7 +11,8 @@ class Config:
 
         SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:////tmp/shop.db'
     else:
+        if os.name == 'nt':
+            SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+                f'sqlite:///{BASE_DIR}\\instance\\shop.db'
 
-        SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or f'sqlite:///{BASE_DIR}/instance/shop.db'
-    
     SQLALCHEMY_TRACK_MODIFICATIONS = False
