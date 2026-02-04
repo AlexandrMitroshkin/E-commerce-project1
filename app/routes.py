@@ -281,18 +281,6 @@ def search_products():
     
     return jsonify(results)
 
-@bp.route('/under-construction')
-def under_construction():
-    return render_template('under_construction.html')
-
-@bp.route('/combined')
-def combined():
-    return render_template('combined.html')
-
-@bp.route('/brands')
-def brands():
-    return render_template('brands.html')
-
 @bp.route('/stub')
 def stub():
     return render_template('stub.html')
