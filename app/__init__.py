@@ -12,8 +12,7 @@ def create_app(config_class=Config):
 
     from app.routes import bp
     app.register_blueprint(bp)
-    
-    # Создаем таблицы при запуске (только если их нет)
+
     with app.app_context():
         try:
             db.create_all()
